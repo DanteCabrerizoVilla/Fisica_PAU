@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 200" width="450" height="200" font-family="system-ui, sans-serif" font-size="13">
+<title>Trazado en una lente divergente de focal −20 cm con el objeto a 20 cm: el rayo paralelo sale como si viniera del foco imagen, el central no se desvía, y la imagen virtual, derecha y de la mitad de tamaño queda a 10 cm de la lente</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="10.0" y1="100.0" x2="440.0" y2="100.0" stroke="#5a6170" stroke-width="1.2"/>
+<line x1="330.0" y1="18" x2="330.0" y2="182" stroke="#3a7bd5" stroke-width="2.5"/>
+<path d="M324.0 10 L330.0 18 L336.0 10" fill="none" stroke="#3a7bd5" stroke-width="2.5"/>
+<path d="M324.0 190 L330.0 182 L336.0 190" fill="none" stroke="#3a7bd5" stroke-width="2.5"/>
+<circle cx="110.0" cy="100" r="3" fill="#1e222b"/><text x="100.0" y="118.0" text-anchor="middle" fill="#1e222b" font-style="italic">F′</text>
+<line x1="110.0" y1="100.0" x2="110.0" y2="56.0" stroke="#1e222b" stroke-width="2.5" marker-end="url(#p)"/>
+<line x1="220.0" y1="100.0" x2="220.0" y2="78.0" stroke="#b5451b" stroke-width="2.5" marker-end="url(#p)"/>
+<polyline points="110.0,56.0 330.0,56.0 418.0,38.400000000000006" fill="none" stroke="#0f6b5c" stroke-width="1.6"/>
+<line x1="110.0" y1="100.0" x2="330.0" y2="56.0" stroke="#0f6b5c" stroke-width="1.2" stroke-dasharray="4 4"/>
+<line x1="110.0" y1="56.0" x2="418.0" y2="117.6" stroke="#0f6b5c" stroke-width="1.6"/>
+<text x="110.0" y="48.0" text-anchor="middle" fill="#1e222b" >objeto</text>
+<text x="228.0" y="72.0" text-anchor="start" fill="#b5451b" >imagen</text>
+<text x="220.0" y="118.0" text-anchor="middle" fill="#5a6170" >−10 cm</text>
+<text x="128.0" y="134.0" text-anchor="middle" fill="#5a6170" >−20 cm</text>
+</svg>

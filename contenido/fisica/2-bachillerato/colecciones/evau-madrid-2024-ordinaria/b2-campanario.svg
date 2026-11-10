@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 210" width="400" height="210" font-family="system-ui, sans-serif" font-size="13">
+<title>Campanario de 35 m de altura; una persona al pie de la torre está a 35 m de las campanas y la población, a 100 m de la base, está a una distancia d que es la hipotenusa</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="10" y1="170" x2="390" y2="170" stroke="#1e222b" stroke-width="1.5"/>
+<rect x="50" y="40" width="26" height="130" fill="rgba(90,97,112,0.25)" stroke="#5a6170"/><path d="M46 40 L63 16 L80 40 Z" fill="#5a6170"/>
+<circle cx="63" cy="46" r="6" fill="#b5451b"/><text x="92.0" y="44.0" text-anchor="start" fill="#b5451b" >campanas</text>
+<line x1="36.0" y1="48.0" x2="36.0" y2="168.0" stroke="#0f6b5c" marker-start="url(#p)" marker-end="url(#p)"/><text x="14.0" y="112.0" text-anchor="middle" fill="#0f6b5c">35 m</text>
+<line x1="63.0" y1="46.0" x2="360.0" y2="170.0" stroke="#b5451b" stroke-width="1.6"/>
+<text x="220.0" y="96.0" text-anchor="middle" fill="#b5451b" font-style="italic">d</text>
+<line x1="78.0" y1="186.0" x2="360.0" y2="186.0" stroke="#0f6b5c" marker-start="url(#p)" marker-end="url(#p)"/><text x="219.0" y="202.0" text-anchor="middle" fill="#0f6b5c">100 m</text>
+<circle cx="63.0" cy="170.0" r="4" fill="#5a6170"/><text x="85.0" y="188.0" text-anchor="start" fill="#5a6170">pie de la torre</text>
+<circle cx="360.0" cy="170.0" r="4" fill="#5a6170"/><text x="360.0" y="160.0" text-anchor="middle" fill="#5a6170">población</text>
+</svg>

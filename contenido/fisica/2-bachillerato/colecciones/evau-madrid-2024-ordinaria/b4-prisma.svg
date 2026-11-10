@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 256" width="270" height="256" font-family="system-ui, sans-serif" font-size="13">
+<title>Prisma de sección triangular: cara vertical a la izquierda, base horizontal y cara inclinada que forma 30 grados con la vertical. Un rayo incide perpendicularmente sobre la cara inclinada en el punto P</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<polygon points="70,20 70,240 197.0,240" fill="rgba(90,97,112,0.22)" stroke="#1e222b" stroke-width="1.5"/>
+<text x="86.0" y="72.0" text-anchor="middle" fill="#1e222b" >30°</text>
+<text x="110.0" y="150.0" text-anchor="middle" fill="#1e222b" font-style="italic">nₚ</text>
+<text x="200.0" y="90.0" text-anchor="middle" fill="#5a6170" >aire, n = 1</text>
+<circle cx="178.0" cy="207.0" r="4" fill="#1e222b"/><text x="188.0" y="211.0" text-anchor="start" fill="#1e222b">P</text>
+<line x1="226.5" y1="179.0" x2="178.0" y2="207.0" stroke="#b5451b" stroke-width="2" marker-end="url(#p)"/>
+</svg>
