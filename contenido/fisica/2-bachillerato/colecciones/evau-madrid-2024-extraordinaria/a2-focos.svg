@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 210" width="290" height="210" font-family="system-ui, sans-serif" font-size="13">
+<title>Foco F1 en (0, 3) m y foco F2 en (4, 0) m; el origen está a 3 m del primero y a 4 m del segundo, y entre los focos hay 5 m</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="32" y1="170" x2="262" y2="170" stroke="#5a6170" marker-end="url(#p)"/><text x="266" y="174" fill="#5a6170" font-style="italic">x</text>
+<line x1="56" y1="194" x2="56" y2="16" stroke="#5a6170" marker-end="url(#p)"/><text x="62" y="20" fill="#5a6170" font-style="italic">y</text>
+<line x1="56.0" y1="38.0" x2="232.0" y2="170.0" stroke="#5a6170" stroke-width="1.2" stroke-dasharray="4 4"/>
+<text x="156.0" y="98.0" text-anchor="start" fill="#5a6170" >5 m</text>
+<circle cx="56" cy="38" r="9" fill="#b5451b"/><text x="70.0" y="32.0" text-anchor="start" fill="#b5451b" >F₁ (0, 3) m</text>
+<circle cx="232" cy="170" r="9" fill="#3a7bd5"/><text x="232.0" y="198.0" text-anchor="middle" fill="#3a7bd5" >F₂ (4, 0) m</text>
+<circle cx="56.0" cy="170.0" r="4" fill="#1e222b"/><text x="48.0" y="188.0" text-anchor="end" fill="#1e222b">O</text>
+</svg>

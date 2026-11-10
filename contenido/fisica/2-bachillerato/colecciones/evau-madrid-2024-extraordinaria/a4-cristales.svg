@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 262" width="360" height="262" font-family="system-ui, sans-serif" font-size="13">
+<title>Dos cristales horizontales de 10 cm separados por una capa de aire de espesor e. El rayo llega a la cara superior del cristal inferior con 30 grados, sale al aire por A, cruza la capa de aire y el cristal superior y sale por B, desplazado 9,2 cm en horizontal</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<rect x="30" y="110" width="300" height="140" fill="rgba(58,123,213,0.10)" stroke="#3a7bd5"/>
+<rect x="30" y="-86.0" width="300" height="140" fill="rgba(58,123,213,0.20)" stroke="#3a7bd5"/>
+<line x1="120.0" y1="-102.0" x2="120.0" y2="250.0" stroke="#5a6170" stroke-width="1.2" stroke-dasharray="4 4"/>
+<line x1="79.6" y1="180.0" x2="120.0" y2="110.0" stroke="#b5451b" stroke-width="2" marker-end="url(#p)"/>
+<polyline points="120,110 174.9,54.0 248.8,-86.0" fill="none" stroke="#b5451b" stroke-width="2"/>
+<line x1="248.8" y1="-86.0" x2="278.2" y2="-116.0" stroke="#b5451b" stroke-width="2" marker-end="url(#p)"/>
+<circle cx="120.0" cy="110.0" r="4" fill="#1e222b"/><text x="112.0" y="126.0" text-anchor="end" fill="#1e222b">A</text>
+<circle cx="248.8" cy="-86.0" r="4" fill="#1e222b"/><text x="256.8" y="-70.0" text-anchor="start" fill="#1e222b">B</text>
+<line x1="122.0" y1="-96.0" x2="246.8" y2="-96.0" stroke="#0f6b5c" marker-start="url(#p)" marker-end="url(#p)"/><text x="184.4" y="-102.0" text-anchor="middle" fill="#0f6b5c">d = 9,2 cm</text>
+<line x1="44.0" y1="56.0" x2="44.0" y2="108.0" stroke="#0f6b5c" marker-start="url(#p)" marker-end="url(#p)"/><text x="56.0" y="86.0" text-anchor="middle" fill="#0f6b5c">e</text>
+<text x="94.0" y="162.0" text-anchor="middle" fill="#1e222b" >30°</text>
+<text x="322.0" y="236.0" text-anchor="end" fill="#3a7bd5" >n₁ = 1,40</text>
+<text x="322.0" y="40.0" text-anchor="end" fill="#3a7bd5" >n₂ = 1,50</text>
+<text x="322.0" y="86.0" text-anchor="end" fill="#5a6170" >aire</text>
+<text x="74.0" y="184.0" text-anchor="middle" fill="#5a6170" >10 cm</text>
+<text x="74.0" y="-12.0" text-anchor="middle" fill="#5a6170" >10 cm</text>
+</svg>
