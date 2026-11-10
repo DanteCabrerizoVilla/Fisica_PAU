@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 226 200" width="226" height="200" font-family="system-ui, sans-serif" font-size="13">
+<title>Espira circular de 20 cm de radio en un campo magnético perpendicular que entra en el papel</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<circle cx="22" cy="22" r="5" fill="none" stroke="#3a7bd5"/><path d="M18.5 18.5 L25.5 25.5 M18.5 25.5 L25.5 18.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="22" cy="48" r="5" fill="none" stroke="#3a7bd5"/><path d="M18.5 44.5 L25.5 51.5 M18.5 51.5 L25.5 44.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="22" cy="74" r="5" fill="none" stroke="#3a7bd5"/><path d="M18.5 70.5 L25.5 77.5 M18.5 77.5 L25.5 70.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="22" cy="100" r="5" fill="none" stroke="#3a7bd5"/><path d="M18.5 96.5 L25.5 103.5 M18.5 103.5 L25.5 96.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="22" cy="126" r="5" fill="none" stroke="#3a7bd5"/><path d="M18.5 122.5 L25.5 129.5 M18.5 129.5 L25.5 122.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="22" cy="152" r="5" fill="none" stroke="#3a7bd5"/><path d="M18.5 148.5 L25.5 155.5 M18.5 155.5 L25.5 148.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="48" cy="22" r="5" fill="none" stroke="#3a7bd5"/><path d="M44.5 18.5 L51.5 25.5 M44.5 25.5 L51.5 18.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="48" cy="48" r="5" fill="none" stroke="#3a7bd5"/><path d="M44.5 44.5 L51.5 51.5 M44.5 51.5 L51.5 44.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="48" cy="74" r="5" fill="none" stroke="#3a7bd5"/><path d="M44.5 70.5 L51.5 77.5 M44.5 77.5 L51.5 70.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="48" cy="100" r="5" fill="none" stroke="#3a7bd5"/><path d="M44.5 96.5 L51.5 103.5 M44.5 103.5 L51.5 96.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="48" cy="126" r="5" fill="none" stroke="#3a7bd5"/><path d="M44.5 122.5 L51.5 129.5 M44.5 129.5 L51.5 122.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="48" cy="152" r="5" fill="none" stroke="#3a7bd5"/><path d="M44.5 148.5 L51.5 155.5 M44.5 155.5 L51.5 148.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="74" cy="22" r="5" fill="none" stroke="#3a7bd5"/><path d="M70.5 18.5 L77.5 25.5 M70.5 25.5 L77.5 18.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="74" cy="48" r="5" fill="none" stroke="#3a7bd5"/><path d="M70.5 44.5 L77.5 51.5 M70.5 51.5 L77.5 44.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="74" cy="74" r="5" fill="none" stroke="#3a7bd5"/><path d="M70.5 70.5 L77.5 77.5 M70.5 77.5 L77.5 70.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="74" cy="100" r="5" fill="none" stroke="#3a7bd5"/><path d="M70.5 96.5 L77.5 103.5 M70.5 103.5 L77.5 96.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="74" cy="126" r="5" fill="none" stroke="#3a7bd5"/><path d="M70.5 122.5 L77.5 129.5 M70.5 129.5 L77.5 122.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="74" cy="152" r="5" fill="none" stroke="#3a7bd5"/><path d="M70.5 148.5 L77.5 155.5 M70.5 155.5 L77.5 148.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="100" cy="22" r="5" fill="none" stroke="#3a7bd5"/><path d="M96.5 18.5 L103.5 25.5 M96.5 25.5 L103.5 18.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="100" cy="48" r="5" fill="none" stroke="#3a7bd5"/><path d="M96.5 44.5 L103.5 51.5 M96.5 51.5 L103.5 44.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="100" cy="74" r="5" fill="none" stroke="#3a7bd5"/><path d="M96.5 70.5 L103.5 77.5 M96.5 77.5 L103.5 70.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="100" cy="100" r="5" fill="none" stroke="#3a7bd5"/><path d="M96.5 96.5 L103.5 103.5 M96.5 103.5 L103.5 96.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="100" cy="126" r="5" fill="none" stroke="#3a7bd5"/><path d="M96.5 122.5 L103.5 129.5 M96.5 129.5 L103.5 122.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="100" cy="152" r="5" fill="none" stroke="#3a7bd5"/><path d="M96.5 148.5 L103.5 155.5 M96.5 155.5 L103.5 148.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="126" cy="22" r="5" fill="none" stroke="#3a7bd5"/><path d="M122.5 18.5 L129.5 25.5 M122.5 25.5 L129.5 18.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="126" cy="48" r="5" fill="none" stroke="#3a7bd5"/><path d="M122.5 44.5 L129.5 51.5 M122.5 51.5 L129.5 44.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="126" cy="74" r="5" fill="none" stroke="#3a7bd5"/><path d="M122.5 70.5 L129.5 77.5 M122.5 77.5 L129.5 70.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="126" cy="100" r="5" fill="none" stroke="#3a7bd5"/><path d="M122.5 96.5 L129.5 103.5 M122.5 103.5 L129.5 96.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="126" cy="126" r="5" fill="none" stroke="#3a7bd5"/><path d="M122.5 122.5 L129.5 129.5 M122.5 129.5 L129.5 122.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="126" cy="152" r="5" fill="none" stroke="#3a7bd5"/><path d="M122.5 148.5 L129.5 155.5 M122.5 155.5 L129.5 148.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="152" cy="22" r="5" fill="none" stroke="#3a7bd5"/><path d="M148.5 18.5 L155.5 25.5 M148.5 25.5 L155.5 18.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="152" cy="48" r="5" fill="none" stroke="#3a7bd5"/><path d="M148.5 44.5 L155.5 51.5 M148.5 51.5 L155.5 44.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="152" cy="74" r="5" fill="none" stroke="#3a7bd5"/><path d="M148.5 70.5 L155.5 77.5 M148.5 77.5 L155.5 70.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="152" cy="100" r="5" fill="none" stroke="#3a7bd5"/><path d="M148.5 96.5 L155.5 103.5 M148.5 103.5 L155.5 96.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="152" cy="126" r="5" fill="none" stroke="#3a7bd5"/><path d="M148.5 122.5 L155.5 129.5 M148.5 129.5 L155.5 122.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="152" cy="152" r="5" fill="none" stroke="#3a7bd5"/><path d="M148.5 148.5 L155.5 155.5 M148.5 155.5 L155.5 148.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="178" cy="22" r="5" fill="none" stroke="#3a7bd5"/><path d="M174.5 18.5 L181.5 25.5 M174.5 25.5 L181.5 18.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="178" cy="48" r="5" fill="none" stroke="#3a7bd5"/><path d="M174.5 44.5 L181.5 51.5 M174.5 51.5 L181.5 44.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="178" cy="74" r="5" fill="none" stroke="#3a7bd5"/><path d="M174.5 70.5 L181.5 77.5 M174.5 77.5 L181.5 70.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="178" cy="100" r="5" fill="none" stroke="#3a7bd5"/><path d="M174.5 96.5 L181.5 103.5 M174.5 103.5 L181.5 96.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="178" cy="126" r="5" fill="none" stroke="#3a7bd5"/><path d="M174.5 122.5 L181.5 129.5 M174.5 129.5 L181.5 122.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="178" cy="152" r="5" fill="none" stroke="#3a7bd5"/><path d="M174.5 148.5 L181.5 155.5 M174.5 155.5 L181.5 148.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="204" cy="22" r="5" fill="none" stroke="#3a7bd5"/><path d="M200.5 18.5 L207.5 25.5 M200.5 25.5 L207.5 18.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="204" cy="48" r="5" fill="none" stroke="#3a7bd5"/><path d="M200.5 44.5 L207.5 51.5 M200.5 51.5 L207.5 44.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="204" cy="74" r="5" fill="none" stroke="#3a7bd5"/><path d="M200.5 70.5 L207.5 77.5 M200.5 77.5 L207.5 70.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="204" cy="100" r="5" fill="none" stroke="#3a7bd5"/><path d="M200.5 96.5 L207.5 103.5 M200.5 103.5 L207.5 96.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="204" cy="126" r="5" fill="none" stroke="#3a7bd5"/><path d="M200.5 122.5 L207.5 129.5 M200.5 129.5 L207.5 122.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="204" cy="152" r="5" fill="none" stroke="#3a7bd5"/><path d="M200.5 148.5 L207.5 155.5 M200.5 155.5 L207.5 148.5" stroke="#3a7bd5" stroke-width="1.1"/>
+<circle cx="113" cy="87" r="56" fill="none" stroke="#b5451b" stroke-width="2.5"/>
+<line x1="113" y1="87" x2="169" y2="87" stroke="#b5451b"/><text x="141" y="80" text-anchor="middle" fill="#b5451b">20 cm</text>
+<text x="113" y="192" text-anchor="middle" fill="#3a7bd5"><tspan font-style="italic">B</tspan> entra en el papel</text>
+</svg>

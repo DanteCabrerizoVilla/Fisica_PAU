@@ -4,5 +4,4 @@
 - Cada solución: verifica numéricamente con Python antes de darla por buena.
 - Marca con [REVISAR] cualquier problema ambiguo para que Dante lo mire.
 - Simulaciones: físicamente correctas, que funcionen en móvil.
-- Trabaja por lotes: un año de exámenes por tanda, y luego resumen.
 - Comunícate conmigo en español.

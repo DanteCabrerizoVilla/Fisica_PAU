@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 200" width="380" height="200" font-family="system-ui, sans-serif" font-size="13">
+<title>La ballena está a una profundidad h bajo el barco A; el barco B está a 300 m de A y a una distancia d de la ballena, hipotenusa del triángulo</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<rect x="0" y="50" width="380" height="170" fill="rgba(58,123,213,0.12)"/><line x1="0" y1="50" x2="380" y2="50" stroke="#3a7bd5" stroke-width="1.5"/>
+<path d="M48 36 L92 36 L84 50 L56 50 Z" fill="#1e222b"/><text x="70" y="28" text-anchor="middle" fill="#1e222b" font-weight="700">A</text>
+<path d="M298 36 L342 36 L334 50 L306 50 Z" fill="#1e222b"/><text x="320" y="28" text-anchor="middle" fill="#1e222b" font-weight="700">B</text>
+<ellipse cx="70" cy="150" rx="20" ry="9" fill="#5a6170"/><text x="70" y="176" text-anchor="middle" fill="#1e222b">ballena</text>
+<line x1="70" y1="50" x2="70" y2="141" stroke="#b5451b" stroke-width="1.8"/><text x="62" y="100.0" text-anchor="end" fill="#b5451b" font-style="italic">h</text>
+<line x1="86" y1="145" x2="320" y2="50" stroke="#b5451b" stroke-width="1.8"/><text x="201.0" y="116.0" fill="#b5451b" font-style="italic">d</text>
+<line x1="96" y1="20" x2="294" y2="20" stroke="#5a6170" marker-start="url(#p)" marker-end="url(#p)"/><text x="195.0" y="14" text-anchor="middle" fill="#5a6170">300 m</text>
+</svg>

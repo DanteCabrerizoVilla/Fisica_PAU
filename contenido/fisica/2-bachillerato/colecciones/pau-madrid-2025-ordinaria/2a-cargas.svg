@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 226" width="290" height="226" font-family="system-ui, sans-serif" font-size="13">
+<title>Electrón en (0, 6) nm y positrón en (0, −6) nm; en el punto (8, 0) nm los dos campos tienen el mismo módulo y su suma apunta hacia arriba</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="20" y1="115" x2="270" y2="115" stroke="#5a6170" marker-end="url(#p)"/><text x="274" y="119" fill="#5a6170" font-style="italic">x</text>
+<line x1="70" y1="216" x2="70" y2="10" stroke="#5a6170" marker-end="url(#p)"/><text x="76" y="14" fill="#5a6170" font-style="italic">y</text>
+<line x1="70" y1="37" x2="174" y2="115" stroke="#5a6170" stroke-dasharray="4 4"/><line x1="70" y1="193" x2="174" y2="115" stroke="#5a6170" stroke-dasharray="4 4"/>
+<circle cx="70" cy="37" r="11" fill="#3a7bd5"/><text x="70" y="42" text-anchor="middle" fill="#fff" font-weight="700">−</text><text x="70" y="21" text-anchor="start" fill="#1e222b">−e  (0, 6) nm</text>
+<circle cx="70" cy="193" r="11" fill="#b5451b"/><text x="70" y="198" text-anchor="middle" fill="#fff" font-weight="700">+</text><text x="70" y="219" text-anchor="start" fill="#1e222b">+e  (0, −6) nm</text>
+<line x1="174.0" y1="115.0" x2="142.0" y2="91.0" stroke="#3a7bd5" stroke-width="2.5" marker-end="url(#p)"/>
+<text x="124" y="89" fill="#3a7bd5" font-style="italic">E₋</text>
+<line x1="174.0" y1="115.0" x2="206.0" y2="91.0" stroke="#b5451b" stroke-width="2.5" marker-end="url(#p)"/>
+<text x="210" y="89" fill="#b5451b" font-style="italic">E₊</text>
+<line x1="174.0" y1="115.0" x2="174.0" y2="53.0" stroke="#0f6b5c" stroke-width="3" marker-end="url(#p)"/>
+<text x="182" y="59" fill="#0f6b5c" font-style="italic">E</text>
+<circle cx="174" cy="115" r="4" fill="#1e222b"/><text x="182" y="133" fill="#1e222b">(8, 0) nm</text>
+<text x="128.0" y="70.0" fill="#5a6170">10 nm</text>
+</svg>
