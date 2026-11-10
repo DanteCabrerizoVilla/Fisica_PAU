@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 316 190" width="316" height="190" font-family="system-ui, sans-serif" font-size="13">
+<title>Masas de 2 kg en el origen y 4 kg en (4, 0) m, con los campos que crean en el punto (0, 2) m</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="14" y1="150" x2="300" y2="150" stroke="#5a6170" marker-end="url(#p)"/><text x="304" y="154" fill="#5a6170" font-style="italic">x</text>
+<line x1="60" y1="178" x2="60" y2="14" stroke="#5a6170" marker-end="url(#p)"/><text x="66" y="18" fill="#5a6170" font-style="italic">y</text>
+<line x1="60" y1="54" x2="252" y2="150" stroke="#5a6170" stroke-dasharray="4 4"/>
+<circle cx="60" cy="150" r="9" fill="#1e222b"/><text x="46" y="172" text-anchor="middle" fill="#1e222b">m₁ = 2 kg</text>
+<circle cx="252" cy="150" r="12" fill="#1e222b"/><text x="252" y="178" text-anchor="middle" fill="#1e222b">m₂ = 4 kg</text>
+<line x1="60.0" y1="54.0" x2="60.0" y2="104.0" stroke="#b5451b" stroke-width="2.5" marker-end="url(#p)"/>
+<text x="52" y="94" text-anchor="end" fill="#b5451b" font-style="italic">g₁</text>
+<line x1="60.0" y1="54.0" x2="92.0" y2="70.0" stroke="#3a7bd5" stroke-width="2.5" marker-end="url(#p)"/>
+<text x="98" y="66" fill="#3a7bd5" font-style="italic">g₂</text>
+<circle cx="60" cy="54" r="4" fill="#1e222b"/><text x="68" y="46" fill="#1e222b">(0, 2) m</text>
+<text x="166.0" y="94.0" fill="#5a6170">√20 m</text><text x="252" y="132" text-anchor="middle" fill="#5a6170">(4, 0) m</text>
+</svg>
