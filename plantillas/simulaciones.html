@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% from "_macros.html" import migas %}
+
+{% block titulo %}Simulaciones de {{ curso.meta.asignatura }} · {{ curso.meta.nivel }} · {{ sitio.nombre }}{% endblock %}
+{% block descripcion %}Simulaciones interactivas de {{ curso.meta.asignatura }} de {{ curso.meta.nivel }} para entender lo que más cuesta de la {{ curso.meta.prueba }}.{% endblock %}
+
+{% block contenido %}
+<div class="ancho">
+  {{ migas([(curso.meta.titulo, curso.url), ('Simulaciones', '')]) }}
+  <h1>Simulaciones</h1>
+  <p class="entrada">Mueve los controles y mira qué pasa. Cada simulación usa las mismas fórmulas y datos que los problemas de examen.</p>
+  <ul class="rejilla rejilla--bloques seccion">
+    {% for s in curso.simulaciones %}
+    <li>
+      <a class="tarjeta tarjeta--enlace" href="{{ url(s.url) }}">
+        <span class="antetitulo">{{ curso.bloques[s.meta.bloque].nombre }}</span>
+        <h2>{{ s.meta.titulo }}</h2>
+        <p>{{ s.meta.resumen }}</p>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

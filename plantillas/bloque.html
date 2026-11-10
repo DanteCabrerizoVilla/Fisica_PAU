@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% from "_macros.html" import migas, lista_problemas %}
+
+{% block titulo %}{{ bloque.nombre }} · problemas resueltos {{ curso.meta.prueba }} · {{ sitio.nombre }}{% endblock %}
+{% block descripcion %}Problemas de {{ bloque.nombre | lower }} de la {{ curso.meta.prueba }} resueltos paso a paso: {{ bloque.subtemas | map(attribute='nombre') | join(', ') | lower }}.{% endblock %}
+{% block cabeza %}{% include "_katex.html" %}{% endblock %}
+
+{% block contenido %}
+<div class="ancho">
+  {{ migas([(curso.meta.titulo, curso.url), (bloque.nombre, '')]) }}
+  <h1>{{ bloque.nombre }}</h1>
+  <p class="entrada">Problemas resueltos, agrupados por lo que se pregunta.</p>
+
+  {% if tema %}
+  <section class="seccion">
+    <h2>Antes de los problemas</h2>
+    <ul class="enlaces">
+      <li><a href="{{ url(tema.url) }}"><span>Teoría de {{ bloque.nombre | lower }}</span><span class="enlaces__dato">Explicación</span></a></li>
+      <li><a href="{{ url(curso.url + '/formulario') }}#{{ bloque.id }}"><span>Fórmulas de {{ bloque.nombre | lower }}</span><span class="enlaces__dato">Formulario</span></a></li>
+    </ul>
+  </section>
+  {% endif %}
+
+  {% if simulaciones %}
+  <section class="seccion">
+    <h2>Simulaciones de este bloque</h2>
+    <ul class="enlaces">
+      {% for s in simulaciones %}
+      <li><a href="{{ url(s.url) }}"><span>{{ s.meta.titulo }}</span><span class="enlaces__dato">Abrir</span></a></li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% for g in grupos %}
+  <section class="seccion">
+    <h2>{{ g.subtema.nombre }}</h2>
+    {{ lista_problemas(g.problemas, mostrar_bloque=false) }}
+  </section>
+  {% else %}
+  <p class="aviso">Todavía no hay problemas publicados de este bloque. Están en camino.</p>
+  {% endfor %}
+</div>
+{% endblock %}

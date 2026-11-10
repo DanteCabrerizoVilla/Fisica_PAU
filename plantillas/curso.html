@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% from "_macros.html" import migas, lista_problemas %}
+
+{% block titulo %}Problemas resueltos de {{ curso.meta.asignatura }} · {{ curso.meta.prueba }} · {{ sitio.nombre }}{% endblock %}
+{% block descripcion %}{{ curso.meta.resumen }}{% endblock %}
+{% block cabeza %}{% include "_katex.html" %}{% endblock %}
+
+{% block contenido %}
+<div class="ancho">
+  {{ migas([(curso.meta.titulo, '')]) }}
+  <h1>Problemas resueltos de {{ curso.meta.asignatura }}</h1>
+  <p class="entrada">{{ curso.meta.resumen }}</p>
+
+  <section class="seccion">
+    <h2>Por bloque</h2>
+    <ul class="rejilla rejilla--bloques">
+      {% for b in bloques %}
+      <li>
+        <a class="tarjeta tarjeta--enlace" href="{{ url(b.ruta) }}">
+          <h3>{{ b.nombre }}</h3>
+          <p>{{ b.subtemas | map(attribute='nombre') | join(' · ') }}</p>
+          {% if b.total %}<span class="tarjeta__dato">{{ b.total }} {{ 'problema' if b.total == 1 else 'problemas' }}</span>{% endif %}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  {% if colecciones %}
+  <section class="seccion">
+    <h2>Por examen</h2>
+    <ul class="enlaces">
+      {% for c in colecciones %}
+      <li>
+        <a href="{{ url(c.col.url) }}">
+          <span>{{ c.col.etiqueta }}</span>
+          <span class="enlaces__dato">{{ c.problemas | length }} {{ 'problema' if c.problemas | length == 1 else 'problemas' }}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% if fichas %}
+  <section class="seccion" id="todos">
+    <h2>Todos los problemas</h2>
+    <form class="filtros" data-filtros aria-label="Filtrar problemas">
+      <fieldset>
+        <legend>Bloque</legend>
+        <label class="pastilla"><input type="radio" name="bloque" value="" checked><span>Todos</span></label>
+        {% for b in bloques if b.total %}
+        <label class="pastilla"><input type="radio" name="bloque" value="{{ b.id }}"><span>{{ b.nombre }}</span></label>
+        {% endfor %}
+      </fieldset>
+      <fieldset>
+        <legend>Dificultad</legend>
+        <label class="pastilla"><input type="radio" name="dificultad" value="" checked><span>Todas</span></label>
+        {% for n, d in curso.meta.dificultades.items() %}
+        <label class="pastilla"><input type="radio" name="dificultad" value="{{ n }}"><span>{{ d.nombre }}</span></label>
+        {% endfor %}
+      </fieldset>
+    </form>
+    <p class="filtros__vacio" data-filtros-vacio hidden>No hay problemas con esos filtros todavía.</p>
+    {{ lista_problemas(fichas) }}
+  </section>
+  {% else %}
+  <p class="aviso">Todavía no hay problemas publicados. Están en camino.</p>
+  {% endif %}
+</div>
+{% endblock %}

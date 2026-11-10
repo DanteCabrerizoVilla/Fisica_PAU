@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% from "_macros.html" import migas %}
+
+{% block titulo %}{{ clases.titulo }} · {{ sitio.nombre }}{% endblock %}
+{% block descripcion %}{{ clases.descripcion }}{% endblock %}
+
+{% block contenido %}
+<div class="ancho ancho--texto clases">
+  {{ migas([('Clases', '')]) }}
+  <p class="antetitulo">{{ sitio.autor.titulo }}</p>
+  <h1>{{ clases.titulo }}</h1>
+  <p class="entrada">{{ clases.entrada }}</p>
+
+  <p class="acciones">
+    {% if contacto.whatsapp %}<a class="boton" href="{{ contacto.whatsapp }}" rel="noopener">Escríbeme por WhatsApp</a>{% endif %}
+    {% if contacto.correo %}<a class="boton boton--suave" href="mailto:{{ contacto.correo }}">Escríbeme un correo</a>{% endif %}
+    {% if not contacto.whatsapp and not contacto.correo %}<span class="aviso aviso--fuerte"><strong>[REVISAR]</strong> Faltan el WhatsApp y el correo en <code>contenido/sitio.yaml</code>.</span>{% endif %}
+  </p>
+
+  <section class="seccion" id="sobre-mi">
+    <h2>Sobre mí</h2>
+    {{ clases.sobre_mi | md }}
+  </section>
+
+  <section class="seccion" id="modalidades">
+    <h2>Modalidades</h2>
+    <ul class="rejilla rejilla--2">
+      {% for m in clases.modalidades %}
+      <li class="tarjeta">
+        <h3>{{ m.nombre }}</h3>
+        {{ m.descripcion | md }}
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section class="seccion" id="precios">
+    <h2>Precios</h2>
+    <table class="precios">
+      <tbody>
+        {% for f in clases.precios %}
+        <tr><th scope="row">{{ f.concepto }}{% if f.detalle %}<small>{{ f.detalle }}</small>{% endif %}</th><td>{{ f.precio }}</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% if clases.nota_precios %}<p class="nota">{{ clases.nota_precios }}</p>{% endif %}
+  </section>
+
+  {% if clases.preguntas %}
+  <section class="seccion" id="preguntas">
+    <h2>Preguntas frecuentes</h2>
+    {% for q in clases.preguntas %}
+    <details class="paso">
+      <summary>{{ q.pregunta }}</summary>
+      <div class="paso__cuerpo">{{ q.respuesta | md }}</div>
+    </details>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  <section class="seccion" id="contacto">
+    <h2>Contacto</h2>
+    <p>{{ clases.contacto }}</p>
+    <p class="acciones">
+      {% if contacto.whatsapp %}<a class="boton" href="{{ contacto.whatsapp }}" rel="noopener">WhatsApp</a>{% endif %}
+      {% if contacto.correo %}<a class="boton boton--suave" href="mailto:{{ contacto.correo }}">{{ contacto.correo }}</a>{% endif %}
+    </p>
+  </section>
+</div>
+{% endblock %}

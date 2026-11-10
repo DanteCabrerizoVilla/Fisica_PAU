@@ -1,0 +1,44 @@
+# Página de clases. Todo lo marcado con [REVISAR] es texto provisional:
+# Dante lo sustituye por sus datos reales antes de publicar.
+
+titulo: "Clases particulares de Física para la PAU"
+descripcion: >-
+  Clases particulares de Física de 2º de Bachillerato para preparar la PAU,
+  presenciales en Madrid y online.
+entrada: >-
+  Clases individuales de Física de 2º de Bachillerato, presenciales en Madrid
+  y online, centradas en lo que cae en la PAU y en lo que a ti te cuesta.
+
+sobre_mi: |
+  **[REVISAR]** Texto provisional. Aquí va tu presentación en primera persona:
+  qué estudiaste, cuánto tiempo llevas dando clase y cómo trabajas con los
+  alumnos. Tres o cuatro frases bastan.
+
+  Soy físico. Todas las soluciones y simulaciones de esta web las preparo yo.
+
+modalidades:
+  - nombre: "Presencial en Madrid"
+    descripcion: |
+      **[REVISAR]** Zona o zonas donde das clase, si es a domicilio o en un
+      lugar fijo, y duración habitual de la sesión.
+  - nombre: "Online"
+    descripcion: |
+      **[REVISAR]** Plataforma que usas, si compartes pizarra y apuntes tras la
+      clase, y horarios disponibles.
+
+precios:
+  - concepto: "Clase individual"
+    detalle: "[REVISAR] duración"
+    precio: "[REVISAR] €"
+  - concepto: "Bono de varias clases"
+    detalle: "[REVISAR] condiciones"
+    precio: "[REVISAR] €"
+nota_precios: "[REVISAR] Condiciones: primera clase, cancelaciones, grupos reducidos."
+
+preguntas:
+  - pregunta: "¿Cuándo conviene empezar?"
+    respuesta: "**[REVISAR]** Tu recomendación."
+  - pregunta: "¿Las clases siguen el temario de mi instituto?"
+    respuesta: "**[REVISAR]** Tu forma de trabajar."
+
+contacto: "Cuéntame en qué curso estás, qué temas te cuestan y cuándo te viene bien. Te respondo en cuanto pueda."

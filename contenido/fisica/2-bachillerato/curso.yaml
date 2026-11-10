@@ -1,0 +1,67 @@
+id: fis2b
+asignatura: "Física"
+nivel: "2º Bachillerato"
+titulo: "Física · 2º Bachillerato"
+prueba: "PAU Madrid"
+# La prueba se llamó EvAU hasta la convocatoria de 2024. Los exámenes de
+# esos años se rotulan con el nombre que tenían.
+nombres_anteriores:
+  - {hasta: 2024, nombre: "EvAU Madrid"}
+resumen: >-
+  Problemas de la PAU de Madrid resueltos paso a paso, ordenados por bloque
+  del temario y por examen.
+
+dificultades:
+  1: {nombre: "Directa", descripcion: "Una idea y sustitución"}
+  2: {nombre: "Estándar", descripcion: "Encadena dos ideas"}
+  3: {nombre: "Exigente", descripcion: "Planteamiento no evidente o álgebra larga"}
+
+# Bloques de estudio. El examen oficial agrupa las preguntas en cuatro
+# bloques: «Vibraciones y ondas» incluye aquí Ondas y Óptica (campo `oficial`).
+bloques:
+  - id: gravitacion
+    nombre: "Gravitación"
+    oficial: "Campo gravitatorio"
+    subtemas:
+      - {id: campo-potencial, nombre: "Campo y potencial gravitatorio"}
+      - {id: satelites, nombre: "Satélites y órbitas"}
+      - {id: energia, nombre: "Energía y velocidad de escape"}
+      - {id: kepler, nombre: "Leyes de Kepler"}
+
+  - id: electromagnetismo
+    nombre: "Electromagnetismo"
+    oficial: "Campo electromagnético"
+    subtemas:
+      - {id: campo-electrico, nombre: "Campo eléctrico"}
+      - {id: potencial-electrico, nombre: "Potencial eléctrico y trabajo"}
+      - {id: campo-magnetico, nombre: "Campo magnético de corrientes"}
+      - {id: lorentz, nombre: "Fuerza de Lorentz"}
+      - {id: induccion, nombre: "Inducción electromagnética"}
+
+  - id: ondas
+    nombre: "Ondas"
+    oficial: "Vibraciones y ondas"
+    subtemas:
+      - {id: mas, nombre: "Movimiento armónico simple"}
+      - {id: onda-armonica, nombre: "Onda armónica"}
+      - {id: energia-intensidad, nombre: "Energía e intensidad"}
+      - {id: sonido, nombre: "Sonido y nivel de intensidad"}
+      - {id: interferencia, nombre: "Interferencia y ondas estacionarias"}
+
+  - id: optica
+    nombre: "Óptica"
+    oficial: "Vibraciones y ondas"
+    subtemas:
+      - {id: refraccion, nombre: "Reflexión y refracción"}
+      - {id: lentes, nombre: "Lentes delgadas"}
+      - {id: espejos, nombre: "Espejos"}
+      - {id: instrumentos, nombre: "El ojo e instrumentos ópticos"}
+
+  - id: fisica-moderna
+    nombre: "Física moderna"
+    oficial: "Física relativista, cuántica, nuclear y de partículas"
+    subtemas:
+      - {id: fotoelectrico, nombre: "Efecto fotoeléctrico"}
+      - {id: de-broglie, nombre: "Dualidad onda-corpúsculo"}
+      - {id: nuclear, nombre: "Física nuclear y radiactividad"}
+      - {id: relatividad, nombre: "Relatividad especial"}

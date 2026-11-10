@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="{{ sitio.idioma }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block titulo %}{{ sitio.nombre }}{% endblock %}</title>
+  <meta name="description" content="{% block descripcion %}{{ sitio.descripcion }}{% endblock %}">
+  <meta name="theme-color" content="#faf6ef" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#17191e" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="{{ url('static/favicon.svg') }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ url('static/css/sitio.css') }}">
+  {% block cabeza %}{% endblock %}
+  <script src="{{ url('static/js/sitio.js') }}" defer></script>
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <header class="cabecera">
+    <div class="ancho cabecera__fila">
+      <a class="marca" href="{{ url() }}">
+        <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
+          <circle cx="16" cy="16" r="5" fill="currentColor"/>
+          <ellipse cx="16" cy="16" rx="14" ry="6.5" fill="none" stroke="currentColor" stroke-width="2" transform="rotate(-28 16 16)"/>
+        </svg>
+        <span>{{ sitio.nombre }}</span>
+      </a>
+      <nav aria-label="Principal">
+        <ul class="nav">
+          {% set activa = nav_activa(ruta_actual) %}
+          {% for n in nav %}
+          <li><a href="{{ url(n.ruta) }}"{% if n.ruta == activa %} aria-current="page"{% endif %}>{{ n.texto }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  {% if modo_borrador %}
+  <p class="franja-borrador">Vista previa con borradores: no publicar esta versión.</p>
+  {% endif %}
+
+  <main id="contenido">
+    {% block contenido %}{% endblock %}
+  </main>
+
+  <footer class="pie">
+    <div class="ancho">
+      <p><strong>{{ sitio.nombre }}</strong> · {{ sitio.autor.nombre }}, {{ sitio.autor.titulo | lower }}.</p>
+      <p>Las soluciones son de redacción propia. Los enunciados de los exámenes pertenecen a las universidades públicas de Madrid; esta web no tiene relación con ellas.</p>
+      <p><a href="{{ url('clases') }}">Clases particulares</a>{% if contacto.correo %} · <a href="mailto:{{ contacto.correo }}">{{ contacto.correo }}</a>{% endif %}</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,37 @@
+# Exámenes oficiales de Física (PAU/EvAU Madrid) y de dónde se descargaron.
+# Página de origen: https://www.uc3m.es/ss/Satellite/evau/es/TextoMixta/1371318299061/Examenes_de_Fisica
+# Los PDFs no se guardan en el repositorio: herramientas/descargar_fuentes.py
+# los baja a fuentes/pdf/. El curso 2026-2027 corresponde al examen de 2027.
+pagina: "https://www.uc3m.es/ss/Satellite/evau/es/TextoMixta/1371318299061/Examenes_de_Fisica"
+documentos:
+  - {archivo: "fisica-2026-2027-modelo.pdf", curso: "2026-2027", tipo: modelo, drive: "1GoNV6n-IUmGghTVLboTtI6ioB8NBP5Ne"}
+  - {archivo: "fisica-2025-2026-modelo.pdf", curso: "2025-2026", tipo: modelo, drive: "18qaoS5fMfycdZbLl5RggFsh9YWs1kNOw"}
+  - {archivo: "fisica-2024-2025-modelo.pdf", curso: "2024-2025", tipo: modelo, drive: "1TyVVdwUC7HePlJBkR_FRDlWGXScaX39i"}
+  - {archivo: "fisica-2023-2024-modelo.pdf", curso: "2023-2024", tipo: modelo, drive: "1EC0L7aRLD6xM6JZKxMSyFOnNt8QFHr3w"}
+  - {archivo: "fisica-2022-2023-modelo.pdf", curso: "2022-2023", tipo: modelo, drive: "1qT5Mt4maBT9UDZJcu2WTomrBPqmQ5MGM"}
+  - {archivo: "fisica-2021-2022-modelo.pdf", curso: "2021-2022", tipo: modelo, drive: "1i_WlSWSe1ibi9l360h0fqiTIsDuhEbcC"}
+  - {archivo: "fisica-2020-2021-modelo.pdf", curso: "2020-2021", tipo: modelo, drive: "1TQbjSlaHbDdeK9UMtfrDWj0s0jJhGD-v"}
+  - {archivo: "fisica-2019-2020-modelo.pdf", curso: "2019-2020", tipo: modelo, drive: "1_nNSSD4cNAQZuuMEHzPsrYblfPdMzGXA"}
+  - {archivo: "fisica-2018-2019-modelo.pdf", curso: "2018-2019", tipo: modelo, drive: "1ZvVQO8s_7uRz_F3bkZ0m7IWnZJ6Rwvnx"}
+  - {archivo: "fisica-2017-2018-modelo.pdf", curso: "2017-2018", tipo: modelo, drive: "1c6sPZQ4K2ol83MfzIAJwdn1t6kdeZh3l"}
+  - {archivo: "fisica-2025-2026-ordinaria.pdf", curso: "2025-2026", tipo: ordinaria, drive: "1G0TdodOdFq93pBBkaOZeM5LiVVWqloOL"}
+  - {archivo: "fisica-2024-2025-ordinaria.pdf", curso: "2024-2025", tipo: ordinaria, drive: "1D8ef5lEdFMW4RXLut5TrTs7uAXv13J53"}
+  - {archivo: "fisica-2023-2024-ordinaria.pdf", curso: "2023-2024", tipo: ordinaria, drive: "1MKDYQ576-06dFPufuUdpY21T1r5iOTi7"}
+  - {archivo: "fisica-2022-2023-ordinaria-coincidentes.pdf", curso: "2022-2023", tipo: ordinaria-coincidentes, drive: "16hSKRbQjjRCy8uxJjDyZx7xrKJ3Z25DK"}
+  - {archivo: "fisica-2022-2023-ordinaria.pdf", curso: "2022-2023", tipo: ordinaria, drive: "1z_oPPde4FRL1eiSeUIRMEO2BNpoMStUI"}
+  - {archivo: "fisica-2021-2022-ordinaria.pdf", curso: "2021-2022", tipo: ordinaria, drive: "1wdvPtqzTlNXHGUZaHQIHEGBKCsHDerZQ"}
+  - {archivo: "fisica-2020-2021-ordinaria.pdf", curso: "2020-2021", tipo: ordinaria, drive: "1sbmZ3hHs6usoLMVXv2thBDnJNALO8KXv"}
+  - {archivo: "fisica-2020-2021-ordinaria-coincidentes.pdf", curso: "2020-2021", tipo: ordinaria-coincidentes, drive: "1O60SgzethRi37xanBrcURDlbGrm3Pkp_"}
+  - {archivo: "fisica-2019-2020-ordinaria.pdf", curso: "2019-2020", tipo: ordinaria, drive: "1hR2sb-YyCNb9se88_H_lA57LVBJzYOWm"}
+  - {archivo: "fisica-2018-2019-ordinaria.pdf", curso: "2018-2019", tipo: ordinaria, drive: "1kYtqdVy6HPeyzK65K_NephWKBDakLjtY"}
+  - {archivo: "fisica-2017-2018-ordinaria.pdf", curso: "2017-2018", tipo: ordinaria, drive: "1f78lGUuuzIsh1rt6LkOAae-ZLLkOnJW3"}
+  - {archivo: "fisica-2025-2026-extraordinaria.pdf", curso: "2025-2026", tipo: extraordinaria, drive: "1l9kkavylPk6l_zs9PLXmRRJPrjsuQNOF"}
+  - {archivo: "fisica-2024-2025-extraordinaria.pdf", curso: "2024-2025", tipo: extraordinaria, drive: "1hUJXWylPmo0fwDm6dpENwm4M4R58rZkE"}
+  - {archivo: "fisica-2023-2024-extraordinaria.pdf", curso: "2023-2024", tipo: extraordinaria, drive: "1wsxQw3eSt1dUs5l3RpKAM1129GNFEGZA"}
+  - {archivo: "fisica-2022-2023-extraordinaria.pdf", curso: "2022-2023", tipo: extraordinaria, drive: "1ziO4gwZgEs4U7D6AkV8xIKwdlwxIPiyE"}
+  - {archivo: "fisica-2021-2022-extraordinaria.pdf", curso: "2021-2022", tipo: extraordinaria, drive: "1uiu7b9j7fshuMN7lC0d0ArD4ar7c_yQt"}
+  - {archivo: "fisica-2020-2021-extraordinaria.pdf", curso: "2020-2021", tipo: extraordinaria, drive: "1VjWdtVu49iLXmlFQAM7xFiwBuo84ANUn"}
+  - {archivo: "fisica-2019-2020-extraordinaria.pdf", curso: "2019-2020", tipo: extraordinaria, drive: "1OeW1FeoU_yusjEJ3v7cGoUb_ybRePKTN"}
+  - {archivo: "fisica-2018-2019-extraordinaria.pdf", curso: "2018-2019", tipo: extraordinaria, drive: "1NDbapYg2lZbeQZjGCRCdq_n7apbN38AF"}
+  - {archivo: "fisica-2017-2018-extraordinaria.pdf", curso: "2017-2018", tipo: extraordinaria, drive: "1RVfbMCzdcjEVd4o3iiRadgnr_fl9tFFO"}
+  - {archivo: "fisica-2025-2026-criterios-generales.pdf", curso: "2025-2026", tipo: criterios-generales, drive: "1oJNgNfhuKd6HfMJWiy19O-6nrj4rvj6h"}

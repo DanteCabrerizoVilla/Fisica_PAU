@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% from "_macros.html" import migas, lista_problemas %}
+
+{% block titulo %}{% if col.oficial %}Examen {{ curso.meta.asignatura }} {{ col.prueba }} {{ col.meta.anio }} {{ convocatoria | lower }} resuelto{% else %}{{ col.meta.titulo }}{% endif %} · {{ sitio.nombre }}{% endblock %}
+{% block descripcion %}{% if col.oficial %}Examen de {{ curso.meta.asignatura }} de la {{ col.prueba }} {{ col.meta.anio }} ({{ convocatoria | lower }}) resuelto paso a paso.{% else %}{{ col.meta.descripcion | default(col.meta.titulo) }}{% endif %}{% endblock %}
+{% block cabeza %}{% include "_katex.html" %}{% endblock %}
+
+{% block contenido %}
+<div class="ancho">
+  {{ migas([(curso.meta.titulo, curso.url), (col.etiqueta, '')]) }}
+  <h1>{{ col.meta.titulo }}</h1>
+  {% if col.meta.descripcion %}<p class="entrada">{{ col.meta.descripcion }}</p>{% endif %}
+  {% if col.meta.pdf_oficial %}
+  <p><a href="{{ col.meta.pdf_oficial }}" rel="noopener">Enunciado oficial (PDF)</a></p>
+  {% endif %}
+  <section class="seccion">
+    {{ lista_problemas(problemas, mostrar_coleccion=false) }}
+  </section>
+</div>
+{% endblock %}

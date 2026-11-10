@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% from "_macros.html" import migas, dificultad, lista_problemas, llamada_clases %}
+
+{% block titulo %}{{ p.meta.titulo }} · {% if col.oficial %}{{ col.etiqueta }}, problema {{ p.meta.numero }} resuelto{% else %}problema resuelto de {{ ficha.bloque_nombre | lower }}{% endif %} · {{ sitio.nombre }}{% endblock %}
+{% block descripcion %}{% if col.oficial %}Problema {{ p.meta.numero }} de {{ curso.meta.asignatura }}, {{ col.etiqueta }}, resuelto paso a paso{% else %}Problema de {{ ficha.bloque_nombre | lower }} resuelto paso a paso{% endif %}: {{ ficha.subtemas_nombres | join(', ') | lower }}.{% endblock %}
+{% block cabeza %}{% include "_katex.html" %}{% endblock %}
+
+{% block contenido %}
+<article class="ancho ancho--texto problema">
+  {{ migas([(curso.meta.titulo, curso.url), (col.etiqueta, col.url), (p.meta.numero, '')]) }}
+
+  <header class="problema__cabecera">
+    <p class="antetitulo">{{ col.etiqueta }} · Problema {{ p.meta.numero }}</p>
+    <h1>{{ p.meta.titulo | mdi }}</h1>
+    <ul class="datos-problema">
+      <li><a class="etiqueta" href="{{ url(curso.url + '/bloques/' + p.meta.bloque) }}">{{ ficha.bloque_nombre }}</a></li>
+      {% for s in ficha.subtemas_nombres %}<li><span class="etiqueta etiqueta--suave">{{ s }}</span></li>{% endfor %}
+      <li>{{ dificultad(p.meta.dificultad, ficha.dificultad_nombre) }}</li>
+      {% if p.meta.puntuacion %}<li><span class="dato-suelto">{{ '%g' | format(p.meta.puntuacion) | replace('.', ',') }} puntos</span></li>{% endif %}
+    </ul>
+  </header>
+
+  {% if p.meta.estado != 'verificado' %}
+  <p class="aviso aviso--fuerte"><strong>[REVISAR]</strong> Solución en estado «{{ p.meta.estado }}»{% if p.meta.revisar %}: {{ p.meta.revisar }}{% endif %}</p>
+  {% endif %}
+
+  <section class="enunciado" aria-labelledby="t-enunciado">
+    <h2 id="t-enunciado">{{ nombres_seccion.enunciado }}</h2>
+    {{ p.secciones.enunciado | md(base_recursos) }}
+    {% if col.meta.pdf_oficial %}
+    <p class="enunciado__fuente"><a href="{{ col.meta.pdf_oficial }}" rel="noopener">Enunciado oficial (PDF)</a></p>
+    {% endif %}
+  </section>
+
+  {% if p.secciones.datos %}
+  <section aria-labelledby="t-datos">
+    <h2 id="t-datos">{{ nombres_seccion.datos }}</h2>
+    {{ p.secciones.datos | md(base_recursos) }}
+  </section>
+  {% endif %}
+
+  <section class="solucion" aria-labelledby="t-solucion">
+    <div class="solucion__cabecera">
+      <h2 id="t-solucion">Solución</h2>
+      <button class="boton boton--suave boton--pequeno" type="button" data-abrir-todo aria-pressed="false">Mostrar todo</button>
+    </div>
+    <p class="nota">Inténtalo antes de mirar. Abre solo lo que necesites.</p>
+
+    {% if resultados %}
+    <details class="paso paso--resultado">
+      <summary>¿Ya lo tienes? Comprueba tu resultado</summary>
+      <div class="paso__cuerpo">
+        <ul class="resultados">
+          {% for r in resultados %}
+          <li><span class="resultados__apartado">{{ r.apartado }})</span><span class="resultados__valores">{% for l in r.lineas %}<span>{{ l }}</span>{% endfor %}</span></li>
+          {% endfor %}
+        </ul>
+        {% if p.meta.estado == 'verificado' %}
+        <p class="verificado"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M6.4 11.6 3 8.2l1.2-1.2 2.2 2.2 5.4-5.4L13 5z" fill="currentColor"/></svg> Resultados verificados con un cálculo independiente</p>
+        {% endif %}
+      </div>
+    </details>
+    {% endif %}
+
+    {% if p.secciones.planteamiento %}
+    <details class="paso">
+      <summary>Pista: {{ nombres_seccion.planteamiento | lower }}</summary>
+      <div class="paso__cuerpo">{{ p.secciones.planteamiento | md(base_recursos) }}</div>
+    </details>
+    {% endif %}
+
+    {% if p.secciones.resolucion %}
+    <div class="solucion__intro">{{ p.secciones.resolucion | md(base_recursos) }}</div>
+    {% endif %}
+
+    {% for titulo, texto in p.apartados %}
+    <details class="paso">
+      <summary>{{ titulo | mdi }}</summary>
+      <div class="paso__cuerpo">{{ texto | md(base_recursos) }}</div>
+    </details>
+    {% endfor %}
+  </section>
+
+  {% if p.secciones.errores %}
+  <section class="errores" aria-labelledby="t-errores">
+    <h2 id="t-errores">{{ nombres_seccion.errores }}</h2>
+    {{ p.secciones.errores | md(base_recursos) }}
+  </section>
+  {% endif %}
+
+  {% if simulaciones %}
+  <section aria-labelledby="t-sim">
+    <h2 id="t-sim">Míralo en una simulación</h2>
+    <ul class="enlaces">
+      {% for s in simulaciones %}
+      <li><a href="{{ s.url }}"><span>{{ s.sim.meta.titulo }}</span><span class="enlaces__dato">{% if '?' in s.url %}Con los datos de este problema{% else %}Abrir{% endif %}</span></a></li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% if tema %}
+  <section aria-labelledby="t-teoria">
+    <h2 id="t-teoria">Repasa la teoría</h2>
+    <ul class="enlaces">
+      <li><a href="{{ url(tema.url) }}"><span>{{ ficha.bloque_nombre }}: explicación del tema</span><span class="enlaces__dato">Teoría</span></a></li>
+      <li><a href="{{ url(curso.url + '/formulario') }}#{{ tema.bloque }}"><span>Fórmulas de {{ ficha.bloque_nombre | lower }}</span><span class="enlaces__dato">Formulario</span></a></li>
+    </ul>
+  </section>
+  {% endif %}
+
+  {% if parecidos %}
+  <section aria-labelledby="t-parecidos">
+    <h2 id="t-parecidos">Problemas parecidos</h2>
+    {{ lista_problemas(parecidos, mostrar_bloque=false) }}
+  </section>
+  {% endif %}
+
+  {{ llamada_clases() }}
+
+  {% if anterior or siguiente %}
+  <nav class="vecinos" aria-label="Otros problemas de {{ col.etiqueta }}">
+    {% if anterior %}<a href="{{ anterior.url }}" rel="prev"><span>Anterior</span>{{ anterior.numero }} · {{ anterior.titulo | mdi }}</a>{% else %}<span></span>{% endif %}
+    {% if siguiente %}<a href="{{ siguiente.url }}" rel="next"><span>Siguiente</span>{{ siguiente.numero }} · {{ siguiente.titulo | mdi }}</a>{% endif %}
+  </nav>
+  {% endif %}
+</article>
+{% endblock %}

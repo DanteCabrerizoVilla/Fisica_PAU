@@ -1,0 +1,9 @@
+# Dependencias del generador y de la verificación numérica.
+Jinja2>=3.1
+markdown-it-py>=2.2
+mdit-py-plugins>=0.3
+PyYAML>=6.0
+jsonschema>=4.19
+numpy>=1.26
+scipy>=1.11
+sympy>=1.12

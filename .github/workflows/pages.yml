@@ -1,0 +1,53 @@
+# Verifica las soluciones, construye el sitio y lo publica en GitHub Pages.
+# Si la verificación numérica falla, no se publica nada.
+name: Publicar
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  construir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Verificar soluciones
+        run: python herramientas/verificar.py
+      - name: Probar la física de las simulaciones
+        run: python herramientas/probar_sim.py
+      - id: pages
+        uses: actions/configure-pages@v5
+      - name: Construir el sitio
+        run: python herramientas/build.py
+        env:
+          BASE_URL: ${{ steps.pages.outputs.base_path }}
+      - name: Comprobar que todas las fórmulas se pintan
+        run: python herramientas/probar_formulas.py
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  publicar:
+    needs: construir
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.despliegue.outputs.page_url }}
+    steps:
+      - id: despliegue
+        uses: actions/deploy-pages@v4

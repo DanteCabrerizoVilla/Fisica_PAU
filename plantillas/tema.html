@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% from "_macros.html" import migas, formulas, llamada_clases %}
+
+{% block titulo %}{{ bloque.nombre }}: teoría y fórmulas · {{ curso.meta.asignatura }} {{ curso.meta.prueba }} · {{ sitio.nombre }}{% endblock %}
+{% block descripcion %}{{ tema.meta.resumen }}{% endblock %}
+{% block cabeza %}{% include "_katex.html" %}{% endblock %}
+
+{% block contenido %}
+<article class="ancho ancho--texto prosa tema">
+  {{ migas([(curso.meta.titulo, curso.url), ('Teoría', curso.url + '/teoria'), (bloque.nombre, '')]) }}
+  <p class="antetitulo">Teoría{% if bloque.oficial %} · Bloque oficial: {{ bloque.oficial }}{% endif %}</p>
+  <h1>{{ bloque.nombre }}</h1>
+  <p class="entrada">{{ tema.meta.resumen }}</p>
+
+  <nav class="indice" aria-label="En esta página">
+    <h2>En esta página</h2>
+    <ol>
+      {% for a in apartados %}
+      <li><a href="#{{ a.ancla }}">{{ a.titulo }}</a></li>
+      {% endfor %}
+      <li><a href="#formulas">Fórmulas del bloque</a></li>
+    </ol>
+  </nav>
+
+  {% if intro %}{{ intro | md(base_recursos) }}{% endif %}
+
+  {% for a in apartados %}
+  <section id="{{ a.ancla }}">
+    <h2>{{ a.titulo }}</h2>
+    {{ a.texto | md(base_recursos) }}
+  </section>
+  {% endfor %}
+
+  <section id="formulas">
+    <h2>Fórmulas del bloque</h2>
+    {{ formulas(tema) }}
+    <p class="nota"><a href="{{ url(curso.url + '/formulario') }}">Ver el formulario completo</a>, con todos los bloques.</p>
+  </section>
+
+  <section>
+    <h2>Ahora practica</h2>
+    <ul class="enlaces">
+      {% for s in simulaciones %}
+      <li><a href="{{ url(s.url) }}"><span>{{ s.meta.titulo }}</span><span class="enlaces__dato">Simulación</span></a></li>
+      {% endfor %}
+      <li><a href="{{ url(bloque.ruta) }}"><span>Problemas resueltos de {{ bloque.nombre | lower }}</span><span class="enlaces__dato">{% if bloque.total %}{{ bloque.total }} {{ 'problema' if bloque.total == 1 else 'problemas' }}{% else %}En camino{% endif %}</span></a></li>
+    </ul>
+  </section>
+
+  {{ llamada_clases() }}
+
+  {% if anterior or siguiente %}
+  <nav class="vecinos" aria-label="Otros bloques">
+    {% if anterior %}<a href="{{ url(anterior.tema.url) }}" rel="prev"><span>Anterior</span>{{ anterior.bloque.nombre }}</a>{% else %}<span></span>{% endif %}
+    {% if siguiente %}<a href="{{ url(siguiente.tema.url) }}" rel="next"><span>Siguiente</span>{{ siguiente.bloque.nombre }}</a>{% endif %}
+  </nav>
+  {% endif %}
+</article>
+{% endblock %}

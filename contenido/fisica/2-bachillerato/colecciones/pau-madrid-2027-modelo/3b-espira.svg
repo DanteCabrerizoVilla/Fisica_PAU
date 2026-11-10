@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 196" width="430" height="196" font-family="system-ui, sans-serif" font-size="13">
+<title>Espira cuadrada de lado L que entra con velocidad v₀ en una región con campo magnético saliente</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<circle cx="200" cy="30" r="5" fill="none" stroke="#3a7bd5"/><circle cx="200" cy="30" r="1.6" fill="#3a7bd5"/>
+<circle cx="200" cy="56" r="5" fill="none" stroke="#3a7bd5"/><circle cx="200" cy="56" r="1.6" fill="#3a7bd5"/>
+<circle cx="200" cy="82" r="5" fill="none" stroke="#3a7bd5"/><circle cx="200" cy="82" r="1.6" fill="#3a7bd5"/>
+<circle cx="200" cy="108" r="5" fill="none" stroke="#3a7bd5"/><circle cx="200" cy="108" r="1.6" fill="#3a7bd5"/>
+<circle cx="200" cy="134" r="5" fill="none" stroke="#3a7bd5"/><circle cx="200" cy="134" r="1.6" fill="#3a7bd5"/>
+<circle cx="200" cy="160" r="5" fill="none" stroke="#3a7bd5"/><circle cx="200" cy="160" r="1.6" fill="#3a7bd5"/>
+<circle cx="226" cy="30" r="5" fill="none" stroke="#3a7bd5"/><circle cx="226" cy="30" r="1.6" fill="#3a7bd5"/>
+<circle cx="226" cy="56" r="5" fill="none" stroke="#3a7bd5"/><circle cx="226" cy="56" r="1.6" fill="#3a7bd5"/>
+<circle cx="226" cy="82" r="5" fill="none" stroke="#3a7bd5"/><circle cx="226" cy="82" r="1.6" fill="#3a7bd5"/>
+<circle cx="226" cy="108" r="5" fill="none" stroke="#3a7bd5"/><circle cx="226" cy="108" r="1.6" fill="#3a7bd5"/>
+<circle cx="226" cy="134" r="5" fill="none" stroke="#3a7bd5"/><circle cx="226" cy="134" r="1.6" fill="#3a7bd5"/>
+<circle cx="226" cy="160" r="5" fill="none" stroke="#3a7bd5"/><circle cx="226" cy="160" r="1.6" fill="#3a7bd5"/>
+<circle cx="252" cy="30" r="5" fill="none" stroke="#3a7bd5"/><circle cx="252" cy="30" r="1.6" fill="#3a7bd5"/>
+<circle cx="252" cy="56" r="5" fill="none" stroke="#3a7bd5"/><circle cx="252" cy="56" r="1.6" fill="#3a7bd5"/>
+<circle cx="252" cy="82" r="5" fill="none" stroke="#3a7bd5"/><circle cx="252" cy="82" r="1.6" fill="#3a7bd5"/>
+<circle cx="252" cy="108" r="5" fill="none" stroke="#3a7bd5"/><circle cx="252" cy="108" r="1.6" fill="#3a7bd5"/>
+<circle cx="252" cy="134" r="5" fill="none" stroke="#3a7bd5"/><circle cx="252" cy="134" r="1.6" fill="#3a7bd5"/>
+<circle cx="252" cy="160" r="5" fill="none" stroke="#3a7bd5"/><circle cx="252" cy="160" r="1.6" fill="#3a7bd5"/>
+<circle cx="278" cy="30" r="5" fill="none" stroke="#3a7bd5"/><circle cx="278" cy="30" r="1.6" fill="#3a7bd5"/>
+<circle cx="278" cy="56" r="5" fill="none" stroke="#3a7bd5"/><circle cx="278" cy="56" r="1.6" fill="#3a7bd5"/>
+<circle cx="278" cy="82" r="5" fill="none" stroke="#3a7bd5"/><circle cx="278" cy="82" r="1.6" fill="#3a7bd5"/>
+<circle cx="278" cy="108" r="5" fill="none" stroke="#3a7bd5"/><circle cx="278" cy="108" r="1.6" fill="#3a7bd5"/>
+<circle cx="278" cy="134" r="5" fill="none" stroke="#3a7bd5"/><circle cx="278" cy="134" r="1.6" fill="#3a7bd5"/>
+<circle cx="278" cy="160" r="5" fill="none" stroke="#3a7bd5"/><circle cx="278" cy="160" r="1.6" fill="#3a7bd5"/>
+<circle cx="304" cy="30" r="5" fill="none" stroke="#3a7bd5"/><circle cx="304" cy="30" r="1.6" fill="#3a7bd5"/>
+<circle cx="304" cy="56" r="5" fill="none" stroke="#3a7bd5"/><circle cx="304" cy="56" r="1.6" fill="#3a7bd5"/>
+<circle cx="304" cy="82" r="5" fill="none" stroke="#3a7bd5"/><circle cx="304" cy="82" r="1.6" fill="#3a7bd5"/>
+<circle cx="304" cy="108" r="5" fill="none" stroke="#3a7bd5"/><circle cx="304" cy="108" r="1.6" fill="#3a7bd5"/>
+<circle cx="304" cy="134" r="5" fill="none" stroke="#3a7bd5"/><circle cx="304" cy="134" r="1.6" fill="#3a7bd5"/>
+<circle cx="304" cy="160" r="5" fill="none" stroke="#3a7bd5"/><circle cx="304" cy="160" r="1.6" fill="#3a7bd5"/>
+<circle cx="330" cy="30" r="5" fill="none" stroke="#3a7bd5"/><circle cx="330" cy="30" r="1.6" fill="#3a7bd5"/>
+<circle cx="330" cy="56" r="5" fill="none" stroke="#3a7bd5"/><circle cx="330" cy="56" r="1.6" fill="#3a7bd5"/>
+<circle cx="330" cy="82" r="5" fill="none" stroke="#3a7bd5"/><circle cx="330" cy="82" r="1.6" fill="#3a7bd5"/>
+<circle cx="330" cy="108" r="5" fill="none" stroke="#3a7bd5"/><circle cx="330" cy="108" r="1.6" fill="#3a7bd5"/>
+<circle cx="330" cy="134" r="5" fill="none" stroke="#3a7bd5"/><circle cx="330" cy="134" r="1.6" fill="#3a7bd5"/>
+<circle cx="330" cy="160" r="5" fill="none" stroke="#3a7bd5"/><circle cx="330" cy="160" r="1.6" fill="#3a7bd5"/>
+<line x1="186" y1="14" x2="186" y2="176" stroke="#5a6170" stroke-dasharray="4 4"/>
+<rect x="96" y="56" width="90" height="90" fill="rgba(181,69,27,0.08)" stroke="#b5451b" stroke-width="2.5"/>
+<line x1="186" y1="101" x2="232" y2="101" stroke="#0f6b5c" stroke-width="2.5" marker-end="url(#p)"/><text x="206" y="94" fill="#0f6b5c" font-style="italic">v₀</text>
+<text x="141" y="166" text-anchor="middle" fill="#1e222b" font-style="italic">L</text><text x="82" y="105" text-anchor="end" fill="#1e222b" font-style="italic">L</text>
+<text x="318" y="20" fill="#3a7bd5"><tspan font-style="italic">B</tspan> sale del papel</text>
+<line x1="20" y1="180" x2="60" y2="180" stroke="#5a6170" marker-end="url(#p)"/><text x="64" y="184" fill="#5a6170" font-style="italic">x</text>
+<line x1="20" y1="180" x2="20" y2="140" stroke="#5a6170" marker-end="url(#p)"/><text x="16" y="134" fill="#5a6170" font-style="italic">y</text>
+</svg>

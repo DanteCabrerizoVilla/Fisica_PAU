@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 200" width="350" height="200" font-family="system-ui, sans-serif" font-size="13">
+<title>Dos cargas en (−5, 0) y (5, 0) y los puntos A (5, 4) y B (0, 4), con los campos en A</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="20" y1="150" x2="330" y2="150" stroke="#5a6170" marker-end="url(#p)"/><text x="334" y="154" fill="#5a6170" font-style="italic">x</text>
+<line x1="170" y1="180" x2="170" y2="14" stroke="#5a6170" marker-end="url(#p)"/><text x="176" y="18" fill="#5a6170" font-style="italic">y</text>
+<line x1="60" y1="150" x2="280" y2="62" stroke="#5a6170" stroke-dasharray="4 4"/>
+<line x1="280" y1="150" x2="280" y2="62" stroke="#5a6170" stroke-dasharray="4 4"/>
+<text x="162.0" y="98.0" fill="#5a6170" font-style="italic">d</text><text x="288" y="128.0" fill="#5a6170">4 m</text>
+<circle cx="60" cy="150" r="11" fill="#3a7bd5"/><text x="60" y="155" text-anchor="middle" fill="#fff" font-weight="700">−</text><text x="60" y="178" text-anchor="middle" fill="#1e222b">−2 nC</text>
+<circle cx="280" cy="150" r="11" fill="#b5451b"/><text x="280" y="155" text-anchor="middle" fill="#fff" font-weight="700">+</text><text x="280" y="178" text-anchor="middle" fill="#1e222b">+2 nC</text>
+<line x1="280" y1="62" x2="280" y2="16" stroke="#b5451b" stroke-width="2.5" marker-end="url(#p)"/><text x="288" y="26" fill="#b5451b" font-style="italic">E₊</text>
+<line x1="280" y1="62" x2="254" y2="72.4" stroke="#3a7bd5" stroke-width="2.5" marker-end="url(#p)"/><text x="240" y="66" fill="#3a7bd5" font-style="italic">E₋</text>
+<circle cx="280" cy="62" r="4" fill="#1e222b"/><text x="288" y="67" fill="#1e222b">A (5, 4)</text>
+<circle cx="170" cy="62" r="4" fill="#1e222b"/><text x="162" y="54" text-anchor="end" fill="#1e222b">B (0, 4)</text>
+<text x="164" y="166" text-anchor="end" fill="#5a6170">O</text>
+</svg>

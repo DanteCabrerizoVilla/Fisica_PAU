@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "coleccion": {
+      "type": "object",
+      "required": ["tipo", "titulo"],
+      "additionalProperties": false,
+      "properties": {
+        "tipo": {"enum": ["examen-oficial", "ejercicios-propios"]},
+        "titulo": {"type": "string", "minLength": 1},
+        "descripcion": {"type": "string"},
+        "anio": {"type": "integer", "minimum": 1990, "maximum": 2100},
+        "convocatoria": {
+          "enum": ["modelo", "ordinaria", "extraordinaria", "ordinaria-coincidentes", "extraordinaria-coincidentes"]
+        },
+        "pdf_oficial": {"type": "string"}
+      },
+      "if": {"properties": {"tipo": {"const": "examen-oficial"}}},
+      "then": {"required": ["anio", "convocatoria"]}
+    },
+    "problema": {
+      "type": "object",
+      "required": ["id", "numero", "titulo", "bloque", "subtemas", "dificultad", "estado", "resultados"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"},
+        "numero": {"type": "string"},
+        "titulo": {"type": "string", "minLength": 1},
+        "bloque": {"type": "string"},
+        "subtemas": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "dificultad": {"enum": [1, 2, 3]},
+        "puntuacion": {"type": "number"},
+        "simulaciones": {"type": "array", "items": {"type": "string"}},
+        "parametros_simulacion": {
+          "type": "object",
+          "additionalProperties": {"type": "string", "pattern": "^[A-Za-z0-9_=&.+-]*$"}
+        },
+        "estado": {"enum": ["borrador", "revisar", "verificado"]},
+        "revisar": {"type": "string"},
+        "resultados": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["apartado", "clave"],
+            "additionalProperties": false,
+            "properties": {
+              "apartado": {"type": "string"},
+              "clave": {"type": "string", "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"},
+              "simbolo": {"type": "string"},
+              "valor": {"type": "number"},
+              "unidad": {"type": "string"},
+              "cifras": {"type": "integer", "minimum": 1, "maximum": 8},
+              "texto": {"type": "string"}
+            },
+            "oneOf": [
+              {"required": ["simbolo", "valor", "cifras"]},
+              {"required": ["texto"]}
+            ]
+          }
+        }
+      }
+    },
+    "tema": {
+      "type": "object",
+      "required": ["bloque", "resumen", "formulas"],
+      "additionalProperties": false,
+      "properties": {
+        "bloque": {"type": "string"},
+        "resumen": {"type": "string"},
+        "formulas": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["grupo", "lista"],
+            "additionalProperties": false,
+            "properties": {
+              "grupo": {"type": "string"},
+              "lista": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "required": ["nombre", "tex"],
+                  "additionalProperties": false,
+                  "properties": {
+                    "nombre": {"type": "string"},
+                    "tex": {"type": "string"},
+                    "nota": {"type": "string"}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "simulacion": {
+      "type": "object",
+      "required": ["id", "titulo", "resumen", "bloque", "modulo"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"},
+        "titulo": {"type": "string"},
+        "resumen": {"type": "string"},
+        "bloque": {"type": "string"},
+        "modulo": {"type": "string"}
+      }
+    }
+  }
+}

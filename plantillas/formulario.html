@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% from "_macros.html" import migas, formulas %}
+
+{% block titulo %}Formulario de {{ curso.meta.asignatura }} · {{ curso.meta.nivel }} · {{ curso.meta.prueba }} · {{ sitio.nombre }}{% endblock %}
+{% block descripcion %}Formulario de {{ curso.meta.asignatura }} de {{ curso.meta.nivel }} para la {{ curso.meta.prueba }}: {{ temas | map(attribute='bloque.nombre') | join(', ') | lower }}. Listo para imprimir.{% endblock %}
+{% block cabeza %}{% include "_katex.html" %}{% endblock %}
+
+{% block contenido %}
+<article class="ancho ancho--texto formulario">
+  {{ migas([(curso.meta.titulo, curso.url), ('Teoría', curso.url + '/teoria'), ('Formulario', '')]) }}
+  <div class="solucion__cabecera formulario__cabecera">
+    <h1>Formulario de {{ curso.meta.asignatura }}</h1>
+    <button class="boton boton--suave boton--pequeno" type="button" data-imprimir>Imprimir</button>
+  </div>
+  <p class="entrada">Las fórmulas que más se usan en la {{ curso.meta.prueba }}, por bloques. En el examen no se entrega formulario: úsalo para repasar, no para memorizar sin entender.</p>
+
+  <nav class="indice" aria-label="Bloques">
+    <ol>
+      {% for t in temas %}
+      <li><a href="#{{ t.bloque.id }}">{{ t.bloque.nombre }}</a></li>
+      {% endfor %}
+    </ol>
+  </nav>
+
+  {% for t in temas %}
+  <section class="formulario__bloque" id="{{ t.bloque.id }}">
+    <div class="seccion__cabecera">
+      <h2>{{ t.bloque.nombre }}</h2>
+      <a href="{{ url(t.tema.url) }}">Ver la explicación</a>
+    </div>
+    {{ formulas(t.tema) }}
+  </section>
+  {% endfor %}
+
+  <p class="nota formulario__pie">{{ sitio.nombre }} · {{ sitio.autor.nombre }}, {{ sitio.autor.titulo | lower }}</p>
+</article>
+{% endblock %}

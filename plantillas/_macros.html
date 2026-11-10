@@ -1,0 +1,68 @@
+{# Piezas que se repiten en varias páginas. #}
+
+{% macro migas(pasos) %}
+<nav class="migas" aria-label="Ruta">
+  <ol>
+    <li><a href="{{ url() }}">Inicio</a></li>
+    {% for texto, ruta in pasos %}
+    <li>{% if ruta %}<a href="{{ url(ruta) }}">{{ texto }}</a>{% else %}<span aria-current="page">{{ texto }}</span>{% endif %}</li>
+    {% endfor %}
+  </ol>
+</nav>
+{% endmacro %}
+
+{% macro dificultad(nivel, nombre) %}
+<span class="dificultad" title="Dificultad: {{ nombre }}">
+  <span class="dificultad__puntos" aria-hidden="true">{% for i in range(1, 4) %}<i{% if i <= nivel %} class="on"{% endif %}></i>{% endfor %}</span>
+  <span>{{ nombre }}</span>
+</span>
+{% endmacro %}
+
+{# Lista de problemas. `mostrar` decide qué dato secundario enseñar. #}
+{% macro lista_problemas(fichas, mostrar_coleccion=true, mostrar_bloque=true) %}
+<ul class="problemas">
+  {% for f in fichas %}
+  <li data-bloque="{{ f.bloque }}" data-dificultad="{{ f.dificultad }}">
+    <a href="{{ f.url }}">
+      <span class="problemas__titulo">{{ f.titulo | mdi }}</span>
+      <span class="problemas__meta">
+        {% if mostrar_coleccion %}<span>{{ f.coleccion_etiqueta }} · {{ f.numero }}</span>{% else %}<span>Problema {{ f.numero }}</span>{% endif %}
+        {% if mostrar_bloque %}<span>{{ f.bloque_nombre }}</span>{% endif %}
+        {{ dificultad(f.dificultad, f.dificultad_nombre) }}
+        {% if f.estado != 'verificado' %}<span class="etiqueta etiqueta--aviso">{{ f.estado }}</span>{% endif %}
+      </span>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+{% endmacro %}
+
+{% macro llamada_clases() %}
+<aside class="llamada">
+  <div>
+    <h2>¿Te atascas con este tipo de problemas?</h2>
+    <p>Doy clases particulares de Física para la PAU, presenciales en Madrid y online. Trabajamos justo lo que te cuesta.</p>
+  </div>
+  <a class="boton" href="{{ url('clases') }}">Ver las clases</a>
+</aside>
+{% endmacro %}
+
+{# Fórmulas de un bloque, agrupadas. Las usan la página de teoría y el formulario. #}
+{% macro formulas(tema) %}
+{% for g in tema.meta.formulas %}
+<section class="formulas">
+  <h3>{{ g.grupo }}</h3>
+  <dl>
+    {% for f in g.lista %}
+    <div class="formula">
+      <dt>{{ f.nombre | mdi }}</dt>
+      <dd>
+        <div class="math block">{{ f.tex }}</div>
+        {% if f.nota %}<p>{{ f.nota | mdi }}</p>{% endif %}
+      </dd>
+    </div>
+    {% endfor %}
+  </dl>
+</section>
+{% endfor %}
+{% endmacro %}

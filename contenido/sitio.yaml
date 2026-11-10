@@ -1,0 +1,26 @@
+# Configuración general del sitio.
+# Los valores marcados con [REVISAR] son provisionales: Dante los confirma.
+
+nombre: "Física PAU Madrid"           # [REVISAR] nombre definitivo del sitio
+lema: "Exámenes resueltos paso a paso, teoría y simulaciones para preparar la PAU"
+descripcion: >-
+  Exámenes de Física de la PAU de Madrid (antes EvAU) resueltos paso a paso,
+  teoría, formulario y simulaciones interactivas para 2º de Bachillerato.
+idioma: es
+
+# Prefijo de las rutas. Vacío en local; en GitHub Pages lo fija el despliegue
+# con la variable de entorno BASE_URL (por ejemplo "/fisica-pau").
+base_url: ""
+
+autor:
+  nombre: "Dante"                      # [REVISAR] nombre completo si quieres que aparezca
+  titulo: "Físico y profesor particular"
+
+contacto:
+  whatsapp: ""                         # [REVISAR] número con prefijo, solo cifras: 34600000000
+  correo: ""                           # [REVISAR] correo público de contacto
+
+# Cursos publicados. Para añadir otro (por ejemplo Matemáticas II) basta con
+# crear su carpeta con un curso.yaml y añadir aquí su ruta.
+cursos:
+  - fisica/2-bachillerato

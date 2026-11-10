@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% from "_macros.html" import migas, lista_problemas, llamada_clases %}
+
+{% block titulo %}{{ sim.meta.titulo }} · simulación de {{ bloque.nombre | lower }} · {{ sitio.nombre }}{% endblock %}
+{% block descripcion %}{{ sim.meta.resumen }}{% endblock %}
+{% block cabeza %}{% include "_katex.html" %}{% endblock %}
+
+{% block contenido %}
+<article class="ancho">
+  {{ migas([(curso.meta.titulo, curso.url), ('Simulaciones', curso.url + '/simulaciones'), (sim.meta.titulo, '')]) }}
+  <p class="antetitulo">Simulación · {{ bloque.nombre }}</p>
+  <h1>{{ sim.meta.titulo }}</h1>
+  <p class="entrada">{{ sim.meta.resumen }}</p>
+
+  <div class="sim" id="sim">
+    <noscript><p class="aviso">La simulación necesita JavaScript.</p></noscript>
+  </div>
+  <script type="module">
+    import { montar } from "{{ url('static/js/sim/' + sim.meta.modulo) }}";
+    montar(document.getElementById("sim"));
+  </script>
+
+  <div class="ancho--texto prosa">
+    {{ sim.cuerpo | md }}
+
+    {% if usada_en %}
+    <section>
+      <h2>Problemas donde te ayuda</h2>
+      {{ lista_problemas(usada_en, mostrar_bloque=false) }}
+    </section>
+    {% endif %}
+
+    {{ llamada_clases() }}
+  </div>
+</article>
+{% endblock %}

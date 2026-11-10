@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 196" width="380" height="196" font-family="system-ui, sans-serif" font-size="13">
+<title>Órbita elíptica con el Sol en un foco: semieje mayor a y distancia c del centro al foco</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<ellipse cx="190" cy="95" rx="150" ry="70" fill="none" stroke="#1e222b" stroke-width="1.5"/>
+<line x1="40" y1="95" x2="340" y2="95" stroke="#5a6170" stroke-dasharray="4 4"/>
+<line x1="190" y1="25" x2="190" y2="165" stroke="#5a6170" stroke-dasharray="4 4"/>
+<circle cx="110" cy="95" r="9" fill="#f5a524" stroke="#b5451b"/>
+<text x="110" y="79" text-anchor="middle" fill="#1e222b">Sol</text>
+<line x1="121" y1="109" x2="188" y2="109" stroke="#b5451b" marker-start="url(#p)" marker-end="url(#p)"/>
+<text x="154.0" y="125" text-anchor="middle" fill="#b5451b" font-style="italic">c</text>
+<line x1="192" y1="81" x2="338" y2="81" stroke="#0f6b5c" marker-start="url(#p)" marker-end="url(#p)"/>
+<text x="265.0" y="75" text-anchor="middle" fill="#0f6b5c" font-style="italic">a</text>
+<circle cx="40" cy="95" r="4" fill="#1e222b"/><text x="48" y="131" fill="#1e222b">perihelio</text>
+<circle cx="340" cy="95" r="4" fill="#1e222b"/><text x="332" y="131" text-anchor="end" fill="#1e222b">afelio</text>
+<text x="190" y="188" text-anchor="middle" fill="#5a6170" font-size="12">Esquema sin escala: la órbita real es mucho menos alargada</text>
+</svg>

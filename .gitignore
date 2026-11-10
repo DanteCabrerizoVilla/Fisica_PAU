@@ -1,0 +1,17 @@
+# Salida del generador (la construye GitHub Actions al publicar)
+_site/
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Referencias de las pruebas de simulaciones (se regeneran)
+pruebas/*.ref.json
+
+# PDFs oficiales: se descargan con herramientas/descargar_fuentes.py
+fuentes/pdf/
+
+# Sistema
+.DS_Store
+Thumbs.db

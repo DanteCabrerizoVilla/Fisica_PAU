@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 220" width="550" height="220" font-family="system-ui, sans-serif" font-size="13">
+<title>Trazado de rayos en la lente convergente: objeto a 10 cm, imagen real e invertida a 40 cm</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="14" y1="110" x2="536" y2="110" stroke="#5a6170"/>
+<line x1="150" y1="16" x2="150" y2="204" stroke="#3a7bd5" stroke-width="2.5" marker-start="url(#p)" marker-end="url(#p)"/>
+<circle cx="78" cy="110" r="3" fill="#1e222b"/><text x="78" y="101" text-anchor="middle" fill="#1e222b" font-style="italic">F</text>
+<circle cx="222" cy="110" r="3" fill="#1e222b"/><text x="222" y="101" text-anchor="middle" fill="#1e222b" font-style="italic">F′</text>
+<line x1="60" y1="110" x2="60" y2="92" stroke="#1e222b" stroke-width="2.5" marker-end="url(#p)"/>
+<line x1="510" y1="110" x2="510" y2="182" stroke="#b5451b" stroke-width="2.5" marker-end="url(#p)"/>
+<polyline points="60,92 150,92 510,182" fill="none" stroke="#0f6b5c" stroke-width="1.6"/>
+<line x1="60" y1="92" x2="510" y2="182" stroke="#0f6b5c" stroke-width="1.6"/>
+<polyline points="60,92 150,182 510,182" fill="none" stroke="#0f6b5c" stroke-width="1.6"/>
+<text x="60" y="82" text-anchor="middle" fill="#1e222b">objeto</text>
+<text x="502" y="198" text-anchor="end" fill="#b5451b">imagen real, invertida y 4 veces mayor</text>
+<text x="105" y="126" text-anchor="middle" fill="#5a6170"><tspan font-style="italic">s</tspan> = −10 cm</text>
+<text x="366" y="101" text-anchor="middle" fill="#5a6170"><tspan font-style="italic">s′</tspan> = 40 cm</text>
+</svg>

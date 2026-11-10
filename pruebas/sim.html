@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<title>Pruebas de la física de las simulaciones</title>
+<style>
+  body { font: 15px/1.5 system-ui, sans-serif; margin: 1.5rem; }
+  .ok { color: #0f6b5c; } .mal { color: #b00020; font-weight: 700; }
+  li { margin: 0.1rem 0; }
+</style>
+<h1>Pruebas de la física de las simulaciones</h1>
+<p id="resumen">Ejecutando…</p>
+<ul id="lista"></ul>
+<script id="resultado" type="application/json"></script>
+<script type="module">
+  // Añadir aquí el módulo de pruebas de cada simulación nueva.
+  const MODULOS = ["./orbitas.prueba.js"];
+
+  const todo = [];
+  for (const ruta of MODULOS) {
+    try {
+      const { probar } = await import(ruta);
+      for (const r of await probar()) todo.push({ modulo: ruta, ...r });
+    } catch (e) {
+      todo.push({ modulo: ruta, nombre: "carga del módulo", ok: false, detalle: String(e) });
+    }
+  }
+  const fallos = todo.filter((r) => !r.ok);
+  const lista = document.getElementById("lista");
+  for (const r of todo) {
+    const li = document.createElement("li");
+    li.className = r.ok ? "ok" : "mal";
+    li.textContent = `${r.ok ? "✓" : "✗"} ${r.nombre}${r.ok || !r.detalle ? "" : " — " + r.detalle}`;
+    lista.append(li);
+  }
+  document.getElementById("resumen").textContent =
+    `${todo.length} comprobaciones, ${fallos.length} fallos`;
+  document.getElementById("resultado").textContent =
+    JSON.stringify({ total: todo.length, fallos });
+  document.documentElement.dataset.fin = "1";
+</script>
+</html>

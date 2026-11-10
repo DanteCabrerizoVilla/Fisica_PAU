@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% from "_macros.html" import migas, llamada_clases %}
+
+{% block titulo %}Teoría y formulario de {{ curso.meta.asignatura }} · {{ curso.meta.prueba }} · {{ sitio.nombre }}{% endblock %}
+{% block descripcion %}Teoría de {{ curso.meta.asignatura }} de {{ curso.meta.nivel }} explicada por bloques y formulario completo para la {{ curso.meta.prueba }}.{% endblock %}
+
+{% block contenido %}
+<div class="ancho">
+  {{ migas([(curso.meta.titulo, curso.url), ('Teoría', '')]) }}
+  <h1>Teoría y fórmulas</h1>
+  <p class="entrada">Lo que hay que entender de cada bloque antes de ponerse con los problemas, y todas las fórmulas juntas en una página para repasar.</p>
+
+  <section class="seccion">
+    <a class="tarjeta tarjeta--enlace tarjeta--destacada" href="{{ url(curso.url + '/formulario') }}">
+      <span class="antetitulo">Para repasar e imprimir</span>
+      <h2>Formulario completo</h2>
+      <p>Las fórmulas de los {{ temas | length }} bloques, con una línea que dice cuándo se usa cada una.</p>
+    </a>
+  </section>
+
+  <section class="seccion">
+    <h2>Explicación por bloques</h2>
+    <ul class="rejilla rejilla--bloques">
+      {% for t in temas %}
+      <li>
+        <a class="tarjeta tarjeta--enlace" href="{{ url(t.tema.url) }}">
+          <h3>{{ t.bloque.nombre }}</h3>
+          <p>{{ t.tema.meta.resumen }}</p>
+          <span class="tarjeta__dato">{{ t.apartados | map(attribute='titulo') | join(' · ') }}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  {{ llamada_clases() }}
+</div>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% from "_macros.html" import llamada_clases %}
+
+{% block titulo %}{{ sitio.nombre }} · {{ sitio.lema }}{% endblock %}
+
+{% block contenido %}
+{% set principal = resumen_cursos[0] %}
+<section class="portada">
+  <div class="ancho">
+    <p class="antetitulo">{{ principal.curso.meta.nivel }} · {{ principal.curso.meta.prueba }}</p>
+    <h1>Física para la PAU, <span class="resalte">explicada paso a paso</span></h1>
+    <p class="entrada">Problemas de examen resueltos como te los explicaría un profesor, simulaciones para ver lo que dicen las fórmulas y hojas de ejercicios para practicar.</p>
+    <p class="acciones">
+      <a class="boton" href="{{ url(principal.curso.url) }}">Ver problemas resueltos</a>
+      {% if principal.curso.simulaciones %}
+      <a class="boton boton--suave" href="{{ url(principal.curso.url + '/simulaciones') }}">Probar una simulación</a>
+      {% endif %}
+    </p>
+  </div>
+</section>
+
+<section class="ancho seccion">
+  <ul class="rejilla rejilla--3 ventajas">
+    <li>
+      <h2>Paso a paso de verdad</h2>
+      <p>Cada solución explica qué ley se usa y por qué, primero con letras y al final con números.</p>
+    </li>
+    <li>
+      <h2>Resultados comprobados</h2>
+      <p>Todos los resultados numéricos se verifican con un cálculo independiente antes de publicarse.</p>
+    </li>
+    <li>
+      <h2>Para estudiar desde el móvil</h2>
+      <p>Intenta el problema, comprueba tu resultado y abre solo el apartado en el que te atascas.</p>
+    </li>
+  </ul>
+</section>
+
+{% for r in resumen_cursos %}
+<section class="ancho seccion">
+  <div class="seccion__cabecera">
+    <h2>{% if resumen_cursos | length > 1 %}{{ r.curso.meta.titulo }}{% else %}Elige un bloque del temario{% endif %}</h2>
+    <a href="{{ url(r.curso.url) }}">Ver todo</a>
+  </div>
+  <ul class="rejilla rejilla--bloques">
+    {% for b in r.bloques %}
+    <li>
+      <a class="tarjeta tarjeta--enlace" href="{{ url(b.ruta) }}">
+        <h3>{{ b.nombre }}</h3>
+        <p>{{ b.subtemas | map(attribute='nombre') | join(' · ') }}</p>
+        {% if b.total %}<span class="tarjeta__dato">{{ b.total }} {{ 'problema' if b.total == 1 else 'problemas' }}</span>{% endif %}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endfor %}
+
+<div class="ancho seccion">
+  {{ llamada_clases() }}
+</div>
+{% endblock %}
