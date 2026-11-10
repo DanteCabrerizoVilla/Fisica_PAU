@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 370 204" width="370" height="204" font-family="system-ui, sans-serif" font-size="13">
+<title>Elongación en x = 1 m frente al tiempo: parte de cero, baja a −3 m en 0,25 s y completa una oscilación en 1 s</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="52.0" y1="14" x2="52.0" y2="164" stroke="#d9d3c7"/>
+<text x="52.0" y="180" text-anchor="middle" fill="#1e222b">0,0</text>
+<line x1="112.0" y1="14" x2="112.0" y2="164" stroke="#d9d3c7"/>
+<text x="112.0" y="180" text-anchor="middle" fill="#1e222b">0,5</text>
+<line x1="172.0" y1="14" x2="172.0" y2="164" stroke="#d9d3c7"/>
+<text x="172.0" y="180" text-anchor="middle" fill="#1e222b">1,0</text>
+<line x1="232.0" y1="14" x2="232.0" y2="164" stroke="#d9d3c7"/>
+<text x="232.0" y="180" text-anchor="middle" fill="#1e222b">1,5</text>
+<line x1="292.0" y1="14" x2="292.0" y2="164" stroke="#d9d3c7"/>
+<text x="292.0" y="180" text-anchor="middle" fill="#1e222b">2,0</text>
+<line x1="352.0" y1="14" x2="352.0" y2="164" stroke="#d9d3c7"/>
+<text x="352.0" y="180" text-anchor="middle" fill="#1e222b">2,5</text>
+<line x1="52" y1="164.0" x2="352" y2="164.0" stroke="#d9d3c7"/>
+<text x="45" y="168.0" text-anchor="end" fill="#1e222b">−3</text>
+<line x1="52" y1="139.0" x2="352" y2="139.0" stroke="#d9d3c7"/>
+<text x="45" y="143.0" text-anchor="end" fill="#1e222b">−2</text>
+<line x1="52" y1="114.0" x2="352" y2="114.0" stroke="#d9d3c7"/>
+<text x="45" y="118.0" text-anchor="end" fill="#1e222b">−1</text>
+<line x1="52" y1="89.0" x2="352" y2="89.0" stroke="#d9d3c7"/>
+<text x="45" y="93.0" text-anchor="end" fill="#1e222b">0</text>
+<line x1="52" y1="64.0" x2="352" y2="64.0" stroke="#d9d3c7"/>
+<text x="45" y="68.0" text-anchor="end" fill="#1e222b">1</text>
+<line x1="52" y1="39.0" x2="352" y2="39.0" stroke="#d9d3c7"/>
+<text x="45" y="43.0" text-anchor="end" fill="#1e222b">2</text>
+<line x1="52" y1="14.0" x2="352" y2="14.0" stroke="#d9d3c7"/>
+<text x="45" y="18.0" text-anchor="end" fill="#1e222b">3</text>
+<rect x="52" y="14" width="300" height="150" fill="none" stroke="#1e222b"/>
+<text x="202.0" y="198" text-anchor="middle" fill="#1e222b"><tspan font-style="italic">t</tspan> (s)</text>
+<text transform="translate(18 89.0) rotate(-90)" text-anchor="middle" fill="#1e222b"><tspan font-style="italic">y</tspan> (m)</text>
+<polyline points="52.0,89.0 55.0,100.7 58.0,112.2 61.0,123.0 64.0,133.1 67.0,142.0 70.0,149.7 73.0,155.8 76.0,160.3 79.0,163.1 82.0,164.0 85.0,163.1 88.0,160.3 91.0,155.8 94.0,149.7 97.0,142.0 100.0,133.1 103.0,123.0 106.0,112.2 109.0,100.7 112.0,89.0 115.0,77.3 118.0,65.8 121.0,55.0 124.0,44.9 127.0,36.0 130.0,28.3 133.0,22.2 136.0,17.7 139.0,14.9 142.0,14.0 145.0,14.9 148.0,17.7 151.0,22.2 154.0,28.3 157.0,36.0 160.0,44.9 163.0,55.0 166.0,65.8 169.0,77.3 172.0,89.0 175.0,100.7 178.0,112.2 181.0,123.0 184.0,133.1 187.0,142.0 190.0,149.7 193.0,155.8 196.0,160.3 199.0,163.1 202.0,164.0 205.0,163.1 208.0,160.3 211.0,155.8 214.0,149.7 217.0,142.0 220.0,133.1 223.0,123.0 226.0,112.2 229.0,100.7 232.0,89.0 235.0,77.3 238.0,65.8 241.0,55.0 244.0,44.9 247.0,36.0 250.0,28.3 253.0,22.2 256.0,17.7 259.0,14.9 262.0,14.0 265.0,14.9 268.0,17.7 271.0,22.2 274.0,28.3 277.0,36.0 280.0,44.9 283.0,55.0 286.0,65.8 289.0,77.3 292.0,89.0 295.0,100.7 298.0,112.2 301.0,123.0 304.0,133.1 307.0,142.0 310.0,149.7 313.0,155.8 316.0,160.3 319.0,163.1 322.0,164.0 325.0,163.1 328.0,160.3 331.0,155.8 334.0,149.7 337.0,142.0 340.0,133.1 343.0,123.0 346.0,112.2 349.0,100.7 352.0,89.0" fill="none" stroke="#b5451b" stroke-width="2" stroke-linejoin="round"/>
+<text x="202.0" y="30" text-anchor="middle" fill="#1e222b" font-weight="700">x = 1 m</text>
+</svg>

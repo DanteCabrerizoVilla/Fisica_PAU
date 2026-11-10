@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" width="400" height="280" font-family="system-ui, sans-serif" font-size="13">
+<title>Órbita elíptica con la Tierra en un foco, perigeo P y apogeo A, y órbita circular que pasa por A</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<circle cx="250" cy="140" r="123.0" fill="none" stroke="#5a6170" stroke-width="1.5" stroke-dasharray="6 5"/>
+<ellipse cx="202.1" cy="140" rx="75.1" ry="57.8" fill="none" stroke="#1e222b" stroke-width="1.8"/>
+<circle cx="250" cy="140" r="7" fill="#3a7bd5"/><text x="250" y="128" text-anchor="middle" fill="#1e222b">Tierra</text>
+<circle cx="127.0" cy="140" r="4.5" fill="#b5451b"/><text x="118.0" y="144" text-anchor="end" fill="#b5451b" font-weight="700">A</text>
+<circle cx="277.2" cy="140" r="4.5" fill="#1e222b"/><text x="286.2" y="144" fill="#1e222b" font-weight="700">P</text>
+<line x1="127.0" y1="140.0" x2="127.0" y2="182.0" stroke="#b5451b" stroke-width="2.5" marker-end="url(#p)"/>
+<line x1="130.0" y1="198" x2="247" y2="198" stroke="#0f6b5c" marker-start="url(#p)" marker-end="url(#p)"/><text x="188.5" y="214" text-anchor="middle" fill="#0f6b5c" font-style="italic">rₐ</text>
+<line x1="253" y1="198" x2="274.2" y2="198" stroke="#0f6b5c" marker-start="url(#p)" marker-end="url(#p)"/><text x="263.6" y="214" text-anchor="middle" fill="#0f6b5c" font-style="italic">rₚ</text>
+<text x="310" y="51.0" fill="#5a6170">órbita circular</text><text x="202.1" y="76.2" text-anchor="middle" fill="#1e222b">órbita elíptica</text>
+</svg>
