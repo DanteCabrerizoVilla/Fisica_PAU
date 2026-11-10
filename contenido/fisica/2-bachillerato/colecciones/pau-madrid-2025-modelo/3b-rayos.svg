@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 216" width="450" height="216" font-family="system-ui, sans-serif" font-size="13">
+<title>Trazado de rayos en un espejo convexo: el rayo paralelo se refleja como si viniera del foco y el rayo dirigido al centro de curvatura vuelve por donde vino; las prolongaciones se cortan detrás del espejo en una imagen virtual, derecha y cuatro veces menor</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="20" y1="110" x2="440" y2="110" stroke="#5a6170"/>
+<path d="M304.4 20.4 Q275.6 110 304.4 199.6" fill="none" stroke="#3a7bd5" stroke-width="3"/>
+<circle cx="354.0" cy="110" r="3" fill="#1e222b"/><text x="354.0" y="128" text-anchor="middle" fill="#1e222b" font-style="italic">F</text>
+<circle cx="418.0" cy="110" r="3" fill="#1e222b"/><text x="418.0" y="128" text-anchor="middle" fill="#1e222b" font-style="italic">C</text>
+<line x1="98.0" y1="110.0" x2="98.0" y2="46.0" stroke="#1e222b" stroke-width="2.5" marker-end="url(#p)"/>
+<line x1="338.0" y1="110.0" x2="338.0" y2="94.0" stroke="#b5451b" stroke-width="2.5" marker-end="url(#p)"/>
+<polyline points="98.0,46.0 290.0,46.0 210.0,-34.0" fill="none" stroke="#0f6b5c" stroke-width="1.6"/>
+<line x1="290.0" y1="46.0" x2="354.0" y2="110" stroke="#0f6b5c" stroke-width="1.2" stroke-dasharray="4 4"/>
+<line x1="98.0" y1="46.0" x2="290.0" y2="84.4" stroke="#0f6b5c" stroke-width="1.6"/>
+<line x1="290.0" y1="84.4" x2="418.0" y2="110" stroke="#0f6b5c" stroke-width="1.2" stroke-dasharray="4 4"/>
+<text x="98.0" y="38.0" text-anchor="middle" fill="#1e222b">objeto</text><text x="344.0" y="88.0" fill="#b5451b">imagen</text>
+<text x="194.0" y="128" text-anchor="middle" fill="#5a6170"><tspan font-style="italic">s</tspan> = −12 cm</text>
+</svg>

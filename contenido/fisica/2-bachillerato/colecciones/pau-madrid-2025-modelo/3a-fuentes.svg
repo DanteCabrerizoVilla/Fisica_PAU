@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 116" width="400" height="116" font-family="system-ui, sans-serif" font-size="13">
+<title>Dos fuentes sonoras separadas 8 m; el punto A está a 2 m de la primera y a 6 m de la segunda</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="40" y1="60" x2="360" y2="60" stroke="#5a6170"/>
+<circle cx="40" cy="60" r="9" fill="#b5451b"/><text x="40" y="38" text-anchor="middle" fill="#b5451b" font-weight="700">P₁</text>
+<circle cx="360" cy="60" r="9" fill="#b5451b"/><text x="360" y="38" text-anchor="middle" fill="#b5451b" font-weight="700">P₂</text>
+<circle cx="120" cy="60" r="4" fill="#1e222b"/><text x="120" y="44" text-anchor="middle" fill="#1e222b">A</text>
+<circle cx="200" cy="60" r="4" fill="#1e222b"/><text x="200" y="44" text-anchor="middle" fill="#1e222b">punto medio</text>
+<line x1="44" y1="86" x2="116" y2="86" stroke="#0f6b5c" marker-start="url(#p)" marker-end="url(#p)"/><text x="80.0" y="104" text-anchor="middle" fill="#0f6b5c">2 m</text>
+<line x1="124" y1="86" x2="356" y2="86" stroke="#0f6b5c" marker-start="url(#p)" marker-end="url(#p)"/><text x="240.0" y="104" text-anchor="middle" fill="#0f6b5c">6 m</text>
+</svg>
