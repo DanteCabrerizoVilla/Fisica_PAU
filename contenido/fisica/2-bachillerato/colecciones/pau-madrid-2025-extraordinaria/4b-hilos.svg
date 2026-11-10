@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 236" width="310" height="236" font-family="system-ui, sans-serif" font-size="13">
+<title>Hilo con corriente saliente en (0, 6) cm, punto P en (4, 2) cm y segundo hilo en (6, 0) cm; los tres están alineados y los campos en P son perpendiculares a esa línea y opuestos</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="26" y1="200" x2="260" y2="200" stroke="#5a6170" marker-end="url(#p)"/><text x="264" y="204" fill="#5a6170" font-style="italic">x (cm)</text>
+<line x1="50" y1="224" x2="50" y2="14" stroke="#5a6170" marker-end="url(#p)"/><text x="56" y="18" fill="#5a6170" font-style="italic">y (cm)</text>
+<line x1="50" y1="44" x2="206" y2="200" stroke="#5a6170" stroke-dasharray="4 4"/>
+<circle cx="50" cy="44" r="9" fill="#fff" stroke="#b5451b" stroke-width="2"/><circle cx="50" cy="44" r="3" fill="#b5451b"/><text x="64" y="38" fill="#b5451b">I₁ = 5 A (sale)</text>
+<circle cx="206" cy="200" r="9" fill="#fff" stroke="#3a7bd5" stroke-width="2"/><text x="210" y="226" text-anchor="middle" fill="#3a7bd5">I₂ en (6, 0)</text>
+<line x1="154.0" y1="148.0" x2="184.0" y2="118.0" stroke="#b5451b" stroke-width="2.5" marker-end="url(#p)"/>
+<text x="188" y="118" fill="#b5451b" font-style="italic">B₁</text>
+<line x1="154.0" y1="148.0" x2="124.0" y2="178.0" stroke="#3a7bd5" stroke-width="2.5" marker-end="url(#p)"/>
+<text x="108" y="188" fill="#3a7bd5" font-style="italic">B₂</text>
+<circle cx="154" cy="148" r="4" fill="#1e222b"/><text x="164" y="164" fill="#1e222b">P (4, 2)</text>
+</svg>

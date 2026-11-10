@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 320" width="350" height="320" font-family="system-ui, sans-serif" font-size="13">
+<title>Figura (a): selector de velocidades con la placa positiva arriba, campo eléctrico hacia abajo y campo magnético entrante. Figura (b): el ion entra en un campo magnético entrante y describe media circunferencia hasta el detector, a una distancia 2r</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<text x="150" y="16" text-anchor="middle" fill="#1e222b" font-weight="700">(a) Selector de velocidades</text>
+<line x1="60" y1="36" x2="240" y2="36" stroke="#b5451b" stroke-width="3"/><line x1="60" y1="116" x2="240" y2="116" stroke="#3a7bd5" stroke-width="3"/>
+<text x="72" y="30" text-anchor="middle" fill="#b5451b">+</text><text x="72" y="132" text-anchor="middle" fill="#3a7bd5">−</text>
+<text x="98" y="30" text-anchor="middle" fill="#b5451b">+</text><text x="98" y="132" text-anchor="middle" fill="#3a7bd5">−</text>
+<text x="124" y="30" text-anchor="middle" fill="#b5451b">+</text><text x="124" y="132" text-anchor="middle" fill="#3a7bd5">−</text>
+<text x="150" y="30" text-anchor="middle" fill="#b5451b">+</text><text x="150" y="132" text-anchor="middle" fill="#3a7bd5">−</text>
+<text x="176" y="30" text-anchor="middle" fill="#b5451b">+</text><text x="176" y="132" text-anchor="middle" fill="#3a7bd5">−</text>
+<text x="202" y="30" text-anchor="middle" fill="#b5451b">+</text><text x="202" y="132" text-anchor="middle" fill="#3a7bd5">−</text>
+<text x="228" y="30" text-anchor="middle" fill="#b5451b">+</text><text x="228" y="132" text-anchor="middle" fill="#3a7bd5">−</text>
+<line x1="150.0" y1="50.0" x2="150.0" y2="102.0" stroke="#1e222b" stroke-width="2" marker-end="url(#p)"/>
+<text x="158" y="96" fill="#1e222b" font-style="italic">E</text>
+<path d="M80 72 L88 80 M80 80 L88 72" stroke="#3a7bd5" stroke-width="1.2"/>
+<path d="M110 72 L118 80 M110 80 L118 72" stroke="#3a7bd5" stroke-width="1.2"/>
+<path d="M140 72 L148 80 M140 80 L148 72" stroke="#3a7bd5" stroke-width="1.2"/>
+<path d="M170 72 L178 80 M170 80 L178 72" stroke="#3a7bd5" stroke-width="1.2"/>
+<path d="M200 72 L208 80 M200 80 L208 72" stroke="#3a7bd5" stroke-width="1.2"/>
+<text x="232" y="66" text-anchor="end" fill="#3a7bd5"><tspan font-style="italic">B₁</tspan> entra</text>
+<circle cx="20" cy="76" r="5" fill="#0f6b5c"/><line x1="26.0" y1="76.0" x2="62.0" y2="76.0" stroke="#0f6b5c" stroke-width="2" marker-end="url(#p)"/>
+<text x="22" y="98" text-anchor="middle" fill="#0f6b5c">Ca²⁺</text>
+<line x1="62" y1="76" x2="262" y2="76" stroke="#0f6b5c" stroke-dasharray="4 4"/>
+<line x1="290.0" y1="110.0" x2="290.0" y2="76.0" stroke="#5a6170" stroke-width="1.2" marker-end="url(#p)"/>
+<line x1="290.0" y1="110.0" x2="324.0" y2="110.0" stroke="#5a6170" stroke-width="1.2" marker-end="url(#p)"/>
+<text x="286" y="72" fill="#5a6170" font-style="italic">z</text><text x="328" y="114" fill="#5a6170" font-style="italic">x</text><text x="290" y="130" text-anchor="middle" fill="#5a6170" font-size="11">y entra en el papel</text>
+<text x="150" y="166" text-anchor="middle" fill="#1e222b" font-weight="700">(b) Detector</text>
+<path d="M146 182 L154 190 M146 190 L154 182" stroke="#3a7bd5" stroke-width="1.2"/>
+<path d="M146 206 L154 214 M146 214 L154 206" stroke="#3a7bd5" stroke-width="1.2"/>
+<path d="M146 230 L154 238 M146 238 L154 230" stroke="#3a7bd5" stroke-width="1.2"/>
+<path d="M146 254 L154 262 M146 262 L154 254" stroke="#3a7bd5" stroke-width="1.2"/>
+<path d="M146 278 L154 286 M146 286 L154 278" stroke="#3a7bd5" stroke-width="1.2"/>
+<path d="M170 182 L178 190 M170 190 L178 182" stroke="#3a7bd5" stroke-width="1.2"/>
+<path d="M170 206 L178 214 M170 214 L178 206" stroke="#3a7bd5" stroke-width="1.2"/>
+<path d="M170 230 L178 238 M170 238 L178 230" stroke="#3a7bd5" stroke-width="1.2"/>
+<path d="M170 254 L178 262 M170 262 L178 254" stroke="#3a7bd5" stroke-width="1.2"/>
+<path d="M170 278 L178 286 M170 286 L178 278" stroke="#3a7bd5" stroke-width="1.2"/>
+<path d="M194 182 L202 190 M194 190 L202 182" stroke="#3a7bd5" stroke-width="1.2"/>
+<path d="M194 206 L202 214 M194 214 L202 206" stroke="#3a7bd5" stroke-width="1.2"/>
+<path d="M194 230 L202 238 M194 238 L202 230" stroke="#3a7bd5" stroke-width="1.2"/>
+<path d="M194 254 L202 262 M194 262 L202 254" stroke="#3a7bd5" stroke-width="1.2"/>
+<path d="M194 278 L202 286 M194 286 L202 278" stroke="#3a7bd5" stroke-width="1.2"/>
+<path d="M218 182 L226 190 M218 190 L226 182" stroke="#3a7bd5" stroke-width="1.2"/>
+<path d="M218 206 L226 214 M218 214 L226 206" stroke="#3a7bd5" stroke-width="1.2"/>
+<path d="M218 230 L226 238 M218 238 L226 230" stroke="#3a7bd5" stroke-width="1.2"/>
+<path d="M218 254 L226 262 M218 262 L226 254" stroke="#3a7bd5" stroke-width="1.2"/>
+<path d="M218 278 L226 286 M218 286 L226 278" stroke="#3a7bd5" stroke-width="1.2"/>
+<path d="M242 182 L250 190 M242 190 L250 182" stroke="#3a7bd5" stroke-width="1.2"/>
+<path d="M242 206 L250 214 M242 214 L250 206" stroke="#3a7bd5" stroke-width="1.2"/>
+<path d="M242 230 L250 238 M242 238 L250 230" stroke="#3a7bd5" stroke-width="1.2"/>
+<path d="M242 254 L250 262 M242 262 L250 254" stroke="#3a7bd5" stroke-width="1.2"/>
+<path d="M242 278 L250 286 M242 286 L250 278" stroke="#3a7bd5" stroke-width="1.2"/>
+<line x1="130" y1="176" x2="130" y2="300" stroke="#1e222b" stroke-width="4"/><text transform="translate(120 240) rotate(-90)" text-anchor="middle" fill="#1e222b">detector</text>
+<circle cx="20" cy="288" r="5" fill="#0f6b5c"/><line x1="26.0" y1="288.0" x2="128.0" y2="288.0" stroke="#0f6b5c" stroke-width="2" marker-end="url(#p)"/>
+<text x="40" y="310" text-anchor="middle" fill="#0f6b5c">Ca²⁺</text>
+<path d="M130 288 A48 48 0 0 0 130 192" fill="none" stroke="#0f6b5c" stroke-width="2" stroke-dasharray="5 4"/>
+<line x1="108" y1="194" x2="108" y2="286" stroke="#5a6170" marker-start="url(#p)" marker-end="url(#p)"/><text x="100" y="230" text-anchor="end" fill="#5a6170">2<tspan font-style="italic">r</tspan></text>
+<text x="280" y="180" fill="#3a7bd5"><tspan font-style="italic">B₂</tspan> entra</text>
+</svg>
