@@ -328,23 +328,32 @@ class Constructor:
     def construir_prueba(self, curso: Curso) -> None:
         """Prueba de nivel: todas las preguntas van en la página, ocultas."""
         prueba = curso.prueba
-        vistas: dict[str, int] = defaultdict(int)
         preguntas = []
         for q in prueba["preguntas"]:
-            # Orden de las opciones fijo para cada pregunta, pero sin que la correcta sea siempre la primera.
-            orden = list(range(4))
-            random.Random(q["id"]).shuffle(orden)
-            vistas[q["bloque"]] += 1
-            preguntas.append({
-                **q,
-                "opciones": [q["opciones"][i] for i in orden],
-                "clave": self.huella(f"{q['id']}|{orden.index(0)}|nivel"),
-                "rapida": vistas[q["bloque"]] <= 2,
-            })
-        bloques = [b for b in curso.meta["bloques"] if vistas[b["id"]]]
+            variantes = []
+            for i, v in enumerate(q["variantes"]):
+                ident, orden = self.variante(q["id"], i)
+                variantes.append({
+                    "id": ident,
+                    "enunciado": v["enunciado"],
+                    "opciones": [v["opciones"][j] for j in orden],
+                    "clave": self.huella(f"{ident}|{orden.index(0)}|nivel"),
+                })
+            preguntas.append({**q, "variantes": variantes})
+        usados = {q["bloque"] for q in preguntas}
+        bloques = [b for b in curso.meta["bloques"] if b["id"] in usados]
         self.escribir(f"{curso.url}/prueba-nivel", "prueba_nivel.html", curso=curso, prueba=prueba,
                       preguntas=preguntas, bloques=bloques,
-                      total_rapida=sum(1 for q in preguntas if q["rapida"]))
+                      informes_url=(self.sitio.meta.get("contacto", {}).get("informes_url") or "").strip())
+
+    @staticmethod
+    def variante(id_pregunta: str, indice: int) -> tuple[str, list[int]]:
+        """Identificador de una variante y orden en que se muestran sus opciones
+        (fijo para cada variante, pero sin que la correcta sea siempre la primera)."""
+        ident = f"{id_pregunta}{'abcdefgh'[indice]}"
+        orden = list(range(4))
+        random.Random(ident).shuffle(orden)
+        return ident, orden
 
     def construir_teoria(self, curso: Curso, bloques: list[dict]) -> None:
         """Índice de teoría, una página por bloque y el formulario completo."""

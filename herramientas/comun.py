@@ -348,13 +348,14 @@ def cargar_prueba(curso: Curso) -> dict:
     f = curso.ruta_prueba
     donde = relativa(f)
     datos = leer_yaml(f)
-    for clave in ("titulo", "entrada", "instrucciones", "resultado", "mensaje_final", "preguntas"):
+    for clave in ("titulo", "entrada", "instrucciones", "privacidad", "consentimiento", "resultado",
+                  "llamada_titulo", "llamada_texto", "preguntas"):
         if not datos.get(clave):
             raise ErrorContenido(f"{donde}: falta '{clave}'")
     vistos: set[str] = set()
     for q in datos["preguntas"]:
         ident = q.get("id", "(sin id)")
-        for clave in ("id", "bloque", "subtema", "mide", "enunciado", "opciones"):
+        for clave in ("id", "bloque", "subtema", "mide", "variantes"):
             if not q.get(clave):
                 raise ErrorContenido(f"{donde}: a la pregunta {ident} le falta '{clave}'")
         if not re.fullmatch(r"[a-z0-9-]+", ident):
@@ -366,8 +367,14 @@ def cargar_prueba(curso: Curso) -> dict:
             raise ErrorContenido(f"{donde}: {ident}: bloque '{q['bloque']}' no existe en curso.yaml")
         if q["subtema"] not in curso.subtemas(q["bloque"]):
             raise ErrorContenido(f"{donde}: {ident}: subtema '{q['subtema']}' no pertenece a '{q['bloque']}'")
-        if len(q["opciones"]) != 4 or len(set(q["opciones"])) != 4:
-            raise ErrorContenido(f"{donde}: {ident}: debe tener cuatro opciones distintas")
+        if len(q["variantes"]) > 8:
+            raise ErrorContenido(f"{donde}: {ident}: como mucho ocho variantes")
+        for i, v in enumerate(q["variantes"]):
+            if not v.get("enunciado"):
+                raise ErrorContenido(f"{donde}: {ident}, variante {i + 1}: falta 'enunciado'")
+            opciones = v.get("opciones") or []
+            if len(opciones) != 4 or len(set(opciones)) != 4:
+                raise ErrorContenido(f"{donde}: {ident}, variante {i + 1}: debe tener cuatro opciones distintas")
     return datos
 
 

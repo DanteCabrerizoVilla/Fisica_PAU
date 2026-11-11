@@ -128,7 +128,7 @@ def main() -> int:
         if curso.prueba is None or args.filtro:
             continue
         script = curso.ruta_prueba.with_suffix(".py")
-        n = len(curso.prueba["preguntas"])
+        n = f"{len(curso.prueba['preguntas'])} preguntas, {sum(len(q['variantes']) for q in curso.prueba['preguntas'])} variantes"
         try:
             if not script.exists():
                 raise AssertionError(f"no existe {script.name}")
@@ -136,7 +136,7 @@ def main() -> int:
             modulo = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(modulo)
             modulo.comprobar(curso.prueba["preguntas"])
-            print(f"[ok] prueba de nivel: {n} preguntas  ({relativa(curso.ruta_prueba)})")
+            print(f"[ok] prueba de nivel: {n}  ({relativa(curso.ruta_prueba)})")
         except AssertionError as e:
             fallidos += 1
             print(f"[FALLA] prueba de nivel  ({relativa(curso.ruta_prueba)})\n    ERROR: {e}")

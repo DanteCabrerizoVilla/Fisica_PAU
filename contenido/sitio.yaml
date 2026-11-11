@@ -17,8 +17,11 @@ autor:
   titulo: "Físico y profesor particular"
 
 contacto:
-  whatsapp: ""                         # [REVISAR] número con prefijo, solo cifras: 34600000000
+  whatsapp: "34665676190"              # número con prefijo, solo cifras
   correo: ""                           # [REVISAR] correo público de contacto
+  # Dirección de la aplicación de Google que recibe los resultados de la prueba
+  # de nivel y los apunta en una hoja de cálculo (ver herramientas/informes-prueba-nivel.gs).
+  informes_url: ""                     # [REVISAR] https://script.google.com/macros/s/.../exec
 
 # Cursos publicados. Para añadir otro (por ejemplo Matemáticas II) basta con
 # crear su carpeta con un curso.yaml y añadir aquí su ruta.

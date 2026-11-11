@@ -10,10 +10,8 @@
 
 {% block contenido %}
 <div class="ancho ancho--texto prueba" data-prueba
-     data-whatsapp="{{ contacto.whatsapp }}"
-     data-profesor="{{ sitio.autor.nombre }}"
-     data-asignatura="{{ curso.meta.asignatura }} ({{ curso.meta.prueba }})"
-     data-mensaje-final="{{ prueba.mensaje_final }}">
+     data-informes="{{ informes_url }}"
+     data-asignatura="{{ curso.meta.asignatura }} ({{ curso.meta.prueba }})">
   {{ migas([(curso.meta.titulo, curso.url), (prueba.titulo, '')]) }}
 
   {# ---- Inicio ---- #}
@@ -24,56 +22,55 @@
     <p>{{ prueba.instrucciones }}</p>
 
     <form class="prueba__inicio" data-inicio>
-      <fieldset class="prueba__grupo">
-        <legend>¿Cuánto tiempo tienes?</legend>
-        <label class="prueba__opcion">
-          <input type="radio" name="modo" value="rapida" checked>
-          <span><strong>Prueba rápida</strong> · {{ total_rapida }} preguntas, unos 10 minutos</span>
-        </label>
-        <label class="prueba__opcion">
-          <input type="radio" name="modo" value="completa">
-          <span><strong>Prueba completa</strong> · {{ preguntas | length }} preguntas, unos 30 minutos</span>
-        </label>
-      </fieldset>
+      <label class="prueba__dato">
+        <span>Tu correo electrónico</span>
+        <input type="email" name="correo" required autocomplete="email" inputmode="email" maxlength="120" placeholder="nombre@ejemplo.com">
+      </label>
+      <label class="prueba__dato">
+        <span>Tu nombre (opcional)</span>
+        <input type="text" name="nombre" autocomplete="given-name" maxlength="40">
+      </label>
+      {# Campo trampa para programas automáticos: las personas no lo ven. #}
+      <label class="oculto-visual" aria-hidden="true">No rellenes este campo <input type="text" name="web" tabindex="-1" autocomplete="off"></label>
 
-      <fieldset class="prueba__grupo">
-        <legend>¿Qué bloques quieres comprobar?</legend>
-        {% for b in bloques %}
-        <label class="prueba__opcion">
-          <input type="checkbox" name="bloque" value="{{ b.id }}" data-nombre="{{ b.nombre }}" checked>
-          <span>{{ b.nombre }}</span>
-        </label>
-        {% endfor %}
-      </fieldset>
+      <p class="nota">{{ prueba.privacidad }}</p>
+      <label class="prueba__opcion prueba__opcion--discreta">
+        <input type="checkbox" name="publicidad" value="si">
+        <span>{{ prueba.consentimiento }}</span>
+      </label>
 
-      <p class="aviso" data-aviso-inicio hidden>Elige al menos un bloque.</p>
-      <p class="acciones"><button class="boton" type="submit">Empezar</button></p>
+      <p class="acciones"><button class="boton" type="submit">Empezar la prueba</button></p>
     </form>
+    {% if not informes_url %}
+    <p class="aviso aviso--fuerte"><strong>[REVISAR]</strong> Falta <code>informes_url</code> en <code>contenido/sitio.yaml</code>: la prueba funciona, pero los resultados no se envían a ningún sitio.</p>
+    {% endif %}
     <noscript><p class="aviso aviso--fuerte">La prueba necesita JavaScript para funcionar.</p></noscript>
   </section>
 
-  {# ---- Preguntas ---- #}
+  {# ---- Preguntas: están todas las variantes; la página elige una por pregunta ---- #}
   <section data-paso="preguntas" hidden>
     <p class="prueba__progreso"><span data-progreso aria-live="polite"></span></p>
     <progress class="prueba__barra" data-barra max="1" value="0"></progress>
 
     {% for q in preguntas %}
+    {% for v in q.variantes %}
     <fieldset class="prueba__pregunta" hidden
-              data-id="{{ q.id }}" data-bloque="{{ q.bloque }}" data-clave="{{ q.clave }}"
-              data-mide="{{ q.mide }}"{% if q.rapida %} data-rapida{% endif %}>
+              data-id="{{ v.id }}" data-ranura="{{ q.id }}" data-bloque="{{ q.bloque }}" data-bloque-nombre="{{ curso.bloques[q.bloque].nombre }}"
+              data-clave="{{ v.clave }}" data-mide="{{ q.mide }}">
       <legend class="antetitulo">{{ curso.bloques[q.bloque].nombre }}</legend>
-      <div class="prueba__enunciado">{{ q.enunciado | mdi }}</div>
-      {% for o in q.opciones %}
+      <div class="prueba__enunciado">{{ v.enunciado | mdi }}</div>
+      {% for o in v.opciones %}
       <label class="prueba__opcion">
-        <input type="radio" name="{{ q.id }}" value="{{ loop.index0 }}">
+        <input type="radio" name="{{ v.id }}" value="{{ loop.index0 }}">
         <span>{{ o | mdi }}</span>
       </label>
       {% endfor %}
       <label class="prueba__opcion prueba__opcion--nose">
-        <input type="radio" name="{{ q.id }}" value="x">
+        <input type="radio" name="{{ v.id }}" value="x">
         <span>No lo sé</span>
       </label>
     </fieldset>
+    {% endfor %}
     {% endfor %}
 
     <p class="acciones prueba__navegacion">
@@ -90,27 +87,20 @@
 
     <div data-bloques></div>
 
-    <aside class="llamada prueba__envio">
+    <aside class="llamada prueba__llamada">
       <div>
-        <h2>Envíame tu resultado</h2>
-        <p>Así sé por dónde empezar contigo desde la primera clase. Se abre WhatsApp con el mensaje ya escrito; puedes cambiarlo antes de enviarlo.</p>
-        <label class="prueba__nombre">
-          <span>Tu nombre (opcional)</span>
-          <input type="text" data-nombre autocomplete="given-name" maxlength="40">
-        </label>
+        <h2>{{ prueba.llamada_titulo }}</h2>
+        <p>{{ prueba.llamada_texto }}</p>
       </div>
       <p class="acciones">
-        <a class="boton" data-enviar href="#" target="_blank" rel="noopener">Enviar por WhatsApp</a>
-        <button class="boton boton--suave" type="button" data-copiar>Copiar el resultado</button>
+        {% if contacto.whatsapp %}<a class="boton" href="{{ contacto.whatsapp }}" target="_blank" rel="noopener">Escríbeme por WhatsApp</a>{% endif %}
+        <a class="boton boton--suave" href="{{ url('clases') }}">Cómo son las clases</a>
       </p>
-      {% if not contacto.whatsapp %}
-      <p class="aviso aviso--fuerte"><strong>[REVISAR]</strong> Falta el número de WhatsApp en <code>contenido/sitio.yaml</code>: de momento el botón deja elegir el contacto.</p>
-      {% endif %}
     </aside>
 
+    <p class="nota" data-envio hidden></p>
     <p class="acciones">
       <button class="boton boton--suave" type="button" data-repetir>Repetir la prueba</button>
-      <a class="boton boton--suave" href="{{ url('clases') }}">Ver cómo son las clases</a>
     </p>
   </section>
 </div>

@@ -1,6 +1,6 @@
 // Prueba de nivel. Enseña al alumno en qué falla (no por qué ni la respuesta
-// correcta) y prepara un mensaje de WhatsApp con el resultado para el profesor.
-// Todo ocurre en el navegador: no se envía ni se guarda nada por su cuenta.
+// correcta) y envía el resultado, con su correo, a la hoja de cálculo del
+// profesor. El envío se hace una sola vez, al terminar la prueba.
 
 /** Resumen FNV-1a de 32 bits, igual que el de herramientas/build.py. */
 export function huella(texto) {
@@ -23,25 +23,55 @@ export function valorar(aciertos, total) {
   return { clave: "mal", texto: "Hay que trabajarlo" };
 }
 
-/** Texto del mensaje que se envía al profesor. */
-export function redactar({ profesor, asignatura, nombre, modo, bloques, final }) {
-  const aciertos = bloques.reduce((s, b) => s + b.aciertos, 0);
-  const total = bloques.reduce((s, b) => s + b.items.length, 0);
-  const lineas = [
-    `Hola${profesor ? ` ${profesor}` : ""}, he hecho la prueba de nivel de ${asignatura}.`,
-    ...(nombre ? [`Me llamo ${nombre}.`] : []),
-    `Resultado: ${aciertos} de ${total} (prueba ${modo === "rapida" ? "rápida" : "completa"}).`,
-    "",
-  ];
-  for (const b of bloques) {
-    lineas.push(`${b.nombre}: ${b.aciertos}/${b.items.length}`);
-    for (const it of b.items) {
-      if (it.estado === "mal") lineas.push(`  ✗ ${it.mide}`);
-      if (it.estado === "nose") lineas.push(`  ? ${it.mide} (no lo sé)`);
-    }
+/**
+ * Elige una variante por pregunta. `grupos` es una lista de listas (las
+ * variantes de cada pregunta, en orden) y `azar` devuelve un número en [0, 1).
+ */
+export function sortear(grupos, azar = Math.random) {
+  return grupos.map((variantes) => variantes[Math.min(variantes.length - 1, Math.floor(azar() * variantes.length))]);
+}
+
+/** Datos que se envían al profesor. `bloques`: [{nombre, aciertos, items:[{id, mide, estado}]}]. */
+export function informe({ correo, nombre, publicidad, asignatura, bloques }) {
+  const items = bloques.flatMap((b) => b.items);
+  return {
+    correo,
+    nombre,
+    publicidad: Boolean(publicidad),
+    asignatura,
+    aciertos: bloques.reduce((s, b) => s + b.aciertos, 0),
+    total: items.length,
+    bloques: bloques.map((b) => ({
+      nombre: b.nombre,
+      aciertos: b.aciertos,
+      total: b.items.length,
+      valoracion: valorar(b.aciertos, b.items.length).texto,
+      falla: b.items.filter((i) => i.estado === "mal").map((i) => i.mide),
+      no_sabe: b.items.filter((i) => i.estado === "nose").map((i) => i.mide),
+    })),
+    variantes: items.map((i) => i.id).join(" "),
+  };
+}
+
+/**
+ * Envía el informe. La aplicación de Google no permite leer la respuesta desde
+ * otra web, así que solo se puede saber si la petición ha salido.
+ */
+export async function enviar(url, datos) {
+  if (!url) return "sin-destino";
+  const peticion = () => fetch(url, {
+    method: "POST",
+    mode: "no-cors",
+    keepalive: true,
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
+    body: JSON.stringify(datos),
+  });
+  try {
+    await peticion();
+    return "enviado";
+  } catch {
+    try { await peticion(); return "enviado"; } catch { return "fallo"; }
   }
-  lineas.push("", final);
-  return lineas.join("\n");
 }
 
 function crear(etiqueta, clase, padre, texto) {
@@ -56,7 +86,6 @@ function montar(raiz) {
   const paso = (nombre) => raiz.querySelector(`[data-paso="${nombre}"]`);
   const pasos = { inicio: paso("inicio"), preguntas: paso("preguntas"), resultado: paso("resultado") };
   const inicio = raiz.querySelector("[data-inicio]");
-  const avisoInicio = raiz.querySelector("[data-aviso-inicio]");
   const todas = [...raiz.querySelectorAll(".prueba__pregunta")];
   const progreso = raiz.querySelector("[data-progreso]");
   const barra = raiz.querySelector("[data-barra]");
@@ -64,15 +93,21 @@ function montar(raiz) {
   const bSiguiente = raiz.querySelector("[data-siguiente]");
   const titular = raiz.querySelector("[data-titular]");
   const cajaBloques = raiz.querySelector("[data-bloques]");
-  const campoNombre = raiz.querySelector("[data-nombre]");
-  const bEnviar = raiz.querySelector("[data-enviar]");
-  const bCopiar = raiz.querySelector("[data-copiar]");
+  const notaEnvio = raiz.querySelector("[data-envio]");
 
-  let modo = "rapida";
+  // Variantes agrupadas por pregunta, en el orden de la página.
+  const grupos = [];
+  for (const q of todas) {
+    const ultimo = grupos[grupos.length - 1];
+    if (ultimo && ultimo[0].dataset.ranura === q.dataset.ranura) ultimo.push(q);
+    else grupos.push([q]);
+  }
+
+  let alumno = { correo: "", nombre: "", publicidad: false, trampa: "" };
   let elegidas = [];
-  let nombres = {};
   let actual = 0;
   let resumen = [];
+  let ultimoInforme = null;
 
   function mostrar(nombre) {
     for (const [clave, el] of Object.entries(pasos)) el.hidden = clave !== nombre;
@@ -82,7 +117,7 @@ function montar(raiz) {
   const marcada = (pregunta) => pregunta.querySelector("input:checked")?.value ?? null;
 
   function pintarPregunta() {
-    elegidas.forEach((q, i) => { q.hidden = i !== actual; });
+    for (const q of todas) q.hidden = q !== elegidas[actual];
     progreso.textContent = `Pregunta ${actual + 1} de ${elegidas.length}`;
     barra.value = actual / elegidas.length;
     bAnterior.disabled = actual === 0;
@@ -94,16 +129,14 @@ function montar(raiz) {
   inicio.addEventListener("submit", (ev) => {
     ev.preventDefault();
     const datos = new FormData(inicio);
-    modo = datos.get("modo");
-    const bloques = datos.getAll("bloque");
-    avisoInicio.hidden = bloques.length > 0;
-    if (!bloques.length) return;
-    nombres = Object.fromEntries([...inicio.querySelectorAll('[name="bloque"]')].map((c) => [c.value, c.dataset.nombre]));
-    elegidas = todas.filter((q) => bloques.includes(q.dataset.bloque) && (modo === "completa" || "rapida" in q.dataset));
-    for (const q of todas) {
-      q.hidden = true;
-      for (const r of q.querySelectorAll("input")) r.checked = false;
-    }
+    alumno = {
+      correo: String(datos.get("correo") ?? "").trim(),
+      nombre: String(datos.get("nombre") ?? "").trim(),
+      publicidad: datos.get("publicidad") === "si",
+      trampa: String(datos.get("web") ?? ""),
+    };
+    for (const q of todas) for (const r of q.querySelectorAll("input")) r.checked = false;
+    elegidas = sortear(grupos);
     actual = 0;
     mostrar("preguntas");
     pintarPregunta();
@@ -115,16 +148,14 @@ function montar(raiz) {
     if (actual < elegidas.length - 1) { actual++; pintarPregunta(); } else terminar();
   });
 
-  function terminar() {
+  async function terminar() {
     const porBloque = new Map();
     for (const q of elegidas) {
       const estado = corregir(q.dataset.id, marcada(q), q.dataset.clave);
-      if (!porBloque.has(q.dataset.bloque)) porBloque.set(q.dataset.bloque, []);
-      porBloque.get(q.dataset.bloque).push({ mide: q.dataset.mide, estado });
+      if (!porBloque.has(q.dataset.bloque)) porBloque.set(q.dataset.bloque, { nombre: q.dataset.bloqueNombre, items: [] });
+      porBloque.get(q.dataset.bloque).items.push({ id: q.dataset.id, mide: q.dataset.mide, estado });
     }
-    resumen = [...porBloque].map(([id, items]) => ({
-      id, nombre: nombres[id], items, aciertos: items.filter((i) => i.estado === "bien").length,
-    }));
+    resumen = [...porBloque.values()].map((b) => ({ ...b, aciertos: b.items.filter((i) => i.estado === "bien").length }));
     const aciertos = resumen.reduce((s, b) => s + b.aciertos, 0);
     titular.textContent = `${aciertos} de ${elegidas.length} preguntas bien`;
 
@@ -148,45 +179,28 @@ function montar(raiz) {
         crear("span", "oculto-visual", li, ` (${lectura})`);
       }
     }
-    actualizarEnvio();
+    notaEnvio.hidden = true;
     mostrar("resultado");
     titular.focus({ preventScroll: true });
-  }
 
-  const mensaje = () => redactar({
-    profesor: raiz.dataset.profesor,
-    asignatura: raiz.dataset.asignatura,
-    nombre: campoNombre.value.trim(),
-    modo,
-    bloques: resumen,
-    final: raiz.dataset.mensajeFinal,
-  });
-
-  function actualizarEnvio() {
-    const base = raiz.dataset.whatsapp || "https://wa.me/";
-    bEnviar.href = `${base}?text=${encodeURIComponent(mensaje())}`;
-  }
-  campoNombre.addEventListener("input", actualizarEnvio);
-
-  bCopiar.addEventListener("click", async () => {
-    const original = "Copiar el resultado";
-    try {
-      await navigator.clipboard.writeText(mensaje());
-      bCopiar.textContent = "Copiado";
-    } catch {
-      bCopiar.textContent = "No se ha podido copiar";
+    ultimoInforme = informe({ ...alumno, asignatura: raiz.dataset.asignatura, bloques: resumen });
+    // Un programa automático habrá rellenado el campo trampa: no se envía nada.
+    const estado = alumno.trampa ? "descartado" : await enviar(raiz.dataset.informes, ultimoInforme);
+    if (estado === "fallo") {
+      notaEnvio.textContent = "No se ha podido enviar tu resultado (¿sin conexión?). Si quieres que lo vea, escríbeme.";
+      notaEnvio.hidden = false;
     }
-    setTimeout(() => { bCopiar.textContent = original; }, 2000);
-  });
+    raiz.dataset.envio = estado;
+  }
 
   raiz.querySelector("[data-repetir]").addEventListener("click", () => mostrar("inicio"));
 
   // Acceso para pruebas automáticas.
-  raiz.pruebaNivel = { terminar, get resumen() { return resumen; }, mensaje };
+  raiz.pruebaNivel = { get resumen() { return resumen; }, get informe() { return ultimoInforme; }, get elegidas() { return elegidas.map((q) => q.dataset.id); } };
   document.documentElement.dataset.prueba = "ok";
 }
 
-const raiz = document.querySelector("[data-prueba]");
+const raiz = typeof document === "undefined" ? null : document.querySelector("[data-prueba]");
 if (raiz) {
   try { montar(raiz); } catch (e) { document.documentElement.dataset.error = String(e?.message ?? e); }
 }

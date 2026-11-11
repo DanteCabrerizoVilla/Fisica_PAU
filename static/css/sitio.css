@@ -390,10 +390,13 @@ main { padding-block: 1.25rem 3rem; min-height: 60vh; }
 .prueba__item--mal { font-weight: 600; }
 .prueba__item--mal .prueba__signo { color: var(--acento); }
 .prueba__item--nose .prueba__signo { color: var(--aviso); }
-.prueba__envio { align-items: flex-start; }
-.prueba__envio .acciones { margin-top: 0; }
-.prueba__nombre { display: block; margin-top: 0.9rem; font-size: 0.92rem; font-weight: 600; }
-.prueba__nombre input { display: block; width: 100%; max-width: 20rem; min-height: 44px; margin-top: 0.3rem; padding: 0.4rem 0.7rem; font: inherit; color: var(--tinta); background: var(--superficie); border: 1px solid var(--linea); border-radius: var(--radio-s); }
+.prueba__llamada { align-items: flex-start; }
+.prueba__llamada .acciones { margin-top: 0; }
+.prueba__dato { display: block; margin-top: 1.1rem; font-weight: 700; }
+.prueba__dato input { display: block; width: 100%; max-width: 24rem; min-height: 48px; margin-top: 0.35rem; padding: 0.5rem 0.8rem; font: inherit; font-weight: 400; color: var(--tinta); background: var(--superficie); border: 1px solid var(--linea); border-radius: var(--radio-s); }
+.prueba__dato input:focus-visible { outline: 2px solid var(--acento); outline-offset: 2px; }
+.prueba__inicio .nota { margin-top: 1.25rem; }
+.prueba__opcion--discreta { background: transparent; font-size: 0.95rem; }
 
 /* ---- Impresión ---------------------------------------------------------- */
 

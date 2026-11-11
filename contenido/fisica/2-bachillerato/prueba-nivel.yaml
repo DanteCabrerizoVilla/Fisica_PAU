@@ -2,22 +2,34 @@
 # en clase. Por eso las preguntas no llevan explicación ni se muestra la
 # respuesta correcta.
 #
-# - La PRIMERA opción de cada pregunta es la correcta; la página las baraja.
-# - Las dos primeras preguntas de cada bloque forman la prueba rápida.
-# - `mide` es lo que aparece en el resultado y en el mensaje que recibe Dante.
+# - Hay 30 preguntas (6 por bloque). Cada una tiene varias VARIANTES de la
+#   misma idea y dificultad: a cada alumno le sale una al azar, de modo que
+#   dos compañeros no hacen la misma prueba.
+# - La PRIMERA opción de cada variante es la correcta; la página las baraja.
+# - `mide` es lo que aparece en el resultado y en el informe que recibe Dante.
 # - prueba-nivel.py comprueba con cálculo las respuestas marcadas como correctas.
 #
-# [REVISAR] Textos de presentación y de resultado: provisionales.
+# [REVISAR] Textos de presentación, de privacidad y de resultado: provisionales.
 
 titulo: "Prueba de nivel"
-entrada: "Descubre en unos minutos qué partes de la Física de la PAU llevas bien y cuáles te están costando puntos."
+entrada: "Descubre en media hora qué partes de la Física de la PAU llevas bien y cuáles te están costando puntos."
 instrucciones: >-
-  Son preguntas de una sola respuesta, sin calculadora. Si no sabes una, marca
-  «No lo sé»: acertar por suerte solo te da un resultado que no es el tuyo.
+  Son 30 preguntas de una sola respuesta, sin calculadora. Si no sabes una,
+  marca «No lo sé»: acertar por suerte solo te da un resultado que no es el tuyo.
+# Texto informativo sobre los datos. [REVISAR] Debe incluir quién es el
+# responsable (nombre y contacto) y cómo pedir la baja o el borrado.
+privacidad: >-
+  Tu correo y tu resultado se envían a Dante, el profesor que mantiene esta
+  web, para que pueda ver en qué fallas. Puedes pedir que se borren tus datos
+  en cualquier momento escribiéndole.
+consentimiento: "Quiero recibir por correo material de estudio e información sobre las clases."
 resultado: >-
   Aquí tienes en qué fallas. El porqué de cada fallo, y cómo dejar de cometerlo,
   es lo que se trabaja en clase.
-mensaje_final: "¿Podemos ver una primera clase para trabajar lo que me falla?"
+llamada_titulo: "¿Crees que necesitas clases?"
+llamada_texto: >-
+  Ponte en contacto conmigo. Ya tengo tu resultado, así que la primera clase
+  va directa a lo que te cuesta.
 
 preguntas:
   # ---- Gravitación ----------------------------------------------------------
@@ -25,332 +37,722 @@ preguntas:
     bloque: gravitacion
     subtema: satelites
     mide: "Velocidad orbital y radio de la órbita"
-    enunciado: 'Un satélite pasa de una órbita circular de radio $r$ a otra de radio $4r$ alrededor del mismo planeta. Su velocidad orbital…'
-    opciones:
-      - 'se reduce a la mitad.'
-      - 'se reduce a la cuarta parte.'
-      - 'se duplica.'
-      - 'no cambia.'
+    variantes:
+      - enunciado: 'Un satélite pasa de una órbita circular de radio $r$ a otra de radio $4r$ alrededor del mismo planeta. Su velocidad orbital…'
+        opciones:
+          - 'se reduce a la mitad.'
+          - 'se reduce a la cuarta parte.'
+          - 'se duplica.'
+          - 'no cambia.'
+      - enunciado: 'Dos satélites describen órbitas circulares alrededor de la Tierra: el satélite A, de radio $r$, y el satélite B, de radio $9r$. La velocidad de B es…'
+        opciones:
+          - 'la tercera parte de la de A.'
+          - 'la novena parte de la de A.'
+          - 'el triple de la de A.'
+          - 'igual a la de A.'
+      - enunciado: 'Un satélite describe una órbita circular. Para que su velocidad orbital fuera el doble, el radio de la órbita tendría que ser…'
+        opciones:
+          - 'la cuarta parte.'
+          - 'la mitad.'
+          - 'el doble.'
+          - 'el cuádruple.'
 
   - id: grav-2
     bloque: gravitacion
     subtema: energia
-    mide: "Energía mecánica de un satélite en órbita"
-    enunciado: 'Un satélite de masa $m$ describe una órbita circular de radio $r$ alrededor de un planeta de masa $M$. Su energía mecánica es…'
-    opciones:
-      - '$-\dfrac{G M m}{2r}$'
-      - '$-\dfrac{G M m}{r}$'
-      - '$+\dfrac{G M m}{2r}$'
-      - 'nula, porque la órbita es estable.'
+    mide: "Energía de un satélite en órbita"
+    variantes:
+      - enunciado: 'Un satélite de masa $m$ describe una órbita circular de radio $r$ alrededor de un planeta de masa $M$. Su energía mecánica es…'
+        opciones:
+          - '$-\dfrac{G M m}{2r}$'
+          - '$-\dfrac{G M m}{r}$'
+          - '$+\dfrac{G M m}{2r}$'
+          - 'nula, porque la órbita es estable.'
+      - enunciado: 'Un satélite en órbita circular tiene una energía cinética $E_c$. Su energía potencial gravitatoria es…'
+        opciones:
+          - '$-2E_c$'
+          - '$-E_c$'
+          - '$-E_c/2$'
+          - '$+2E_c$'
+      - enunciado: 'Un satélite en órbita circular tiene una energía mecánica $E$, que es negativa. Su energía cinética es…'
+        opciones:
+          - '$-E$'
+          - '$-2E$'
+          - '$-E/2$'
+          - '$E$'
 
   - id: grav-3
     bloque: gravitacion
     subtema: campo-potencial
-    mide: "Cómo cambia el campo gravitatorio con la altura"
-    enunciado: 'En la superficie de la Tierra la gravedad vale $g_0$. A una altura sobre la superficie igual al radio de la Tierra vale…'
-    opciones:
-      - '$g_0/4$'
-      - '$g_0/2$'
-      - '$g_0/\sqrt{2}$'
-      - '$g_0/8$'
+    mide: "Cómo cambia el campo gravitatorio con la distancia"
+    variantes:
+      - enunciado: 'En la superficie de la Tierra la gravedad vale $g_0$. A una altura sobre la superficie igual al radio de la Tierra vale…'
+        opciones:
+          - '$g_0/4$'
+          - '$g_0/2$'
+          - '$g_0/\sqrt{2}$'
+          - '$g_0/8$'
+      - enunciado: 'Un planeta tiene la misma masa que la Tierra y el doble de radio. Si en la superficie de la Tierra la gravedad vale $g_0$, en la superficie de ese planeta vale…'
+        opciones:
+          - '$g_0/4$'
+          - '$g_0/2$'
+          - '$2g_0$'
+          - '$4g_0$'
+      - enunciado: 'En la superficie de la Tierra la gravedad vale $g_0$. A una altura sobre la superficie igual al doble del radio de la Tierra vale…'
+        opciones:
+          - '$g_0/9$'
+          - '$g_0/4$'
+          - '$g_0/3$'
+          - '$g_0/2$'
 
   - id: grav-4
     bloque: gravitacion
     subtema: kepler
     mide: "Tercera ley de Kepler"
-    enunciado: 'Dos satélites describen órbitas circulares de radios $r$ y $4r$ alrededor del mismo planeta. Si el periodo del primero es $T$, el del segundo es…'
-    opciones:
-      - '$8T$'
-      - '$4T$'
-      - '$2T$'
-      - '$16T$'
+    variantes:
+      - enunciado: 'Dos satélites describen órbitas circulares de radios $r$ y $4r$ alrededor del mismo planeta. Si el periodo del primero es $T$, el del segundo es…'
+        opciones:
+          - '$8T$'
+          - '$4T$'
+          - '$2T$'
+          - '$16T$'
+      - enunciado: 'Un satélite describe una órbita circular de radio $r$ con periodo $T$. Otro satélite del mismo planeta tiene un periodo $8T$. El radio de su órbita es…'
+        opciones:
+          - '$4r$'
+          - '$8r$'
+          - '$2r$'
+          - '$64r$'
+      - enunciado: 'Dos planetas giran alrededor de la misma estrella en órbitas circulares de radios $r$ y $9r$. Si el periodo del primero es $T$, el del segundo es…'
+        opciones:
+          - '$27T$'
+          - '$9T$'
+          - '$3T$'
+          - '$81T$'
 
   - id: grav-5
     bloque: gravitacion
     subtema: energia
     mide: "Velocidad de escape"
-    enunciado: 'La velocidad de escape desde la superficie de un planeta…'
-    opciones:
-      - 'no depende de la masa del objeto que se lanza.'
-      - 'es mayor cuanto mayor es la masa del objeto que se lanza.'
-      - 'es menor cuanto mayor es la masa del objeto que se lanza.'
-      - 'coincide con la velocidad de un satélite en órbita a ras de la superficie.'
+    variantes:
+      - enunciado: 'La velocidad de escape desde la superficie de un planeta…'
+        opciones:
+          - 'no depende de la masa del objeto que se lanza.'
+          - 'es mayor cuanto mayor es la masa del objeto que se lanza.'
+          - 'es menor cuanto mayor es la masa del objeto que se lanza.'
+          - 'coincide con la velocidad de un satélite en órbita a ras de la superficie.'
+      - enunciado: 'Dos planetas tienen el mismo radio, pero la masa del segundo es cuatro veces la del primero. La velocidad de escape del segundo es…'
+        opciones:
+          - 'el doble que la del primero.'
+          - 'cuatro veces la del primero.'
+          - 'la mitad que la del primero.'
+          - 'igual que la del primero.'
+      - enunciado: 'Se lanza un objeto desde la superficie de un planeta exactamente con la velocidad de escape. Su energía mecánica es…'
+        opciones:
+          - 'nula.'
+          - 'positiva.'
+          - 'negativa.'
+          - 'igual a su energía cinética inicial.'
 
   - id: grav-6
     bloque: gravitacion
     subtema: kepler
     mide: "Momento angular en una órbita elíptica"
-    enunciado: 'Un cometa describe una órbita elíptica alrededor del Sol. En el perihelio está a una distancia $r_p$ y lleva una velocidad $v_p$. En el afelio, a una distancia $3r_p$, su velocidad es…'
-    opciones:
-      - '$v_p/3$'
-      - '$v_p/\sqrt{3}$'
-      - '$v_p/9$'
-      - '$v_p$, porque la energía se conserva.'
+    variantes:
+      - enunciado: 'Un cometa describe una órbita elíptica alrededor del Sol. En el perihelio está a una distancia $r_p$ y lleva una velocidad $v_p$. En el afelio, a una distancia $3r_p$, su velocidad es…'
+        opciones:
+          - '$v_p/3$'
+          - '$v_p/\sqrt{3}$'
+          - '$v_p/9$'
+          - '$v_p$, porque la energía se conserva.'
+      - enunciado: 'Un planeta describe una órbita elíptica alrededor de su estrella. Su velocidad es…'
+        opciones:
+          - 'máxima en el punto más cercano a la estrella y mínima en el más lejano.'
+          - 'máxima en el punto más lejano de la estrella y mínima en el más cercano.'
+          - 'la misma en todos los puntos de la órbita.'
+          - 'máxima en los dos puntos extremos y mínima entre ellos.'
+      - enunciado: 'Un satélite en órbita elíptica lleva en el apogeo la mitad de la velocidad que en el perigeo. Si en el perigeo está a una distancia $r_p$ del centro del planeta, en el apogeo está a…'
+        opciones:
+          - '$2r_p$'
+          - '$4r_p$'
+          - '$\sqrt{2}\,r_p$'
+          - '$r_p/2$'
 
   # ---- Electromagnetismo ----------------------------------------------------
   - id: elec-1
     bloque: electromagnetismo
     subtema: campo-electrico
     mide: "Campo y potencial de dos cargas"
-    enunciado: 'Dos cargas iguales y positivas están separadas una distancia $d$. En el punto medio del segmento que las une…'
-    opciones:
-      - 'el campo eléctrico es nulo y el potencial no.'
-      - 'el campo eléctrico y el potencial son nulos.'
-      - 'el potencial es nulo y el campo eléctrico no.'
-      - 'ni el campo eléctrico ni el potencial son nulos.'
+    variantes:
+      - enunciado: 'Dos cargas iguales y positivas están separadas una distancia $d$. En el punto medio del segmento que las une…'
+        opciones:
+          - 'el campo eléctrico es nulo y el potencial no.'
+          - 'el campo eléctrico y el potencial son nulos.'
+          - 'el potencial es nulo y el campo eléctrico no.'
+          - 'ni el campo eléctrico ni el potencial son nulos.'
+      - enunciado: 'Dos cargas del mismo valor y signos opuestos, $+q$ y $-q$, están separadas una distancia $d$. En el punto medio del segmento que las une…'
+        opciones:
+          - 'el potencial es nulo y el campo eléctrico no.'
+          - 'el campo eléctrico es nulo y el potencial no.'
+          - 'el campo eléctrico y el potencial son nulos.'
+          - 'ni el campo eléctrico ni el potencial son nulos.'
+      - enunciado: 'Dos cargas positivas, $q$ y $4q$, están separadas una distancia $d$. El punto del segmento que las une donde el campo eléctrico es nulo está…'
+        opciones:
+          - 'a una distancia $d/3$ de la carga $q$.'
+          - 'a una distancia $d/3$ de la carga $4q$.'
+          - 'en el punto medio.'
+          - 'a una distancia $d/5$ de la carga $q$.'
 
   - id: elec-2
     bloque: electromagnetismo
     subtema: lorentz
     mide: "Movimiento de una carga en un campo magnético"
-    enunciado: 'Un protón entra en un campo magnético uniforme con velocidad perpendicular al campo. Mientras se mueve dentro del campo…'
-    opciones:
-      - 'cambia la dirección de su velocidad, pero no su energía cinética.'
-      - 'aumenta su energía cinética.'
-      - 'sigue en línea recta con velocidad constante.'
-      - 'se va frenando hasta detenerse.'
+    variantes:
+      - enunciado: 'Un protón entra en un campo magnético uniforme con velocidad perpendicular al campo. Mientras se mueve dentro del campo…'
+        opciones:
+          - 'cambia la dirección de su velocidad, pero no su energía cinética.'
+          - 'aumenta su energía cinética.'
+          - 'sigue en línea recta con velocidad constante.'
+          - 'se va frenando hasta detenerse.'
+      - enunciado: 'Un electrón se mueve en un campo magnético uniforme con velocidad paralela al campo. El electrón…'
+        opciones:
+          - 'sigue en línea recta con velocidad constante.'
+          - 'describe una circunferencia.'
+          - 'describe una hélice.'
+          - 'se va frenando hasta detenerse.'
+      - enunciado: 'El trabajo que realiza la fuerza magnética sobre una carga que se mueve en un campo magnético uniforme es…'
+        opciones:
+          - 'siempre nulo, porque la fuerza es perpendicular a la velocidad.'
+          - 'positivo, porque la carga describe una circunferencia.'
+          - 'nulo solo si la carga se mueve en línea recta.'
+          - 'proporcional al radio de la trayectoria.'
 
   - id: elec-3
     bloque: electromagnetismo
     subtema: potencial-electrico
-    mide: "Potencial, energía potencial y sentido del movimiento"
-    enunciado: 'Se deja en reposo una carga positiva en una región donde hay un campo eléctrico. La carga se mueve hacia…'
-    opciones:
-      - 'potenciales decrecientes, y su energía potencial disminuye.'
-      - 'potenciales crecientes, y su energía potencial disminuye.'
-      - 'potenciales decrecientes, y su energía potencial aumenta.'
-      - 'potenciales crecientes, y su energía potencial aumenta.'
+    mide: "Potencial, energía potencial y trabajo"
+    variantes:
+      - enunciado: 'Se deja en reposo una carga positiva en una región donde hay un campo eléctrico. La carga se mueve hacia…'
+        opciones:
+          - 'potenciales decrecientes, y su energía potencial disminuye.'
+          - 'potenciales crecientes, y su energía potencial disminuye.'
+          - 'potenciales decrecientes, y su energía potencial aumenta.'
+          - 'potenciales crecientes, y su energía potencial aumenta.'
+      - enunciado: 'Se deja en reposo un electrón en una región donde hay un campo eléctrico. El electrón se mueve hacia…'
+        opciones:
+          - 'potenciales crecientes, y su energía potencial disminuye.'
+          - 'potenciales decrecientes, y su energía potencial disminuye.'
+          - 'potenciales crecientes, y su energía potencial aumenta.'
+          - 'potenciales decrecientes, y su energía potencial aumenta.'
+      - enunciado: 'Una carga se desplaza entre dos puntos de una misma superficie equipotencial. El trabajo que realiza el campo eléctrico es…'
+        opciones:
+          - 'nulo, sea cual sea el camino.'
+          - 'nulo solo si el camino es recto.'
+          - 'positivo si la carga es positiva.'
+          - 'proporcional a la distancia recorrida.'
 
   - id: elec-4
     bloque: electromagnetismo
     subtema: lorentz
-    mide: "Radio y sentido de giro en un campo magnético"
-    enunciado: 'Un electrón y un protón entran con la misma velocidad, perpendicular al campo, en una región con un campo magnético uniforme. Entonces…'
-    opciones:
-      - 'el protón describe una circunferencia de radio mayor y giran en sentidos contrarios.'
-      - 'describen circunferencias del mismo radio y giran en sentidos contrarios.'
-      - 'el protón describe una circunferencia de radio mayor y giran en el mismo sentido.'
-      - 'el electrón describe una circunferencia de radio mayor y giran en sentidos contrarios.'
+    mide: "Radio, periodo y sentido de giro en un campo magnético"
+    variantes:
+      - enunciado: 'Un electrón y un protón entran con la misma velocidad, perpendicular al campo, en una región con un campo magnético uniforme. Entonces…'
+        opciones:
+          - 'el protón describe una circunferencia de radio mayor y giran en sentidos contrarios.'
+          - 'describen circunferencias del mismo radio y giran en sentidos contrarios.'
+          - 'el protón describe una circunferencia de radio mayor y giran en el mismo sentido.'
+          - 'el electrón describe una circunferencia de radio mayor y giran en sentidos contrarios.'
+      - enunciado: 'Una partícula cargada describe una circunferencia en un campo magnético uniforme. Si su velocidad se duplica…'
+        opciones:
+          - 'el radio se duplica y el periodo no cambia.'
+          - 'el radio y el periodo se duplican.'
+          - 'el radio no cambia y el periodo se reduce a la mitad.'
+          - 'el radio se duplica y el periodo se reduce a la mitad.'
+      - enunciado: 'Un protón y una partícula alfa (el doble de carga y cuatro veces más masa) entran con la misma velocidad, perpendicular al campo, en un campo magnético uniforme. El radio de la trayectoria de la partícula alfa es…'
+        opciones:
+          - 'el doble que el del protón.'
+          - 'la mitad que el del protón.'
+          - 'cuatro veces el del protón.'
+          - 'igual que el del protón.'
 
   - id: elec-5
     bloque: electromagnetismo
     subtema: campo-magnetico
-    mide: "Fuerza entre hilos paralelos"
-    enunciado: 'Dos hilos rectos, largos y paralelos transportan corrientes del mismo sentido. Si la distancia entre ellos se duplica…'
-    opciones:
-      - 'siguen atrayéndose y la fuerza se reduce a la mitad.'
-      - 'siguen atrayéndose y la fuerza se reduce a la cuarta parte.'
-      - 'siguen repeliéndose y la fuerza se reduce a la mitad.'
-      - 'siguen repeliéndose y la fuerza se reduce a la cuarta parte.'
+    mide: "Campo y fuerza entre hilos paralelos"
+    variantes:
+      - enunciado: 'Dos hilos rectos, largos y paralelos transportan corrientes del mismo sentido. Si la distancia entre ellos se duplica…'
+        opciones:
+          - 'siguen atrayéndose y la fuerza se reduce a la mitad.'
+          - 'siguen atrayéndose y la fuerza se reduce a la cuarta parte.'
+          - 'siguen repeliéndose y la fuerza se reduce a la mitad.'
+          - 'siguen repeliéndose y la fuerza se reduce a la cuarta parte.'
+      - enunciado: 'Dos hilos rectos, largos y paralelos transportan corrientes de sentidos contrarios. Si se duplica la intensidad de uno de ellos…'
+        opciones:
+          - 'siguen repeliéndose y la fuerza se duplica.'
+          - 'siguen atrayéndose y la fuerza se duplica.'
+          - 'siguen repeliéndose y la fuerza se cuadruplica.'
+          - 'siguen atrayéndose y la fuerza se cuadruplica.'
+      - enunciado: 'Dos hilos rectos, largos y paralelos transportan la misma intensidad en el mismo sentido. En el punto medio entre los dos hilos, el campo magnético total es…'
+        opciones:
+          - 'nulo.'
+          - 'el doble del que crea un solo hilo.'
+          - 'igual al que crea un solo hilo.'
+          - 'la mitad del que crea un solo hilo.'
 
   - id: elec-6
     bloque: electromagnetismo
     subtema: induccion
-    mide: "Cuándo hay fem inducida"
-    enunciado: 'Una espira está en reposo, perpendicular a un campo magnético uniforme, constante y muy intenso. La fuerza electromotriz inducida en la espira es…'
-    opciones:
-      - 'nula, porque el flujo magnético no cambia.'
-      - 'máxima, porque el flujo magnético es máximo.'
-      - 'proporcional al valor del campo magnético.'
-      - 'proporcional a la superficie de la espira.'
+    mide: "Inducción: cuándo hay fem y qué sentido tiene"
+    variantes:
+      - enunciado: 'Una espira está en reposo, perpendicular a un campo magnético uniforme, constante y muy intenso. La fuerza electromotriz inducida en la espira es…'
+        opciones:
+          - 'nula, porque el flujo magnético no cambia.'
+          - 'máxima, porque el flujo magnético es máximo.'
+          - 'proporcional al valor del campo magnético.'
+          - 'proporcional a la superficie de la espira.'
+      - enunciado: 'Una espira gira con velocidad angular constante en un campo magnético uniforme. La fuerza electromotriz inducida es máxima en los instantes en que…'
+        opciones:
+          - 'el flujo magnético a través de la espira es nulo.'
+          - 'el flujo magnético a través de la espira es máximo.'
+          - 'el plano de la espira es perpendicular al campo.'
+          - 'la espira completa una vuelta.'
+      - enunciado: 'Se acerca el polo norte de un imán a una espira. La corriente inducida en la espira crea un campo magnético que…'
+        opciones:
+          - 'se opone al aumento del flujo: la espira repele al imán.'
+          - 'refuerza el aumento del flujo: la espira atrae al imán.'
+          - 'tiene siempre el mismo sentido que el campo del imán.'
+          - 'es nulo mientras el imán se mueve.'
 
   # ---- Ondas ------------------------------------------------------------------
   - id: onda-1
     bloque: ondas
     subtema: onda-armonica
     mide: "Leer la ecuación de una onda"
-    enunciado: 'Una onda se describe con $y(x,t) = 0{,}02\,\operatorname{sen}(10\pi t - 4\pi x)$, en unidades del SI. La onda se propaga…'
-    opciones:
-      - 'a 2,5 m/s hacia las $x$ positivas.'
-      - 'a 2,5 m/s hacia las $x$ negativas.'
-      - 'a 0,4 m/s hacia las $x$ positivas.'
-      - 'a 0,63 m/s hacia las $x$ positivas.'
+    variantes:
+      - enunciado: 'Una onda se describe con $y(x,t) = 0{,}02\,\operatorname{sen}(10\pi t - 4\pi x)$, en unidades del SI. La onda se propaga…'
+        opciones:
+          - 'a 2,5 m/s hacia las $x$ positivas.'
+          - 'a 2,5 m/s hacia las $x$ negativas.'
+          - 'a 0,4 m/s hacia las $x$ positivas.'
+          - 'a 0,63 m/s hacia las $x$ positivas.'
+      - enunciado: 'Una onda se describe con $y(x,t) = 0{,}05\,\operatorname{sen}(6\pi t + 2\pi x)$, en unidades del SI. La onda se propaga…'
+        opciones:
+          - 'a 3 m/s hacia las $x$ negativas.'
+          - 'a 3 m/s hacia las $x$ positivas.'
+          - 'a 0,33 m/s hacia las $x$ negativas.'
+          - 'a 0,94 m/s hacia las $x$ negativas.'
+      - enunciado: 'Una onda se describe con $y(x,t) = 0{,}1\,\operatorname{sen}(4\pi t - \pi x)$, en unidades del SI. Su longitud de onda y su periodo son…'
+        opciones:
+          - '2 m y 0,5 s.'
+          - '1 m y 0,25 s.'
+          - '0,5 m y 2 s.'
+          - '$\pi$ m y $4\pi$ s.'
 
   - id: onda-2
     bloque: ondas
     subtema: sonido
     mide: "Nivel de intensidad sonora (decibelios)"
-    enunciado: 'Un altavoz produce en un punto un nivel de intensidad sonora de 60 dB. Diez altavoces iguales, colocados en el mismo sitio, producen en ese punto…'
-    opciones:
-      - '70 dB'
-      - '600 dB'
-      - '120 dB'
-      - '63 dB'
+    variantes:
+      - enunciado: 'Un altavoz produce en un punto un nivel de intensidad sonora de 60 dB. Diez altavoces iguales, colocados en el mismo sitio, producen en ese punto…'
+        opciones:
+          - '70 dB'
+          - '600 dB'
+          - '120 dB'
+          - '63 dB'
+      - enunciado: 'A cierta distancia de un foco sonoro el nivel de intensidad es de 80 dB. En un punto donde la intensidad es cien veces menor, el nivel es de…'
+        opciones:
+          - '60 dB'
+          - '0,8 dB'
+          - '40 dB'
+          - '78 dB'
+      - enunciado: 'Una máquina produce en un punto un nivel de intensidad sonora de 70 dB. Cien máquinas iguales, funcionando en el mismo sitio, producen en ese punto…'
+        opciones:
+          - '90 dB'
+          - '140 dB'
+          - '170 dB'
+          - '72 dB'
 
   - id: onda-3
     bloque: ondas
     subtema: mas
     mide: "Velocidad y aceleración en el movimiento armónico"
-    enunciado: 'Una partícula describe un movimiento armónico simple. Cuando pasa por la posición de equilibrio…'
-    opciones:
-      - 'su velocidad es máxima y su aceleración es nula.'
-      - 'su velocidad y su aceleración son máximas.'
-      - 'su velocidad es nula y su aceleración es máxima.'
-      - 'su velocidad y su aceleración son nulas.'
+    variantes:
+      - enunciado: 'Una partícula describe un movimiento armónico simple. Cuando pasa por la posición de equilibrio…'
+        opciones:
+          - 'su velocidad es máxima y su aceleración es nula.'
+          - 'su velocidad y su aceleración son máximas.'
+          - 'su velocidad es nula y su aceleración es máxima.'
+          - 'su velocidad y su aceleración son nulas.'
+      - enunciado: 'Una partícula describe un movimiento armónico simple. En los extremos de la oscilación…'
+        opciones:
+          - 'su velocidad es nula y su aceleración es máxima.'
+          - 'su velocidad es máxima y su aceleración es nula.'
+          - 'su velocidad y su aceleración son máximas.'
+          - 'su velocidad y su aceleración son nulas.'
+      - enunciado: 'En un movimiento armónico simple, la aceleración de la partícula es…'
+        opciones:
+          - 'proporcional a la elongación y de sentido contrario.'
+          - 'proporcional a la elongación y del mismo sentido.'
+          - 'constante.'
+          - 'proporcional a la velocidad y de sentido contrario.'
 
   - id: onda-4
     bloque: ondas
     subtema: energia-intensidad
     mide: "Intensidad de una onda y distancia al foco"
-    enunciado: 'Un foco puntual emite ondas por igual en todas las direcciones. A 2 m del foco la intensidad es $I$. A 6 m es…'
-    opciones:
-      - '$I/9$'
-      - '$I/3$'
-      - '$I/6$'
-      - '$I/36$'
+    variantes:
+      - enunciado: 'Un foco puntual emite ondas por igual en todas las direcciones. A 2 m del foco la intensidad es $I$. A 6 m es…'
+        opciones:
+          - '$I/9$'
+          - '$I/3$'
+          - '$I/6$'
+          - '$I/36$'
+      - enunciado: 'Un foco puntual emite ondas por igual en todas las direcciones. A 10 m del foco la intensidad es $I$. La intensidad vale $4I$ a una distancia de…'
+        opciones:
+          - '5 m'
+          - '2,5 m'
+          - '20 m'
+          - '40 m'
+      - enunciado: 'Un foco puntual emite ondas por igual en todas las direcciones. Si la potencia del foco se duplica y nos alejamos al doble de distancia, la intensidad que recibimos…'
+        opciones:
+          - 'se reduce a la mitad.'
+          - 'no cambia.'
+          - 'se reduce a la cuarta parte.'
+          - 'se duplica.'
 
   - id: onda-5
     bloque: ondas
     subtema: onda-armonica
     mide: "Diferencia de fase entre dos puntos"
-    enunciado: 'Dos puntos de una onda armónica están separados media longitud de onda. Esos dos puntos…'
-    opciones:
-      - 'oscilan en oposición de fase.'
-      - 'oscilan en fase.'
-      - 'oscilan con un desfase de $\pi/2$.'
-      - 'tienen un desfase que depende del instante.'
+    variantes:
+      - enunciado: 'Dos puntos de una onda armónica están separados media longitud de onda. Esos dos puntos…'
+        opciones:
+          - 'oscilan en oposición de fase.'
+          - 'oscilan en fase.'
+          - 'oscilan con un desfase de $\pi/2$.'
+          - 'tienen un desfase que depende del instante.'
+      - enunciado: 'Dos puntos de una onda armónica están separados una longitud de onda y media. Esos dos puntos…'
+        opciones:
+          - 'oscilan en oposición de fase.'
+          - 'oscilan en fase.'
+          - 'oscilan con un desfase de $\pi/2$.'
+          - 'tienen un desfase que depende del instante.'
+      - enunciado: 'Una onda armónica tiene una longitud de onda de 4 m. La diferencia de fase entre dos puntos separados 1 m es…'
+        opciones:
+          - '$\pi/2$ rad'
+          - '$\pi$ rad'
+          - '$\pi/4$ rad'
+          - '$2\pi$ rad'
 
   - id: onda-6
     bloque: ondas
     subtema: interferencia
-    mide: "Ondas estacionarias en una cuerda"
-    enunciado: 'Una cuerda de longitud $L$, fija por los dos extremos, vibra en su modo fundamental. La longitud de onda es…'
-    opciones:
-      - '$2L$'
-      - '$L$'
-      - '$L/2$'
-      - '$4L$'
+    mide: "Ondas estacionarias"
+    variantes:
+      - enunciado: 'Una cuerda de longitud $L$, fija por los dos extremos, vibra en su modo fundamental. La longitud de onda es…'
+        opciones:
+          - '$2L$'
+          - '$L$'
+          - '$L/2$'
+          - '$4L$'
+      - enunciado: 'En una onda estacionaria, la distancia entre dos nodos consecutivos es…'
+        opciones:
+          - 'media longitud de onda.'
+          - 'una longitud de onda.'
+          - 'un cuarto de longitud de onda.'
+          - 'dos longitudes de onda.'
+      - enunciado: 'Una cuerda de longitud $L$, fija por los dos extremos, vibra en su segundo armónico. La longitud de onda es…'
+        opciones:
+          - '$L$'
+          - '$2L$'
+          - '$L/2$'
+          - '$L/4$'
 
   # ---- Óptica -----------------------------------------------------------------
   - id: opt-1
     bloque: optica
     subtema: refraccion
     mide: "Qué cambia en la luz al cambiar de medio"
-    enunciado: 'Un rayo de luz pasa del aire al vidrio. Al entrar en el vidrio…'
-    opciones:
-      - 'su frecuencia no cambia; su velocidad y su longitud de onda disminuyen.'
-      - 'su frecuencia y su velocidad disminuyen; su longitud de onda no cambia.'
-      - 'su frecuencia aumenta y su longitud de onda disminuye; su velocidad no cambia.'
-      - 'solo cambia su dirección.'
+    variantes:
+      - enunciado: 'Un rayo de luz pasa del aire al vidrio. Al entrar en el vidrio…'
+        opciones:
+          - 'su frecuencia no cambia; su velocidad y su longitud de onda disminuyen.'
+          - 'su frecuencia y su velocidad disminuyen; su longitud de onda no cambia.'
+          - 'su frecuencia aumenta y su longitud de onda disminuye; su velocidad no cambia.'
+          - 'solo cambia su dirección.'
+      - enunciado: 'Una luz tiene en el vacío una longitud de onda de 600 nm. Dentro de un vidrio de índice de refracción 1,5 su longitud de onda es de…'
+        opciones:
+          - '400 nm'
+          - '900 nm'
+          - '600 nm'
+          - '450 nm'
+      - enunciado: 'Un rayo de luz pasa del agua al aire con un ángulo de incidencia menor que el ángulo límite. El rayo refractado…'
+        opciones:
+          - 'se aleja de la normal y la luz se propaga más rápido.'
+          - 'se acerca a la normal y la luz se propaga más rápido.'
+          - 'se aleja de la normal y la luz se propaga más despacio.'
+          - 'se acerca a la normal y la luz se propaga más despacio.'
 
   - id: opt-2
     bloque: optica
     subtema: lentes
     mide: "Imagen formada por una lente convergente"
-    enunciado: 'Se coloca un objeto 30 cm por delante de una lente convergente de 10 cm de distancia focal. La imagen es…'
-    opciones:
-      - 'real, invertida y menor, a 15 cm de la lente.'
-      - 'real, invertida y mayor, a 15 cm de la lente.'
-      - 'virtual, derecha y mayor, a 15 cm de la lente.'
-      - 'real, invertida y del mismo tamaño, a 30 cm de la lente.'
+    variantes:
+      - enunciado: 'Se coloca un objeto 30 cm por delante de una lente convergente de 10 cm de distancia focal. La imagen es…'
+        opciones:
+          - 'real, invertida y menor, a 15 cm de la lente.'
+          - 'real, invertida y mayor, a 15 cm de la lente.'
+          - 'virtual, derecha y mayor, a 15 cm de la lente.'
+          - 'real, invertida y del mismo tamaño, a 30 cm de la lente.'
+      - enunciado: 'Se coloca un objeto 20 cm por delante de una lente convergente de 10 cm de distancia focal. La imagen es…'
+        opciones:
+          - 'real, invertida y del mismo tamaño, a 20 cm de la lente.'
+          - 'real, invertida y mayor, a 20 cm de la lente.'
+          - 'real, invertida y menor, a 10 cm de la lente.'
+          - 'virtual, derecha y del mismo tamaño, a 20 cm de la lente.'
+      - enunciado: 'Se coloca un objeto 15 cm por delante de una lente convergente de 10 cm de distancia focal. La imagen es…'
+        opciones:
+          - 'real, invertida y mayor, a 30 cm de la lente.'
+          - 'real, invertida y menor, a 30 cm de la lente.'
+          - 'virtual, derecha y mayor, a 30 cm de la lente.'
+          - 'real, invertida y mayor, a 6 cm de la lente.'
 
   - id: opt-3
     bloque: optica
     subtema: refraccion
     mide: "Reflexión total y ángulo límite"
-    enunciado: 'La reflexión total puede producirse…'
-    opciones:
-      - 'solo cuando la luz pasa a un medio de índice de refracción menor.'
-      - 'solo cuando la luz pasa a un medio de índice de refracción mayor.'
-      - 'en cualquier cambio de medio, si el ángulo de incidencia es lo bastante grande.'
-      - 'solo cuando la luz incide perpendicularmente a la superficie.'
+    variantes:
+      - enunciado: 'La reflexión total puede producirse…'
+        opciones:
+          - 'solo cuando la luz pasa a un medio de índice de refracción menor.'
+          - 'solo cuando la luz pasa a un medio de índice de refracción mayor.'
+          - 'en cualquier cambio de medio, si el ángulo de incidencia es lo bastante grande.'
+          - 'solo cuando la luz incide perpendicularmente a la superficie.'
+      - enunciado: 'Un rayo de luz viaja por un vidrio de índice de refracción 2 y llega a la superficie que lo separa del aire. El ángulo límite es de…'
+        opciones:
+          - '30°'
+          - '60°'
+          - '45°'
+          - '90°'
+      - enunciado: 'Un rayo de luz que viaja por el agua llega a la superficie que la separa del aire con un ángulo de incidencia mayor que el ángulo límite. Entonces…'
+        opciones:
+          - 'toda la luz se refleja y nada pasa al aire.'
+          - 'toda la luz pasa al aire, rozando la superficie.'
+          - 'la luz pasa al aire acercándose a la normal.'
+          - 'la luz pasa al aire sin desviarse.'
 
   - id: opt-4
     bloque: optica
     subtema: lentes
-    mide: "Objeto entre el foco y la lente (lupa)"
-    enunciado: 'Se coloca un objeto entre el foco y una lente convergente. La imagen es…'
-    opciones:
-      - 'virtual, derecha y mayor.'
-      - 'real, invertida y mayor.'
-      - 'virtual, derecha y menor.'
-      - 'real, derecha y mayor.'
+    mide: "Lentes: imágenes virtuales y casos especiales"
+    variantes:
+      - enunciado: 'Se coloca un objeto entre el foco y una lente convergente. La imagen es…'
+        opciones:
+          - 'virtual, derecha y mayor.'
+          - 'real, invertida y mayor.'
+          - 'virtual, derecha y menor.'
+          - 'real, derecha y mayor.'
+      - enunciado: 'La imagen de un objeto real formada por una lente divergente es…'
+        opciones:
+          - 'siempre virtual, derecha y menor.'
+          - 'siempre virtual, derecha y mayor.'
+          - 'siempre real, invertida y menor.'
+          - 'real o virtual según la distancia del objeto a la lente.'
+      - enunciado: 'Se coloca un objeto justo en el foco objeto de una lente convergente. Los rayos que salen de la lente…'
+        opciones:
+          - 'son paralelos entre sí: la imagen se forma en el infinito.'
+          - 'se cruzan en el foco imagen.'
+          - 'se cruzan en el centro de la lente.'
+          - 'se separan como si vinieran del foco imagen.'
 
   - id: opt-5
     bloque: optica
     subtema: espejos
-    mide: "Imagen en un espejo convexo"
-    enunciado: 'La imagen de un objeto real en un espejo convexo es…'
-    opciones:
-      - 'siempre virtual, derecha y menor.'
-      - 'siempre virtual, derecha y mayor.'
-      - 'siempre real, invertida y menor.'
-      - 'real o virtual según la distancia del objeto al espejo.'
+    mide: "Imagen en espejos esféricos"
+    variantes:
+      - enunciado: 'La imagen de un objeto real en un espejo convexo es…'
+        opciones:
+          - 'siempre virtual, derecha y menor.'
+          - 'siempre virtual, derecha y mayor.'
+          - 'siempre real, invertida y menor.'
+          - 'real o virtual según la distancia del objeto al espejo.'
+      - enunciado: 'Se coloca un objeto delante de un espejo cóncavo, entre el foco y el espejo. La imagen es…'
+        opciones:
+          - 'virtual, derecha y mayor.'
+          - 'real, invertida y mayor.'
+          - 'virtual, derecha y menor.'
+          - 'real, invertida y menor.'
+      - enunciado: 'Un espejo cóncavo tiene un radio de curvatura de 40 cm. Se coloca un objeto a 40 cm del espejo. La imagen es…'
+        opciones:
+          - 'real, invertida y del mismo tamaño.'
+          - 'real, invertida y menor.'
+          - 'virtual, derecha y del mismo tamaño.'
+          - 'real, invertida y mayor.'
 
   - id: opt-6
     bloque: optica
     subtema: instrumentos
-    mide: "Defectos de la visión y su corrección"
-    enunciado: 'Un ojo miope, sin corrección, forma la imagen de los objetos lejanos…'
-    opciones:
-      - 'delante de la retina, y se corrige con lentes divergentes.'
-      - 'detrás de la retina, y se corrige con lentes convergentes.'
-      - 'delante de la retina, y se corrige con lentes convergentes.'
-      - 'detrás de la retina, y se corrige con lentes divergentes.'
+    mide: "Defectos de la visión y potencia de una lente"
+    variantes:
+      - enunciado: 'Un ojo miope, sin corrección, forma la imagen de los objetos lejanos…'
+        opciones:
+          - 'delante de la retina, y se corrige con lentes divergentes.'
+          - 'detrás de la retina, y se corrige con lentes convergentes.'
+          - 'delante de la retina, y se corrige con lentes convergentes.'
+          - 'detrás de la retina, y se corrige con lentes divergentes.'
+      - enunciado: 'Un ojo hipermétrope, sin corrección, forma la imagen de los objetos cercanos…'
+        opciones:
+          - 'detrás de la retina, y se corrige con lentes convergentes.'
+          - 'delante de la retina, y se corrige con lentes divergentes.'
+          - 'detrás de la retina, y se corrige con lentes divergentes.'
+          - 'delante de la retina, y se corrige con lentes convergentes.'
+      - enunciado: 'Una lente tiene una potencia de $-2$ dioptrías. Se trata de una lente…'
+        opciones:
+          - 'divergente, de 50 cm de distancia focal.'
+          - 'convergente, de 50 cm de distancia focal.'
+          - 'divergente, de 2 m de distancia focal.'
+          - 'convergente, de 2 m de distancia focal.'
 
   # ---- Física moderna ---------------------------------------------------------
   - id: mod-1
     bloque: fisica-moderna
     subtema: fotoelectrico
     mide: "Efecto fotoeléctrico: intensidad frente a frecuencia"
-    enunciado: 'Una luz arranca electrones de un metal. Si se duplica la intensidad de la luz sin cambiar su frecuencia…'
-    opciones:
-      - 'se emiten más electrones, con la misma energía cinética máxima.'
-      - 'se emiten los mismos electrones, con el doble de energía cinética máxima.'
-      - 'se emiten más electrones y con más energía cinética máxima.'
-      - 'no cambia nada.'
+    variantes:
+      - enunciado: 'Una luz arranca electrones de un metal. Si se duplica la intensidad de la luz sin cambiar su frecuencia…'
+        opciones:
+          - 'se emiten más electrones, con la misma energía cinética máxima.'
+          - 'se emiten los mismos electrones, con el doble de energía cinética máxima.'
+          - 'se emiten más electrones y con más energía cinética máxima.'
+          - 'no cambia nada.'
+      - enunciado: 'Una luz arranca electrones de un metal. Si se aumenta la frecuencia de la luz sin cambiar el número de fotones que llegan cada segundo…'
+        opciones:
+          - 'se emiten los mismos electrones, con más energía cinética máxima.'
+          - 'se emiten más electrones, con la misma energía cinética máxima.'
+          - 'se emiten más electrones y con más energía cinética máxima.'
+          - 'no cambia nada.'
+      - enunciado: 'En el efecto fotoeléctrico, el potencial de frenado depende…'
+        opciones:
+          - 'de la frecuencia de la luz y del metal, pero no de la intensidad.'
+          - 'de la intensidad de la luz y del metal, pero no de la frecuencia.'
+          - 'de la intensidad y de la frecuencia de la luz, pero no del metal.'
+          - 'solo de la intensidad de la luz.'
 
   - id: mod-2
     bloque: fisica-moderna
     subtema: nuclear
     mide: "Periodo de semidesintegración"
-    enunciado: 'Un isótopo radiactivo tiene un periodo de semidesintegración de 8 días. Al cabo de 24 días queda sin desintegrar…'
-    opciones:
-      - 'la octava parte de la muestra.'
-      - 'la tercera parte de la muestra.'
-      - 'la sexta parte de la muestra.'
-      - 'nada: se ha desintegrado toda.'
+    variantes:
+      - enunciado: 'Un isótopo radiactivo tiene un periodo de semidesintegración de 8 días. Al cabo de 24 días queda sin desintegrar…'
+        opciones:
+          - 'la octava parte de la muestra.'
+          - 'la tercera parte de la muestra.'
+          - 'la sexta parte de la muestra.'
+          - 'nada: se ha desintegrado toda.'
+      - enunciado: 'Una muestra radiactiva tiene una actividad de 800 Bq y un periodo de semidesintegración de 5 años. Dentro de 15 años su actividad será de…'
+        opciones:
+          - '100 Bq'
+          - '267 Bq'
+          - '200 Bq'
+          - '0 Bq'
+      - enunciado: 'Al cabo de 20 días queda sin desintegrar la cuarta parte de una muestra radiactiva. Su periodo de semidesintegración es de…'
+        opciones:
+          - '10 días'
+          - '5 días'
+          - '20 días'
+          - '40 días'
 
   - id: mod-3
     bloque: fisica-moderna
     subtema: de-broglie
     mide: "Longitud de onda de De Broglie"
-    enunciado: 'Un electrón y un protón se mueven con la misma velocidad. La longitud de onda asociada…'
-    opciones:
-      - 'es mayor la del electrón.'
-      - 'es mayor la del protón.'
-      - 'es la misma para los dos.'
-      - 'solo existe para el electrón.'
+    variantes:
+      - enunciado: 'Un electrón y un protón se mueven con la misma velocidad. La longitud de onda asociada…'
+        opciones:
+          - 'es mayor la del electrón.'
+          - 'es mayor la del protón.'
+          - 'es la misma para los dos.'
+          - 'solo existe para el electrón.'
+      - enunciado: 'Si la velocidad de un electrón se duplica (sin llegar a velocidades relativistas), su longitud de onda de De Broglie…'
+        opciones:
+          - 'se reduce a la mitad.'
+          - 'se duplica.'
+          - 'se reduce a la cuarta parte.'
+          - 'no cambia.'
+      - enunciado: 'Un electrón y un protón tienen la misma cantidad de movimiento. La longitud de onda asociada…'
+        opciones:
+          - 'es la misma para los dos.'
+          - 'es mayor la del electrón.'
+          - 'es mayor la del protón.'
+          - 'solo existe para el electrón.'
 
   - id: mod-4
     bloque: fisica-moderna
     subtema: fotoelectrico
-    mide: "Frecuencia umbral"
-    enunciado: 'Sobre un metal incide luz de frecuencia menor que su frecuencia umbral. Entonces…'
-    opciones:
-      - 'no se emiten electrones, por intensa que sea la luz.'
-      - 'se emiten electrones si la luz es lo bastante intensa.'
-      - 'se emiten electrones si se ilumina durante el tiempo suficiente.'
-      - 'se emiten electrones, pero con muy poca energía cinética.'
+    mide: "Frecuencia umbral y trabajo de extracción"
+    variantes:
+      - enunciado: 'Sobre un metal incide luz de frecuencia menor que su frecuencia umbral. Entonces…'
+        opciones:
+          - 'no se emiten electrones, por intensa que sea la luz.'
+          - 'se emiten electrones si la luz es lo bastante intensa.'
+          - 'se emiten electrones si se ilumina durante el tiempo suficiente.'
+          - 'se emiten electrones, pero con muy poca energía cinética.'
+      - enunciado: 'El trabajo de extracción de un metal es de 2 eV. Si se ilumina con fotones de 5 eV, los electrones salen con una energía cinética máxima de…'
+        opciones:
+          - '3 eV'
+          - '7 eV'
+          - '5 eV'
+          - '2,5 eV'
+      - enunciado: 'Dos metales, A y B, tienen trabajos de extracción de 2 eV y 4 eV. La frecuencia umbral de B es…'
+        opciones:
+          - 'el doble que la de A.'
+          - 'la mitad que la de A.'
+          - 'igual que la de A.'
+          - 'cuatro veces la de A.'
 
   - id: mod-5
     bloque: fisica-moderna
     subtema: nuclear
     mide: "Emisiones radiactivas y números atómico y másico"
-    enunciado: 'Cuando un núcleo emite una partícula $\beta^-$…'
-    opciones:
-      - 'su número atómico aumenta en una unidad y su número másico no cambia.'
-      - 'su número atómico disminuye en una unidad y su número másico no cambia.'
-      - 'su número atómico disminuye en dos unidades y su número másico en cuatro.'
-      - 'no cambian ni su número atómico ni su número másico.'
+    variantes:
+      - enunciado: 'Cuando un núcleo emite una partícula $\beta^-$…'
+        opciones:
+          - 'su número atómico aumenta en una unidad y su número másico no cambia.'
+          - 'su número atómico disminuye en una unidad y su número másico no cambia.'
+          - 'su número atómico disminuye en dos unidades y su número másico en cuatro.'
+          - 'no cambian ni su número atómico ni su número másico.'
+      - enunciado: 'Cuando un núcleo emite una partícula $\alpha$…'
+        opciones:
+          - 'su número atómico disminuye en dos unidades y su número másico en cuatro.'
+          - 'su número atómico disminuye en cuatro unidades y su número másico en dos.'
+          - 'su número atómico aumenta en una unidad y su número másico no cambia.'
+          - 'su número atómico disminuye en dos unidades y su número másico no cambia.'
+      - enunciado: 'Cuando un núcleo excitado emite radiación $\gamma$…'
+        opciones:
+          - 'no cambian ni su número atómico ni su número másico.'
+          - 'su número atómico aumenta en una unidad y su número másico no cambia.'
+          - 'su número atómico disminuye en dos unidades y su número másico en cuatro.'
+          - 'su número másico disminuye en una unidad y su número atómico no cambia.'
 
   - id: mod-6
     bloque: fisica-moderna
     subtema: relatividad
-    mide: "Energía relativista"
-    enunciado: 'Una partícula de masa en reposo $m_0$ se mueve con un factor de Lorentz $\gamma = 2$. Su energía cinética es…'
-    opciones:
-      - '$m_0 c^2$'
-      - '$2\,m_0 c^2$'
-      - '$\tfrac{1}{2}\,m_0 c^2$'
-      - '$\tfrac{1}{2}\,m_0 v^2$'
+    mide: "Relatividad: factor de Lorentz"
+    variantes:
+      - enunciado: 'Una partícula de masa en reposo $m_0$ se mueve con un factor de Lorentz $\gamma = 2$. Su energía cinética es…'
+        opciones:
+          - '$m_0 c^2$'
+          - '$2\,m_0 c^2$'
+          - '$\tfrac{1}{2}\,m_0 c^2$'
+          - '$\tfrac{1}{2}\,m_0 v^2$'
+      - enunciado: 'Una partícula de masa en reposo $m_0$ se mueve con un factor de Lorentz $\gamma = 3$. Su energía total es…'
+        opciones:
+          - '$3\,m_0 c^2$'
+          - '$2\,m_0 c^2$'
+          - '$m_0 c^2$'
+          - '$\tfrac{9}{2}\,m_0 c^2$'
+      - enunciado: 'Una nave se mueve respecto a la Tierra con un factor de Lorentz $\gamma = 2$. Un proceso que en la nave dura 1 hora, medido desde la Tierra dura…'
+        opciones:
+          - '2 horas'
+          - 'media hora'
+          - '1 hora'
+          - '4 horas'
