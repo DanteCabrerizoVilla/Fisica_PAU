@@ -15,6 +15,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import random
 import re
 import shutil
 import sys
@@ -131,6 +132,9 @@ class Constructor:
         # El formulario cuelga del curso, pero pertenece a la sección de teoría.
         if ruta_actual.endswith("/formulario"):
             ruta_actual = ruta_actual[: -len("formulario")] + "teoria/formulario"
+        # La prueba de nivel cuelga del curso, pero es la puerta de entrada a las clases.
+        if ruta_actual.endswith("/prueba-nivel"):
+            return "clases"
         coinciden = [
             n["ruta"] for n in self.env.globals["nav"]
             if ruta_actual == n["ruta"] or ruta_actual.startswith(n["ruta"] + "/")
@@ -300,6 +304,9 @@ class Constructor:
         if curso.temas:
             self.construir_teoria(curso, bloques)
 
+        if curso.prueba:
+            self.construir_prueba(curso)
+
         return {"curso": curso, "bloques": bloques, "total": len(problemas),
                 "examenes": sum(1 for c in colecciones if c["col"].oficial)}
 
@@ -308,6 +315,36 @@ class Constructor:
         """Parámetros con los que un problema abre una simulación ya rellena."""
         parametros = p.meta.get("parametros_simulacion", {}).get(sim, "")
         return f"?{parametros}" if parametros else ""
+
+    @staticmethod
+    def huella(texto: str) -> str:
+        """Resumen FNV-1a de 32 bits. La página lo recalcula para saber si una
+        respuesta es la correcta sin llevar la solución a la vista en el HTML."""
+        h = 0x811C9DC5
+        for b in texto.encode("ascii"):
+            h = ((h ^ b) * 0x01000193) & 0xFFFFFFFF
+        return f"{h:08x}"
+
+    def construir_prueba(self, curso: Curso) -> None:
+        """Prueba de nivel: todas las preguntas van en la página, ocultas."""
+        prueba = curso.prueba
+        vistas: dict[str, int] = defaultdict(int)
+        preguntas = []
+        for q in prueba["preguntas"]:
+            # Orden de las opciones fijo para cada pregunta, pero sin que la correcta sea siempre la primera.
+            orden = list(range(4))
+            random.Random(q["id"]).shuffle(orden)
+            vistas[q["bloque"]] += 1
+            preguntas.append({
+                **q,
+                "opciones": [q["opciones"][i] for i in orden],
+                "clave": self.huella(f"{q['id']}|{orden.index(0)}|nivel"),
+                "rapida": vistas[q["bloque"]] <= 2,
+            })
+        bloques = [b for b in curso.meta["bloques"] if vistas[b["id"]]]
+        self.escribir(f"{curso.url}/prueba-nivel", "prueba_nivel.html", curso=curso, prueba=prueba,
+                      preguntas=preguntas, bloques=bloques,
+                      total_rapida=sum(1 for q in preguntas if q["rapida"]))
 
     def construir_teoria(self, curso: Curso, bloques: list[dict]) -> None:
         """Índice de teoría, una página por bloque y el formulario completo."""

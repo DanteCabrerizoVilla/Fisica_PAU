@@ -17,6 +17,16 @@
     {% if not contacto.whatsapp and not contacto.correo %}<span class="aviso aviso--fuerte"><strong>[REVISAR]</strong> Faltan el WhatsApp y el correo en <code>contenido/sitio.yaml</code>.</span>{% endif %}
   </p>
 
+  {% for c in cursos if c.prueba %}
+  <aside class="llamada">
+    <div>
+      <h2>¿No sabes por dónde empezar?</h2>
+      <p>Haz la prueba de nivel de {{ c.meta.asignatura }} y envíame el resultado: así la primera clase va directa a lo que te cuesta.</p>
+    </div>
+    <a class="boton" href="{{ url(c.url + '/prueba-nivel') }}">Hacer la prueba de nivel</a>
+  </aside>
+  {% endfor %}
+
   <section class="seccion" id="sobre-mi">
     <h2>Sobre mí</h2>
     {{ clases.sobre_mi | md }}

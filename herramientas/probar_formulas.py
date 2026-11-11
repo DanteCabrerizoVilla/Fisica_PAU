@@ -43,6 +43,8 @@ def revisar(navegador: str, url: str) -> tuple[int, int, list[str]]:
         errores.append("simulación: " + m.group(1))
     elif "/simulaciones/" in url and not url.rstrip("/").endswith("simulaciones/index.html") and 'data-sim="ok"' not in dom:
         errores.append("simulación: no ha terminado de montarse")
+    if "/prueba-nivel/" in url and 'data-prueba="ok"' not in dom and not m:
+        errores.append("prueba de nivel: no ha terminado de montarse")
     return total, total - listas, errores
 
 

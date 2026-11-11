@@ -123,6 +123,27 @@ def main() -> int:
             for a in avisos:
                 print("    aviso: " + a)
 
+    # Pruebas de nivel: cada una lleva al lado su comprobación (prueba-nivel.py).
+    for curso in sitio.cursos:
+        if curso.prueba is None or args.filtro:
+            continue
+        script = curso.ruta_prueba.with_suffix(".py")
+        n = len(curso.prueba["preguntas"])
+        try:
+            if not script.exists():
+                raise AssertionError(f"no existe {script.name}")
+            spec = importlib.util.spec_from_file_location("verif_prueba_nivel", script)
+            modulo = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(modulo)
+            modulo.comprobar(curso.prueba["preguntas"])
+            print(f"[ok] prueba de nivel: {n} preguntas  ({relativa(curso.ruta_prueba)})")
+        except AssertionError as e:
+            fallidos += 1
+            print(f"[FALLA] prueba de nivel  ({relativa(curso.ruta_prueba)})\n    ERROR: {e}")
+        except Exception:
+            fallidos += 1
+            print(f"[FALLA] prueba de nivel  ({relativa(curso.ruta_prueba)})\n    " + traceback.format_exc(limit=3))
+
     print(f"\n{total} problemas · {total - fallidos - pendientes} verificados · "
           f"{pendientes} pendientes · {fallidos} con fallo")
     return 1 if fallidos else 0

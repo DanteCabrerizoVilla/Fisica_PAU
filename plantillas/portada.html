@@ -15,6 +15,9 @@
       {% if principal.curso.simulaciones %}
       <a class="boton boton--suave" href="{{ url(principal.curso.url + '/simulaciones') }}">Probar una simulación</a>
       {% endif %}
+      {% if principal.curso.prueba %}
+      <a class="boton boton--suave" href="{{ url(principal.curso.url + '/prueba-nivel') }}">Hacer la prueba de nivel</a>
+      {% endif %}
     </p>
   </div>
 </section>

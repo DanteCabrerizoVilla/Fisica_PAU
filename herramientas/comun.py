@@ -16,7 +16,7 @@ CONTENIDO = RAIZ / "contenido"
 ESQUEMA = json.loads((Path(__file__).parent / "esquema.json").read_text(encoding="utf-8"))
 
 # Nombres de carpeta reservados dentro de un curso: no pueden ser colecciones.
-RESERVADOS = {"bloques", "simulaciones", "hojas", "teoria", "formulario"}
+RESERVADOS = {"bloques", "simulaciones", "hojas", "teoria", "formulario", "prueba-nivel"}
 
 ORDEN_CONVOCATORIA = {
     "modelo": 0,
@@ -151,6 +151,11 @@ class Curso:
     colecciones: list[Coleccion] = field(default_factory=list)
     simulaciones: list[Simulacion] = field(default_factory=list)
     temas: list[Tema] = field(default_factory=list)
+    prueba: dict | None = None          # prueba de nivel (prueba-nivel.yaml), si existe
+
+    @property
+    def ruta_prueba(self) -> Path:
+        return self.ruta / "prueba-nivel.yaml"
 
     @property
     def bloques(self) -> dict[str, dict]:
@@ -315,6 +320,9 @@ def cargar_curso(ruta_rel: str) -> Curso:
             curso.temas.append(Tema(ruta=f, meta=meta, cuerpo=cuerpo, curso=curso))
         curso.temas.sort(key=lambda t: orden.index(t.bloque))
 
+    if curso.ruta_prueba.exists():
+        curso.prueba = cargar_prueba(curso)
+
     dir_col = ruta / "colecciones"
     for carpeta in sorted(p for p in dir_col.iterdir() if p.is_dir()) if dir_col.is_dir() else []:
         f_col = carpeta / "coleccion.yaml"
@@ -333,6 +341,34 @@ def cargar_curso(ruta_rel: str) -> Curso:
         curso.colecciones.append(col)
     curso.colecciones.sort(key=lambda c: c.orden)
     return curso
+
+
+def cargar_prueba(curso: Curso) -> dict:
+    """Lee y valida la prueba de nivel de un curso."""
+    f = curso.ruta_prueba
+    donde = relativa(f)
+    datos = leer_yaml(f)
+    for clave in ("titulo", "entrada", "instrucciones", "resultado", "mensaje_final", "preguntas"):
+        if not datos.get(clave):
+            raise ErrorContenido(f"{donde}: falta '{clave}'")
+    vistos: set[str] = set()
+    for q in datos["preguntas"]:
+        ident = q.get("id", "(sin id)")
+        for clave in ("id", "bloque", "subtema", "mide", "enunciado", "opciones"):
+            if not q.get(clave):
+                raise ErrorContenido(f"{donde}: a la pregunta {ident} le falta '{clave}'")
+        if not re.fullmatch(r"[a-z0-9-]+", ident):
+            raise ErrorContenido(f"{donde}: id '{ident}' no válido (minúsculas, cifras y guiones)")
+        if ident in vistos:
+            raise ErrorContenido(f"{donde}: id de pregunta repetido '{ident}'")
+        vistos.add(ident)
+        if q["bloque"] not in curso.bloques:
+            raise ErrorContenido(f"{donde}: {ident}: bloque '{q['bloque']}' no existe en curso.yaml")
+        if q["subtema"] not in curso.subtemas(q["bloque"]):
+            raise ErrorContenido(f"{donde}: {ident}: subtema '{q['subtema']}' no pertenece a '{q['bloque']}'")
+        if len(q["opciones"]) != 4 or len(set(q["opciones"])) != 4:
+            raise ErrorContenido(f"{donde}: {ident}: debe tener cuatro opciones distintas")
+    return datos
 
 
 def _orden_natural(texto: str):
