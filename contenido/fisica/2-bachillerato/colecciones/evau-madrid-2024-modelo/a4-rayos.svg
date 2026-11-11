@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 446 170" width="446" height="170" font-family="system-ui, sans-serif" font-size="13">
+<title>Espejo cóncavo de 60 cm de radio con el objeto a 80 cm: el rayo paralelo al eje se refleja pasando por el foco y el rayo que pasa por el centro de curvatura vuelve sobre sí mismo; se cortan a 48 cm del espejo formando una imagen real, invertida y menor</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="14.0" y1="60.0" x2="436.0" y2="60.0" stroke="#5a6170" stroke-width="1.2"/>
+<path d="M399.9 18.6 Q420.1 85.3 396.7 152.0" fill="none" stroke="#3a7bd5" stroke-width="3"/>
+<circle cx="134.0" cy="60" r="3" fill="#1e222b"/><text x="134.0" y="51.0" text-anchor="middle" fill="#1e222b" font-style="italic">C</text>
+<circle cx="272.0" cy="60" r="3" fill="#1e222b"/><text x="272.0" y="51.0" text-anchor="middle" fill="#1e222b" font-style="italic">F</text>
+<line x1="42.0" y1="60.0" x2="42.0" y2="37.0" stroke="#1e222b" stroke-width="2.5" marker-end="url(#p)"/>
+<line x1="189.2" y1="60.0" x2="189.2" y2="73.8" stroke="#b5451b" stroke-width="2.5" marker-end="url(#p)"/>
+<polyline points="42.0,37.0 410.0,37.0 106.40000000000003,87.6" fill="none" stroke="#0f6b5c" stroke-width="1.6"/>
+<line x1="42.0" y1="37.0" x2="410.0" y2="129.0" stroke="#0f6b5c" stroke-width="1.6"/>
+<text x="42.0" y="29.0" text-anchor="middle" fill="#1e222b" >objeto</text>
+<text x="195.2" y="87.8" text-anchor="start" fill="#b5451b" >imagen</text>
+<text x="88.0" y="76.0" text-anchor="middle" fill="#5a6170" >80 cm</text>
+<text x="299.6" y="138.2" text-anchor="end" fill="#5a6170" font-size="12">el rayo que pasa por C vuelve por el mismo camino</text>
+</svg>

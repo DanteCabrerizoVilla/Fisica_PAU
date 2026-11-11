@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 270" width="270" height="270" font-family="system-ui, sans-serif" font-size="13">
+<title>Dos cargas de 2 nC en (0, 0) y (4, 0) m; en P (2, 2) m su campo conjunto apunta hacia arriba. La carga de −10 nC se coloca debajo de P, sobre la recta x = 2 m, para que su campo en P apunte hacia abajo</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="36" y1="120" x2="250" y2="120" stroke="#5a6170" marker-end="url(#p)"/><text x="254" y="124" fill="#5a6170" font-style="italic">x</text>
+<line x1="60" y1="144" x2="60" y2="14" stroke="#5a6170" marker-end="url(#p)"/><text x="66" y="18" fill="#5a6170" font-style="italic">y</text>
+<line x1="60.0" y1="120.0" x2="132.0" y2="48.0" stroke="#5a6170" stroke-width="1.2" stroke-dasharray="4 4"/>
+<line x1="204.0" y1="120.0" x2="132.0" y2="48.0" stroke="#5a6170" stroke-width="1.2" stroke-dasharray="4 4"/>
+<line x1="132.0" y1="48.0" x2="132.0" y2="239.5" stroke="#5a6170" stroke-width="1.2" stroke-dasharray="4 4"/>
+<circle cx="60" cy="120" r="11" fill="#b5451b"/><text x="60" y="125" text-anchor="middle" fill="#fff" font-weight="700">+</text><text x="60" y="146" text-anchor="middle" fill="#1e222b">2 nC</text>
+<circle cx="204" cy="120" r="11" fill="#b5451b"/><text x="204" y="125" text-anchor="middle" fill="#fff" font-weight="700">+</text><text x="204" y="146" text-anchor="middle" fill="#1e222b">2 nC</text>
+<circle cx="132" cy="239.51999999999998" r="11" fill="#3a7bd5"/><text x="132" y="244.51999999999998" text-anchor="middle" fill="#fff" font-weight="700">−</text><text x="132" y="243.51999999999998" text-anchor="start" dx="18" fill="#1e222b">−10 nC</text>
+<line x1="132.0" y1="48.0" x2="132.0" y2="8.0" stroke="#b5451b" stroke-width="2.5" marker-end="url(#p)"/>
+<text x="140.0" y="18.0" text-anchor="start" fill="#b5451b" font-style="italic">E₁ + E₂</text>
+<line x1="132.0" y1="48.0" x2="132.0" y2="88.0" stroke="#3a7bd5" stroke-width="2.5" marker-end="url(#p)"/>
+<text x="140.0" y="84.0" text-anchor="start" fill="#3a7bd5" font-style="italic">E₃</text>
+<circle cx="132.0" cy="48.0" r="4" fill="#1e222b"/><text x="124.0" y="52.0" text-anchor="end" fill="#1e222b">P (2, 2)</text>
+</svg>
