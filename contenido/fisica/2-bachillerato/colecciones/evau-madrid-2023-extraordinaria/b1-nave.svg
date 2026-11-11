@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 290" width="300" height="290" font-family="system-ui, sans-serif" font-size="13">
+<title>La nave en el origen; el planeta está sobre el eje y negativo a una distancia R y el satélite a una distancia R′, en una dirección que forma un ángulo alfa de 53,13 grados con la del planeta, hacia las x positivas</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="110.0" y1="40.0" x2="180.0" y2="40.0" stroke="#5a6170" stroke-width="1.2" marker-end="url(#p)"/>
+<text x="186.0" y="44.0" text-anchor="start" fill="#5a6170" font-style="italic">x</text>
+<line x1="110.0" y1="40.0" x2="110.0" y2="12.0" stroke="#5a6170" stroke-width="1.2" marker-end="url(#p)"/>
+<text x="116.0" y="16.0" text-anchor="start" fill="#5a6170" font-style="italic">y</text>
+<line x1="110.0" y1="40.0" x2="110.0" y2="230.0" stroke="#5a6170" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="110.0" y1="40.0" x2="230.0" y2="130.0" stroke="#5a6170" stroke-width="1" stroke-dasharray="4 4"/>
+<circle cx="110" cy="250" r="34" fill="#5a6170"/><text x="110.0" y="254.0" text-anchor="middle" fill="#fff" >planeta</text>
+<circle cx="230.0" cy="130.0" r="16" fill="rgba(90,97,112,0.45)" stroke="#5a6170"/><text x="230.0" y="164.0" text-anchor="middle" fill="#1e222b" >satélite</text>
+<line x1="110.0" y1="40.0" x2="110.0" y2="110.0" stroke="#b5451b" stroke-width="2.5" marker-end="url(#p)"/>
+<text x="102.0" y="102.0" text-anchor="end" fill="#b5451b" >F (planeta)</text>
+<line x1="110.0" y1="40.0" x2="137.2" y2="60.4" stroke="#3a7bd5" stroke-width="2.5" marker-end="url(#p)"/>
+<text x="150.0" y="62.0" text-anchor="start" fill="#3a7bd5" >F′ (satélite)</text>
+<circle cx="110" cy="40" r="6" fill="#1e222b"/><text x="100.0" y="34.0" text-anchor="end" fill="#1e222b" >nave</text>
+<text x="124.0" y="92.0" text-anchor="middle" fill="#1e222b" font-style="italic">α</text>
+<text x="100.0" y="150.0" text-anchor="end" fill="#1e222b" font-style="italic">R</text>
+<text x="182.0" y="83.0" text-anchor="start" fill="#1e222b" font-style="italic">R′</text>
+</svg>

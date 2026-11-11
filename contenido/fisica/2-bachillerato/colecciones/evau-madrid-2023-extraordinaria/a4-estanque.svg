@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 370 276" width="370" height="276" font-family="system-ui, sans-serif" font-size="13">
+<title>Estanque de 2 m de profundidad con un foco de luz en el fondo. El rayo sube hasta el punto A de la superficie, a 1,2 m del borde, se refracta y llega al ojo del observador, situado en el borde a 1,6 m sobre el agua</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<rect x="70" y="120" width="290" height="120" fill="rgba(58,123,213,0.16)"/>
+<line x1="10.0" y1="120.0" x2="70.0" y2="120.0" stroke="#1e222b" stroke-width="2"/>
+<line x1="70.0" y1="120.0" x2="70.0" y2="240.0" stroke="#1e222b" stroke-width="2"/>
+<line x1="70.0" y1="240.0" x2="360.0" y2="240.0" stroke="#1e222b" stroke-width="2"/>
+<line x1="70.0" y1="120.0" x2="360.0" y2="120.0" stroke="#3a7bd5" stroke-width="1.5"/>
+<line x1="202.5" y1="240.0" x2="142.0" y2="120.0" stroke="#b5451b" stroke-width="2" marker-end="url(#p)"/>
+<line x1="142.0" y1="120.0" x2="74.0" y2="29.0" stroke="#b5451b" stroke-width="2" marker-end="url(#p)"/>
+<line x1="142.0" y1="70.0" x2="142.0" y2="180.0" stroke="#5a6170" stroke-width="1" stroke-dasharray="4 4"/>
+<circle cx="70" cy="24.0" r="6" fill="#1e222b"/><text x="60.0" y="28.0" text-anchor="end" fill="#1e222b" >observador</text>
+<circle cx="202.5" cy="236" r="6" fill="#f5a524" stroke="#b5451b"/><text x="214.5" y="232.0" text-anchor="start" fill="#1e222b" >foco</text>
+<circle cx="142.0" cy="120.0" r="4" fill="#1e222b"/><text x="150.0" y="112.0" text-anchor="start" fill="#1e222b">A</text>
+<line x1="48.0" y1="24.0" x2="48.0" y2="118.0" stroke="#0f6b5c" marker-start="url(#p)" marker-end="url(#p)"/><text x="12.0" y="75.0" text-anchor="middle" fill="#0f6b5c">H′ = 1,6 m</text>
+<line x1="88.0" y1="123.0" x2="88.0" y2="237.0" stroke="#0f6b5c" marker-start="url(#p)" marker-end="url(#p)"/><text x="122.0" y="184.0" text-anchor="middle" fill="#0f6b5c">H = 2 m</text>
+<line x1="72.0" y1="108.0" x2="140.0" y2="108.0" stroke="#0f6b5c" marker-start="url(#p)" marker-end="url(#p)"/><text x="106.0" y="103.0" text-anchor="middle" fill="#0f6b5c">d</text>
+<line x1="72.0" y1="254.0" x2="200.5" y2="254.0" stroke="#0f6b5c" marker-start="url(#p)" marker-end="url(#p)"/><text x="136.2" y="270.0" text-anchor="middle" fill="#0f6b5c">D</text>
+<text x="128.0" y="90.0" text-anchor="middle" fill="#1e222b" font-style="italic">β</text>
+<text x="154.0" y="164.0" text-anchor="middle" fill="#1e222b" font-style="italic">α</text>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 252" width="350" height="252" font-family="system-ui, sans-serif" font-size="13">
+<title>Dos hilos verticales en x = −0,1 m y x = 0,1 m; el primero lleva 10 A hacia arriba y el segundo corriente hacia abajo. Un electrón sube por la recta x = 0,4 m sin desviarse</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="20" y1="150" x2="330" y2="150" stroke="#5a6170" marker-end="url(#p)"/><text x="334.0" y="154.0" text-anchor="start" fill="#5a6170" font-style="italic">x</text>
+<line x1="110" y1="230" x2="110" y2="14" stroke="#5a6170" stroke-dasharray="3 4" marker-end="url(#p)"/><text x="116.0" y="18.0" text-anchor="start" fill="#5a6170" font-style="italic">y</text>
+<line x1="78.0" y1="220.0" x2="78.0" y2="30.0" stroke="#b5451b" stroke-width="3" marker-end="url(#p)"/>
+<text x="78.0" y="242.0" text-anchor="middle" fill="#b5451b" >I₁ = 10 A</text>
+<line x1="142.0" y1="30.0" x2="142.0" y2="220.0" stroke="#3a7bd5" stroke-width="3" marker-end="url(#p)"/>
+<text x="146.0" y="242.0" text-anchor="middle" fill="#3a7bd5" >I₂</text>
+<line x1="238.0" y1="30.0" x2="238.0" y2="220.0" stroke="#5a6170" stroke-width="1" stroke-dasharray="4 4"/>
+<circle cx="238.0" cy="170" r="5" fill="#0f6b5c"/><line x1="238.0" y1="164.0" x2="238.0" y2="110.0" stroke="#0f6b5c" stroke-width="2.5" marker-end="url(#p)"/>
+<text x="246.0" y="130.0" text-anchor="start" fill="#0f6b5c" font-style="italic">v</text>
+<text x="248.0" y="176.0" text-anchor="start" fill="#0f6b5c" >e⁻</text>
+<text x="94.0" y="166.0" text-anchor="start" fill="#5a6170" font-size="12">−0,1</text>
+<text x="158.0" y="166.0" text-anchor="start" fill="#5a6170" font-size="12">0,1</text>
+<text x="254.0" y="166.0" text-anchor="start" fill="#5a6170" font-size="12">0,4 m</text>
+</svg>
