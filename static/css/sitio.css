@@ -278,11 +278,22 @@ main { padding-block: 1.25rem 3rem; min-height: 60vh; }
 .sim__unidad { color: var(--tinta-suave); min-width: 1.5rem; }
 .sim__nota { margin: 0.6rem 0 0; font-size: 0.85rem; line-height: 1.45; color: var(--tinta-suave); }
 .sim__lecturas dd.destacado { color: var(--acento); }
+.sim__casilla { display: flex; align-items: center; gap: 0.6rem; min-height: 44px; font-weight: 600; font-size: 0.95rem; cursor: pointer; }
+.sim__casilla input { width: 1.25rem; height: 1.25rem; accent-color: var(--acento); flex: none; }
+.sim__fuente { border-top: 1px solid var(--linea); padding-top: 0.6rem; margin-top: 0.4rem; }
+.sim__fuente[hidden] { display: none; }
+.sim__fuente > h3 { margin: 0 0 0.4rem; font-size: 0.9rem; }
+.sim__par[hidden] { display: none; }
+.sim__par { display: grid; grid-template-columns: 1fr 1fr; gap: 0 0.6rem; }
+.sim__ecuacion { margin: 0.2rem 0 0.6rem; padding: 0.6rem 0.7rem; background: var(--hundido); border-radius: var(--radio-s); font-size: 0.95rem; font-weight: 600; overflow-x: auto; white-space: nowrap; }
+.sim__lecturas dd { white-space: normal; overflow-wrap: anywhere; }
+.sim__lecturas dt[hidden], .sim__lecturas dd[hidden] { display: none; }
+.sim__grupo[hidden], .sim__control[hidden] { display: none; }
 .sim__botones { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .sim__botones .boton { flex: 1 1 7rem; }
-.sim__lecturas { display: grid; grid-template-columns: 1fr auto; gap: 0.3rem 1rem; margin: 0; font-size: 0.95rem; }
+.sim__lecturas { display: grid; grid-template-columns: minmax(38%, 1fr) minmax(0, auto); gap: 0.3rem 1rem; margin: 0; font-size: 0.95rem; }
 .sim__lecturas dt { color: var(--tinta-suave); }
-.sim__lecturas dd { margin: 0; text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; white-space: nowrap; }
+.sim__lecturas dd { margin: 0; text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; }
 .sim sup { font-size: 0.7em; line-height: 0; }
 .sim__barras { display: grid; gap: 0.45rem; margin-top: 0.9rem; }
 .sim__barra { display: grid; grid-template-columns: 2.4rem 1fr; align-items: center; gap: 0.5rem; font-size: 0.85rem; font-weight: 700; color: var(--tinta-suave); }

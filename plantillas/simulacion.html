@@ -16,8 +16,18 @@
     <noscript><p class="aviso">La simulación necesita JavaScript.</p></noscript>
   </div>
   <script type="module">
-    import { montar } from "{{ url('static/js/sim/' + sim.meta.modulo) }}";
-    montar(document.getElementById("sim"));
+    // Si algo falla se anota en la página: lo detectan las pruebas automáticas.
+    const anotar = (e) => { document.documentElement.dataset.error = String(e?.message ?? e); };
+    window.addEventListener("error", (ev) => anotar(ev.error ?? ev.message));
+    window.addEventListener("unhandledrejection", (ev) => anotar(ev.reason));
+    try {
+      const { montar } = await import("{{ url('static/js/sim/' + sim.meta.modulo) }}");
+      montar(document.getElementById("sim"));
+      document.documentElement.dataset.sim = "ok";
+    } catch (e) {
+      anotar(e);
+      document.getElementById("sim").insertAdjacentHTML("beforeend", '<p class="aviso">No se ha podido cargar la simulación. Prueba a recargar la página.</p>');
+    }
   </script>
 
   <div class="ancho--texto prosa">

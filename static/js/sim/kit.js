@@ -351,3 +351,205 @@ export function flecha(ctx, x, y, dx, dy, color, grosor = 2.5) {
   ctx.fill();
   ctx.restore();
 }
+
+// ---- Más controles ----------------------------------------------------------
+
+/** Campo numérico sencillo con unidad. `valor` se lee y escribe como número. */
+export function campoNumero(padre, { etiqueta, valor, unidad = "", paso = "any", min, max, alCambiar }) {
+  const id = `sim-control-${++contador}`;
+  const caja = crear("div", "sim__campo", padre);
+  const rotulo = crear("label", "", caja, etiqueta);
+  rotulo.htmlFor = id;
+  const fila = crear("div", "sim__cientifico", caja);
+  const entrada = crear("input", "sim__mantisa", fila);
+  Object.assign(entrada, { type: "number", id, step: paso, inputMode: "decimal", value: valor });
+  if (min !== undefined) entrada.min = min;
+  if (max !== undefined) entrada.max = max;
+  if (unidad) crear("span", "sim__unidad", fila, unidad);
+  entrada.addEventListener("input", () => {
+    const v = Number(entrada.value);
+    if (entrada.value !== "" && Number.isFinite(v)) alCambiar?.(v);
+  });
+  return {
+    caja,
+    get valor() { return Number(entrada.value); },
+    set valor(v) { entrada.value = Number(Number(v).toPrecision(6)); },
+  };
+}
+
+/** Casilla de verificación. */
+export function casilla(padre, { etiqueta, valor = false, alCambiar }) {
+  const caja = crear("label", "sim__casilla", padre);
+  const entrada = crear("input", "", caja);
+  entrada.type = "checkbox";
+  entrada.checked = valor;
+  crear("span", "", caja, etiqueta);
+  entrada.addEventListener("change", () => alCambiar?.(entrada.checked));
+  return {
+    caja,
+    get valor() { return entrada.checked; },
+    set valor(v) { entrada.checked = Boolean(v); },
+  };
+}
+
+/** Párrafo de ayuda dentro de un grupo. */
+export function nota(padre, texto) {
+  return crear("p", "sim__nota", padre, texto);
+}
+
+/** Texto de un parámetro de la URL (para opciones que no son números). */
+export function parametroTexto(nombre, porDefecto = "") {
+  return new URLSearchParams(window.location.search).get(nombre) ?? porDefecto;
+}
+
+// ---- Gráficas sobre el lienzo ------------------------------------------------
+
+export const TINTA = {
+  fondo: "#0e1320",
+  rejilla: "rgba(255,255,255,0.10)",
+  eje: "rgba(255,255,255,0.45)",
+  texto: "rgba(243,239,230,0.88)",
+  suave: "rgba(243,239,230,0.55)",
+  a: "#ffd166",
+  b: "#7ee081",
+  c: "#ff9f6b",
+  d: "#7aaaff",
+  e: "#f78fb3",
+};
+
+/** Marcas «redondas» entre min y max (unas n). */
+export function marcas(min, max, n = 5) {
+  const tramo = (max - min) / n;
+  if (!(tramo > 0)) return [min];
+  const base = 10 ** Math.floor(Math.log10(tramo));
+  const paso = [1, 2, 2.5, 5, 10].map((m) => m * base).find((p) => p >= tramo * 0.999) ?? 10 * base;
+  const lista = [];
+  for (let v = Math.ceil(min / paso - 1e-9) * paso; v <= max + paso * 1e-9; v += paso) {
+    lista.push(Math.abs(v) < paso * 1e-9 ? 0 : v);
+  }
+  return lista;
+}
+
+/** Número corto para rótulos de ejes. */
+export function corto(v) {
+  if (v === 0) return "0";
+  const abs = Math.abs(v);
+  if (abs >= 1e4 || abs < 1e-3) {
+    const exp = Math.floor(Math.log10(abs));
+    return `${String(Number((v / 10 ** exp).toPrecision(3))).replace(".", ",")}e${exp}`.replace("-", "−");
+  }
+  return String(Number(v.toPrecision(4))).replace(".", ",").replace("-", "−");
+}
+
+/**
+ * Dibuja unos ejes con rejilla en el rectángulo dado y devuelve las funciones
+ * de escala X e Y. `xr` e `yr` son los intervalos [min, max].
+ */
+export function ejes(ctx, { x, y, ancho, alto, xr, yr, xlab = "", ylab = "", nx = 5, ny = 4, titulo = "" }) {
+  const X = (v) => x + ((v - xr[0]) / (xr[1] - xr[0])) * ancho;
+  const Y = (v) => y + alto - ((v - yr[0]) / (yr[1] - yr[0])) * alto;
+  ctx.save();
+  ctx.font = "11px system-ui, sans-serif";
+  ctx.lineWidth = 1;
+  ctx.textBaseline = "middle";
+  for (const v of marcas(xr[0], xr[1], nx)) {
+    ctx.strokeStyle = TINTA.rejilla;
+    ctx.beginPath(); ctx.moveTo(X(v), y); ctx.lineTo(X(v), y + alto); ctx.stroke();
+    ctx.fillStyle = TINTA.suave;
+    ctx.textAlign = "center";
+    ctx.fillText(corto(v), X(v), y + alto + 10);
+  }
+  for (const v of marcas(yr[0], yr[1], ny)) {
+    ctx.strokeStyle = TINTA.rejilla;
+    ctx.beginPath(); ctx.moveTo(x, Y(v)); ctx.lineTo(x + ancho, Y(v)); ctx.stroke();
+    ctx.fillStyle = TINTA.suave;
+    ctx.textAlign = "right";
+    ctx.fillText(corto(v), x - 5, Y(v));
+  }
+  ctx.strokeStyle = TINTA.eje;
+  ctx.strokeRect(x, y, ancho, alto);
+  if (yr[0] < 0 && yr[1] > 0) { ctx.beginPath(); ctx.moveTo(x, Y(0)); ctx.lineTo(x + ancho, Y(0)); ctx.stroke(); }
+  if (xr[0] < 0 && xr[1] > 0) { ctx.beginPath(); ctx.moveTo(X(0), y); ctx.lineTo(X(0), y + alto); ctx.stroke(); }
+  ctx.fillStyle = TINTA.texto;
+  ctx.textAlign = "right";
+  if (xlab) ctx.fillText(xlab, x + ancho, y + alto + 24);
+  ctx.textAlign = "left";
+  if (ylab) ctx.fillText(ylab, x - 30, y - 10);
+  if (titulo) { ctx.font = "600 12px system-ui, sans-serif"; ctx.textAlign = "right"; ctx.fillText(titulo, x + ancho, y - 10); }
+  ctx.restore();
+  return { X, Y };
+}
+
+/** Línea quebrada por una lista de puntos [x, y] ya en píxeles, recortada a un rectángulo. */
+export function trazar(ctx, puntos, color, { grosor = 2, discontinua = false, recorte = null } = {}) {
+  ctx.save();
+  if (recorte) { ctx.beginPath(); ctx.rect(recorte.x, recorte.y, recorte.ancho, recorte.alto); ctx.clip(); }
+  ctx.beginPath();
+  puntos.forEach(([px, py], i) => (i ? ctx.lineTo(px, py) : ctx.moveTo(px, py)));
+  ctx.strokeStyle = color;
+  ctx.lineWidth = grosor;
+  ctx.lineJoin = "round";
+  if (discontinua) ctx.setLineDash([5, 5]);
+  ctx.stroke();
+  ctx.restore();
+}
+
+export function punto(ctx, x, y, color, radio = 5) {
+  ctx.beginPath();
+  ctx.arc(x, y, radio, 0, 2 * Math.PI);
+  ctx.fillStyle = color;
+  ctx.fill();
+}
+
+export function rotulo(ctx, texto, x, y, { color = TINTA.texto, alinear = "left", negrita = false, tam = 12 } = {}) {
+  ctx.save();
+  ctx.font = `${negrita ? "600 " : ""}${tam}px system-ui, sans-serif`;
+  ctx.fillStyle = color;
+  ctx.textAlign = alinear;
+  ctx.textBaseline = "middle";
+  ctx.fillText(texto, x, y);
+  ctx.restore();
+}
+
+/**
+ * Arrastre con dedo o ratón sobre el lienzo. `buscar(p)` devuelve el objeto que
+ * hay bajo el punto (o null); `mover(objeto, p)` se llama mientras se arrastra.
+ * Las coordenadas van en píxeles CSS relativos al lienzo.
+ */
+export function arrastre(canvas, { buscar, mover, soltar }) {
+  canvas.style.touchAction = "none";
+  let activo = null;
+  const pos = (ev) => {
+    const r = canvas.getBoundingClientRect();
+    return { x: ev.clientX - r.left, y: ev.clientY - r.top };
+  };
+  canvas.addEventListener("pointerdown", (ev) => {
+    activo = buscar(pos(ev));
+    if (activo !== null && activo !== undefined) {
+      canvas.setPointerCapture(ev.pointerId);
+      mover(activo, pos(ev));
+      ev.preventDefault();
+    } else activo = null;
+  });
+  canvas.addEventListener("pointermove", (ev) => {
+    if (activo !== null) mover(activo, pos(ev));
+  });
+  const fin = () => { if (activo !== null) soltar?.(activo); activo = null; };
+  canvas.addEventListener("pointerup", fin);
+  canvas.addEventListener("pointercancel", fin);
+}
+
+/** Fracción de π legible: 2,618 -> "5π/6". Devuelve null si no es una fracción sencilla. */
+export function fraccionPi(rad) {
+  for (const den of [1, 2, 3, 4, 6, 12]) {
+    const n = (rad / Math.PI) * den;
+    if (Math.abs(n - Math.round(n)) < 1e-6) {
+      const k = Math.round(n);
+      if (k === 0) return "0";
+      const signo = k < 0 ? "−" : "";
+      const a = Math.abs(k);
+      return `${signo}${a === 1 ? "" : a}π${den === 1 ? "" : `/${den}`}`;
+    }
+  }
+  return null;
+}

@@ -83,6 +83,24 @@ export function elipse({ M, a, e, m = 1 }) {
   };
 }
 
+/**
+ * Cambio de órbita: impulso en un extremo de la elipse ("lejano" o "cercano")
+ * para pasar a la órbita circular de ese radio. Devuelve la velocidad antes y
+ * después, el cambio de velocidad (positivo si hay que acelerar) y la energía
+ * que hay que aportar a un cuerpo de masa m (negativa si hay que frenar).
+ */
+export function cambioACircular({ M, a, e, m = 1 }, donde = "lejano") {
+  const el = elipse({ M, a, e, m });
+  const r = donde === "lejano" ? el.ra : el.rp;
+  const vAntes = donde === "lejano" ? el.va : el.vp;
+  const vCircular = Math.sqrt((G * M) / r);
+  return {
+    r, vAntes, vCircular,
+    deltaV: vCircular - vAntes,
+    energia: (-G * M * m) / (2 * r) - el.Em,
+  };
+}
+
 /** Resuelve la ecuación de Kepler, M = E − e·sen E, por el método de Newton. */
 export function anomaliaExcentrica(media, e) {
   const dosPi = 2 * Math.PI;

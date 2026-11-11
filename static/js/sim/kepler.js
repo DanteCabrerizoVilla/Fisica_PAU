@@ -4,7 +4,7 @@
 
 import * as F from "./fisica-orbitas.js";
 import {
-  barras, botones, bucle, campoCientifico, crearLienzo, deslizador, duracion,
+  barras, botones, bucle, campoCientifico, casilla, crearLienzo, deslizador, duracion,
   estructura, flecha, grupo, lecturas, medida, num, parametrosURL,
 } from "./kit.js";
 
@@ -153,6 +153,31 @@ export function montar(contenedor) {
   nota.textContent = "Las áreas están medidas sobre el dibujo, sumando triángulos, no calculadas con la ley.";
   gAreas.append(nota);
 
+  // Cambio de órbita: impulso en un extremo para pasar a la órbita circular de ese radio.
+  const gCambio = grupo(panel, "Cambio a órbita circular");
+  let masaCuerpo = url.m ?? 1000;
+  let verCirculares = url.cambio === 1;
+  campoCientifico(gCambio, {
+    etiqueta: "Masa del cuerpo, m", valor: masaCuerpo, unidades: MASA,
+    alCambiar: (v) => { masaCuerpo = v; recalcular(); },
+  });
+  const ponerC = lecturas(gCambio, [
+    ["vcL", "v circular en el punto más lejano"],
+    ["dvL", "Cambio de velocidad allí"],
+    ["EL", "Energía que hay que aportar"],
+    ["vcC", "v circular en el punto más cercano"],
+    ["dvC", "Cambio de velocidad allí"],
+    ["EC", "Energía que hay que aportar"],
+  ]);
+  casilla(gCambio, {
+    etiqueta: "Dibujar las dos órbitas circulares", valor: verCirculares,
+    alCambiar: (v) => { verCirculares = v; dibujar(); },
+  });
+  const notaCambio = document.createElement("p");
+  notaCambio.className = "sim__nota";
+  notaCambio.textContent = "Un impulso breve cambia la velocidad pero no la posición: el punto del impulso pertenece a la órbita antigua y a la nueva.";
+  gCambio.append(notaCambio);
+
   // ---- Cálculo ----
   const valido = () => M > 0 && a > 0 && e >= 0 && e < 1;
 
@@ -189,6 +214,13 @@ export function montar(contenedor) {
     // Tramo que empieza en el punto más cercano y tramo que empieza en el más lejano.
     ponerA("cerca", medida(F.areaBarrida(orbita, 0, dt), "m²"));
     ponerA("lejos", medida(F.areaBarrida(orbita, el.T / 2, el.T / 2 + dt), "m²"));
+    const signo = (x, unidad) => `${x >= 0 ? "+" : "−"}${medida(Math.abs(x), unidad)}`;
+    for (const [sufijo, donde] of [["L", "lejano"], ["C", "cercano"]]) {
+      const c = F.cambioACircular({ M, a, e, m: masaCuerpo }, donde);
+      ponerC(`vc${sufijo}`, medida(c.vCircular, "m/s"));
+      ponerC(`dv${sufijo}`, e < 1e-9 ? "ninguno: ya es circular" : `${signo(c.deltaV, "m/s")} (${c.deltaV > 0 ? "acelerar" : "frenar"})`);
+      ponerC(`E${sufijo}`, e < 1e-9 || !(masaCuerpo > 0) ? "—" : signo(c.energia, "J"));
+    }
     gExtremos.querySelector("h2").textContent = `${cerca[0].toUpperCase()}${cerca.slice(1)} y ${lejos}`;
     actualizarAhora();
     dibujar();
@@ -223,13 +255,28 @@ export function montar(contenedor) {
     const margenX = 30;
     const arriba = 44;
     const abajo = 70;
-    const esc = Math.min((ancho - 2 * margenX) / (2 * el.a), (alto - arriba - abajo) / (2 * el.b));
-    const cx = ancho / 2;
     const cy = arriba + (alto - arriba - abajo) / 2;
-    // El astro está en el foco, desplazado a·e a la derecha del centro.
-    const fx = cx + el.c * esc;
+    // El astro está en el foco, desplazado a·e a la derecha del centro de la elipse.
+    // Con las órbitas circulares a la vista, el encuadre se centra en el astro.
+    const esc = verCirculares
+      ? Math.min(ancho - 2 * margenX, alto - arriba - abajo) / (2 * el.ra)
+      : Math.min((ancho - 2 * margenX) / (2 * el.a), (alto - arriba - abajo) / (2 * el.b));
+    const fx = verCirculares ? ancho / 2 : ancho / 2 + el.c * esc;
+    const cx = fx - el.c * esc;
     const X = (x) => fx + x * esc;
     const Y = (y) => cy - y * esc;
+
+    if (verCirculares && e >= 0.005) {
+      ctx.setLineDash([5, 5]);
+      ctx.lineWidth = 1.5;
+      for (const [radio, color] of [[el.ra, "rgba(122,170,255,0.9)"], [el.rp, "rgba(255,159,107,0.9)"]]) {
+        ctx.beginPath();
+        ctx.arc(fx, cy, radio * esc, 0, 2 * Math.PI);
+        ctx.strokeStyle = color;
+        ctx.stroke();
+      }
+      ctx.setLineDash([]);
+    }
 
     // Tramos de igual duración
     sectores.forEach((puntos, i) => {
@@ -310,7 +357,7 @@ export function montar(contenedor) {
     ctx.font = "600 12px system-ui, sans-serif";
     ctx.fillStyle = COLOR.texto;
     ctx.textBaseline = "middle";
-    if (e >= 0.005) {
+    if (e >= 0.005 && !verCirculares) {
       const yRotulo = cy + el.b * esc + 14;
       ctx.textAlign = "right";
       ctx.fillText(cerca, ancho - 10, yRotulo);
@@ -333,7 +380,7 @@ export function montar(contenedor) {
     });
     ctx.textAlign = "right";
     ctx.fillStyle = COLOR.texto;
-    ctx.fillText("cada franja: mismo tiempo", ancho - 12, alto - 14);
+    ctx.fillText(verCirculares ? "a trazos: órbitas circulares" : "cada franja: mismo tiempo", ancho - 12, alto - 14);
   }
   lienzo.alRedimensionar = () => dibujar();
 

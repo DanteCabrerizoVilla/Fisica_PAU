@@ -1,4 +1,5 @@
-"""Comprueba que todas las fórmulas del sitio construido se pintan sin error.
+"""Comprueba que todas las fórmulas del sitio construido se pintan sin error
+y que todas las simulaciones se montan sin errores de JavaScript.
 
 Abre cada página de _site/ que tenga fórmulas en Chrome o Edge sin ventana y
 cuenta las que KaTeX no ha podido interpretar. Hay que construir antes.
@@ -36,6 +37,12 @@ def revisar(navegador: str, url: str) -> tuple[int, int, list[str]]:
     total = len(re.findall(r'class="math (?:inline|block)', dom))
     listas = len(re.findall(r'class="math (?:inline|block) listo"', dom))
     errores = re.findall(r'class="katex-error"[^>]*title="([^"]*)"', dom)
+    # Las páginas de simulación anotan en <html data-error="..."> cualquier fallo de JavaScript.
+    m = re.search(r'<html[^>]*data-error="([^"]*)"', dom)
+    if m:
+        errores.append("simulación: " + m.group(1))
+    elif "/simulaciones/" in url and not url.rstrip("/").endswith("simulaciones/index.html") and 'data-sim="ok"' not in dom:
+        errores.append("simulación: no ha terminado de montarse")
     return total, total - listas, errores
 
 

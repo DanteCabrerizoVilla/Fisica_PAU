@@ -33,6 +33,7 @@ $$r_p\,v_p = r_a\,v_a$$
 3. **Excentricidad cero.** La órbita es circular, todas las franjas son iguales y la velocidad es constante.
 4. **Cometa Halley.** Con una excentricidad de 0,967 pasa casi todo el periodo lejos del Sol y cruza el perihelio a toda velocidad.
 5. **Energías.** La cinética y la potencial cambian a lo largo de la órbita, pero la mecánica se queda fija.
+6. **Cambio de órbita.** Carga el satélite Molniya y marca «Dibujar las dos órbitas circulares». En el apogeo va más lento que un satélite en órbita circular de ese radio, así que para quedarse en ella hay que **acelerar**; en el perigeo va más rápido y habría que **frenar**. La energía que hay que aportar es la diferencia de energías mecánicas, $\Delta E = -\dfrac{GMm}{2r} - \left(-\dfrac{GMm}{2a}\right)$.
 
 ## Lo que conviene llevarse al examen
 
