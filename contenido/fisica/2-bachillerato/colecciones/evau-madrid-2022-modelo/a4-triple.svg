@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 170" width="400" height="170" font-family="system-ui, sans-serif" font-size="13">
+<title>Objeto a tres veces la distancia focal: los tres rayos principales se cruzan a 1,5 veces la focal al otro lado de la lente. La imagen es real, invertida y de la mitad de tamaño</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="8.0" y1="80.0" x2="392.0" y2="80.0" stroke="#5a6170" stroke-width="1.2"/>
+<line x1="232" y1="12" x2="232" y2="158" stroke="#3a7bd5" stroke-width="2.5" marker-start="url(#p)" marker-end="url(#p)"/>
+<circle cx="170.0" cy="80" r="2.5" fill="#1e222b"/><text x="170.0" y="96.0" text-anchor="middle" fill="#1e222b" font-size="12">F</text>
+<circle cx="294.0" cy="80" r="2.5" fill="#1e222b"/><text x="294.0" y="96.0" text-anchor="middle" fill="#1e222b" font-size="12">F′</text>
+<polyline points="46.0,30.0 232.0,30.0 325.0,105.0" fill="none" stroke="#0f6b5c" stroke-width="1.5"/>
+<polyline points="46.0,30.0 325.0,105.0" fill="none" stroke="#0f6b5c" stroke-width="1.5"/>
+<polyline points="46.0,30.0 232.0,105.0 325.0,105.0" fill="none" stroke="#0f6b5c" stroke-width="1.5"/>
+<line x1="46.0" y1="80.0" x2="46.0" y2="30.0" stroke="#1e222b" stroke-width="2.5" marker-end="url(#p)"/>
+<line x1="325.0" y1="80.0" x2="325.0" y2="105.0" stroke="#b5451b" stroke-width="2.5" marker-end="url(#p)"/>
+<text x="46.0" y="22.0" text-anchor="middle" fill="#1e222b" font-style="italic">y</text>
+<text x="333.0" y="109.0" text-anchor="start" fill="#b5451b" font-size="12">y′ = −0,5 y</text>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 216" width="360" height="216" font-family="system-ui, sans-serif" font-size="13">
+<title>Plano xy visto de frente. El hilo 1 corta al plano en el punto (0, a) y su corriente entra en el papel; el hilo 2 lo corta en (2a, 0) y su corriente sale del papel</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="46" y1="170" x2="330" y2="170" stroke="#5a6170" marker-end="url(#p)"/><text x="334" y="174" fill="#5a6170" font-style="italic">x</text>
+<line x1="70" y1="194" x2="70" y2="24" stroke="#5a6170" marker-end="url(#p)"/><text x="76" y="28" fill="#5a6170" font-style="italic">y</text>
+<circle cx="70.0" cy="60.0" r="9" fill="#fff" stroke="#b5451b" stroke-width="2"/><path d="M65.0 55.0 L75.0 65.0 M65.0 65.0 L75.0 55.0" stroke="#b5451b" stroke-width="2"/><text x="86.0" y="52.0" text-anchor="start" fill="#b5451b">hilo 1 · I</text>
+<circle cx="290.0" cy="170.0" r="9" fill="#fff" stroke="#3a7bd5" stroke-width="2"/><circle cx="290.0" cy="170.0" r="3" fill="#3a7bd5"/><text x="290.0" y="152.0" text-anchor="middle" fill="#3a7bd5">hilo 2 · I</text>
+<line x1="48.0" y1="60.0" x2="48.0" y2="170.0" stroke="#5a6170" marker-start="url(#p)" marker-end="url(#p)"/><text x="48.0" y="109.0" text-anchor="middle" fill="#5a6170"></text>
+<text x="36.0" y="119.0" text-anchor="middle" fill="#5a6170" font-style="italic">a</text>
+<line x1="70.0" y1="196.0" x2="290.0" y2="196.0" stroke="#5a6170" marker-start="url(#p)" marker-end="url(#p)"/><text x="180.0" y="212.0" text-anchor="middle" fill="#5a6170">2a</text>
+<text x="60.0" y="186.0" text-anchor="end" fill="#1e222b" >O</text>
+<circle cx="238.0" cy="40.0" r="9" fill="#fff" stroke="#b5451b" stroke-width="2"/><path d="M233.0 35.0 L243.0 45.0 M233.0 45.0 L243.0 35.0" stroke="#b5451b" stroke-width="2"/><text x="254.0" y="45.0" text-anchor="start" fill="#b5451b">entra en el papel</text>
+<circle cx="238.0" cy="66.0" r="9" fill="#fff" stroke="#3a7bd5" stroke-width="2"/><circle cx="238.0" cy="66.0" r="3" fill="#3a7bd5"/><text x="254.0" y="71.0" text-anchor="start" fill="#3a7bd5">sale del papel</text>
+</svg>

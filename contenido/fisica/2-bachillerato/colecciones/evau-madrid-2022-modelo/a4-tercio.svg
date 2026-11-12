@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220" width="400" height="220" font-family="system-ui, sans-serif" font-size="13">
+<title>Objeto a un tercio de la distancia focal: los rayos salen divergentes de la lente y sus prolongaciones se cortan a media distancia focal, en el lado del objeto. La imagen es virtual, derecha y 1,5 veces mayor</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="8.0" y1="120.0" x2="392.0" y2="120.0" stroke="#5a6170" stroke-width="1.2"/>
+<line x1="190" y1="12" x2="190" y2="208" stroke="#3a7bd5" stroke-width="2.5" marker-start="url(#p)" marker-end="url(#p)"/>
+<circle cx="40.0" cy="120" r="2.5" fill="#1e222b"/><text x="40.0" y="136.0" text-anchor="middle" fill="#1e222b" font-size="12">F</text>
+<circle cx="340.0" cy="120" r="2.5" fill="#1e222b"/><text x="340.0" y="136.0" text-anchor="middle" fill="#1e222b" font-size="12">F′</text>
+<polyline points="140.0,70.0 190.0,70.0 385.0,135.0" fill="none" stroke="#0f6b5c" stroke-width="1.5"/>
+<polyline points="190.0,70.0 115.0,45.0" fill="none" stroke="#0f6b5c" stroke-width="1.5" stroke-dasharray="5 4"/>
+<polyline points="140.0,70.0 265.0,195.0" fill="none" stroke="#0f6b5c" stroke-width="1.5"/>
+<polyline points="140.0,70.0 115.0,45.0" fill="none" stroke="#0f6b5c" stroke-width="1.5" stroke-dasharray="5 4"/>
+<line x1="140.0" y1="120.0" x2="140.0" y2="70.0" stroke="#1e222b" stroke-width="2.5" marker-end="url(#p)"/>
+<line x1="115.0" y1="120.0" x2="115.0" y2="45.0" stroke="#b5451b" stroke-width="2.5" marker-end="url(#p)"/>
+<text x="146.0" y="136.0" text-anchor="start" fill="#1e222b" font-style="italic">y</text>
+<text x="107.0" y="49.0" text-anchor="end" fill="#b5451b" font-size="12">y′ = 1,5 y</text>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 200" width="360" height="200" font-family="system-ui, sans-serif" font-size="13">
+<title>Dos esferas grandes de masa M, B y C, separadas una distancia D en horizontal. Una esfera pequeña A, de masa m, está justo debajo de B, a una distancia d. Los tres centros forman un triángulo rectángulo de catetos D y d</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<circle cx="70" cy="60" r="30" fill="#5a6170" opacity="0.75"/><circle cx="310" cy="60" r="30" fill="#5a6170" opacity="0.75"/><circle cx="70" cy="150" r="13" fill="#5a6170" opacity="0.55"/>
+<text x="70.0" y="65.0" text-anchor="middle" fill="#fff" font-weight="700">B</text>
+<text x="310.0" y="65.0" text-anchor="middle" fill="#fff" font-weight="700">C</text>
+<text x="70.0" y="155.0" text-anchor="middle" fill="#fff" font-weight="700">A</text>
+<line x1="104.0" y1="60.0" x2="276.0" y2="60.0" stroke="#0f6b5c" marker-start="url(#p)" marker-end="url(#p)"/><text x="190.0" y="52.0" text-anchor="middle" fill="#0f6b5c">D</text>
+<line x1="28.0" y1="60.0" x2="28.0" y2="150.0" stroke="#0f6b5c" marker-start="url(#p)" marker-end="url(#p)"/><text x="28.0" y="99.0" text-anchor="middle" fill="#0f6b5c"></text>
+<text x="16.0" y="110.0" text-anchor="middle" fill="#0f6b5c" font-style="italic">d</text>
+<line x1="20.0" y1="60.0" x2="40.0" y2="60.0" stroke="#5a6170" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="20.0" y1="150.0" x2="56.0" y2="150.0" stroke="#5a6170" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="83.0" y1="147.0" x2="284.0" y2="72.0" stroke="#5a6170" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="96.0" y="172.0" text-anchor="start" fill="#1e222b" font-size="12">A: masa m</text>
+<text x="250.0" y="150.0" text-anchor="middle" fill="#1e222b" font-size="12">B y C: masa M</text>
+</svg>
