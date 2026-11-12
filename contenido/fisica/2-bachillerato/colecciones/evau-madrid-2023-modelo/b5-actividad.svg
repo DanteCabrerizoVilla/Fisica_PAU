@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 214" width="360" height="214" font-family="system-ui, sans-serif" font-size="13">
+<title>Actividad de la muestra frente al tiempo: curva exponencial decreciente que vale 6 MBq en el instante inicial, 3 MBq a los 8 días, 1,5 MBq a los 16 días y 0,75 MBq a los 24 días</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="54.0" y1="14" x2="54.0" y2="174" stroke="#d9d3c7"/>
+<text x="54.0" y="190" text-anchor="middle" fill="#1e222b">0</text>
+<line x1="88.1" y1="14" x2="88.1" y2="174" stroke="#d9d3c7"/>
+<text x="88.1" y="190" text-anchor="middle" fill="#1e222b">4</text>
+<line x1="122.2" y1="14" x2="122.2" y2="174" stroke="#d9d3c7"/>
+<text x="122.2" y="190" text-anchor="middle" fill="#1e222b">8</text>
+<line x1="156.4" y1="14" x2="156.4" y2="174" stroke="#d9d3c7"/>
+<text x="156.4" y="190" text-anchor="middle" fill="#1e222b">12</text>
+<line x1="190.5" y1="14" x2="190.5" y2="174" stroke="#d9d3c7"/>
+<text x="190.5" y="190" text-anchor="middle" fill="#1e222b">16</text>
+<line x1="224.6" y1="14" x2="224.6" y2="174" stroke="#d9d3c7"/>
+<text x="224.6" y="190" text-anchor="middle" fill="#1e222b">20</text>
+<line x1="258.7" y1="14" x2="258.7" y2="174" stroke="#d9d3c7"/>
+<text x="258.7" y="190" text-anchor="middle" fill="#1e222b">24</text>
+<line x1="292.8" y1="14" x2="292.8" y2="174" stroke="#d9d3c7"/>
+<text x="292.8" y="190" text-anchor="middle" fill="#1e222b">28</text>
+<line x1="326.9" y1="14" x2="326.9" y2="174" stroke="#d9d3c7"/>
+<text x="326.9" y="190" text-anchor="middle" fill="#1e222b">32</text>
+<line x1="54" y1="174.0" x2="344" y2="174.0" stroke="#d9d3c7"/>
+<text x="47" y="178.0" text-anchor="end" fill="#1e222b">0</text>
+<line x1="54" y1="151.1" x2="344" y2="151.1" stroke="#d9d3c7"/>
+<text x="47" y="155.1" text-anchor="end" fill="#1e222b">1</text>
+<line x1="54" y1="128.3" x2="344" y2="128.3" stroke="#d9d3c7"/>
+<text x="47" y="132.3" text-anchor="end" fill="#1e222b">2</text>
+<line x1="54" y1="105.4" x2="344" y2="105.4" stroke="#d9d3c7"/>
+<text x="47" y="109.4" text-anchor="end" fill="#1e222b">3</text>
+<line x1="54" y1="82.6" x2="344" y2="82.6" stroke="#d9d3c7"/>
+<text x="47" y="86.6" text-anchor="end" fill="#1e222b">4</text>
+<line x1="54" y1="59.7" x2="344" y2="59.7" stroke="#d9d3c7"/>
+<text x="47" y="63.7" text-anchor="end" fill="#1e222b">5</text>
+<line x1="54" y1="36.9" x2="344" y2="36.9" stroke="#d9d3c7"/>
+<text x="47" y="40.9" text-anchor="end" fill="#1e222b">6</text>
+<line x1="54" y1="14.0" x2="344" y2="14.0" stroke="#d9d3c7"/>
+<text x="47" y="18.0" text-anchor="end" fill="#1e222b">7</text>
+<rect x="54" y="14" width="290" height="160" fill="none" stroke="#1e222b"/>
+<text x="199.0" y="208" text-anchor="middle" fill="#1e222b">Tiempo (días)</text>
+<text transform="translate(20 94.0) rotate(-90)" text-anchor="middle" fill="#1e222b">Actividad (MBq)</text>
+<polyline points="54.0,36.9 56.1,39.8 58.3,42.7 60.4,45.5 62.5,48.2 64.7,50.9 66.8,53.6 68.9,56.2 71.1,58.7 73.2,61.1 75.3,63.6 77.5,65.9 79.6,68.2 81.7,70.5 83.9,72.7 86.0,74.9 88.1,77.0 90.2,79.1 92.4,81.1 94.5,83.1 96.6,85.1 98.8,87.0 100.9,88.8 103.0,90.7 105.2,92.5 107.3,94.2 109.4,95.9 111.6,97.6 113.7,99.2 115.8,100.8 118.0,102.4 120.1,103.9 122.2,105.4 124.4,106.9 126.5,108.3 128.6,109.7 130.8,111.1 132.9,112.5 135.0,113.8 137.2,115.1 139.3,116.3 141.4,117.6 143.6,118.8 145.7,120.0 147.8,121.1 150.0,122.3 152.1,123.4 154.2,124.5 156.4,125.5 158.5,126.6 160.6,127.6 162.8,128.6 164.9,129.5 167.0,130.5 169.1,131.4 171.3,132.3 173.4,133.2 175.5,134.1 177.7,135.0 179.8,135.8 181.9,136.6 184.1,137.4 186.2,138.2 188.3,139.0 190.5,139.7 192.6,140.4 194.7,141.2 196.9,141.9 199.0,142.6 201.1,143.2 203.3,143.9 205.4,144.5 207.5,145.2 209.7,145.8 211.8,146.4 213.9,147.0 216.1,147.6 218.2,148.1 220.3,148.7 222.5,149.2 224.6,149.8 226.7,150.3 228.9,150.8 231.0,151.3 233.1,151.8 235.2,152.2 237.4,152.7 239.5,153.2 241.6,153.6 243.8,154.1 245.9,154.5 248.0,154.9 250.2,155.3 252.3,155.7 254.4,156.1 256.6,156.5 258.7,156.9 260.8,157.2 263.0,157.6 265.1,157.9 267.2,158.3 269.4,158.6 271.5,158.9 273.6,159.3 275.8,159.6 277.9,159.9 280.0,160.2 282.2,160.5 284.3,160.8 286.4,161.1 288.6,161.3 290.7,161.6 292.8,161.9 295.0,162.1 297.1,162.4 299.2,162.6 301.4,162.9 303.5,163.1 305.6,163.4 307.8,163.6 309.9,163.8 312.0,164.0 314.1,164.2 316.3,164.4 318.4,164.7 320.5,164.9 322.7,165.0 324.8,165.2 326.9,165.4 329.1,165.6 331.2,165.8 333.3,166.0 335.5,166.1 337.6,166.3 339.7,166.5 341.9,166.6 344.0,166.8" fill="none" stroke="#b5451b" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="164.9" y="78.0" text-anchor="start" fill="#b5451b" font-weight="700">Actividad del ¹³¹I</text>
+</svg>

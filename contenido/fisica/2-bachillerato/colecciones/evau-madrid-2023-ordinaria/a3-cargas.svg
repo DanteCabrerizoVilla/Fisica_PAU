@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 220" width="340" height="220" font-family="system-ui, sans-serif" font-size="13">
+<title>Cargas −q en (−a, a), −q en (a, a) y +2q en el origen. La superficie cerrada S1 rodea a la carga +2q y a la carga −q de la izquierda; la superficie S2 rodea a las tres</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="30" y1="170" x2="320" y2="170" stroke="#5a6170" marker-end="url(#p)"/><text x="324.0" y="174.0" text-anchor="start" fill="#5a6170" font-style="italic">x</text>
+<line x1="170" y1="210" x2="170" y2="20" stroke="#5a6170" marker-end="url(#p)"/><text x="176.0" y="24.0" text-anchor="start" fill="#5a6170" font-style="italic">y</text>
+<ellipse cx="170" cy="130" rx="140" ry="110" fill="none" stroke="#0f6b5c" stroke-width="1.5" stroke-dasharray="7 5"/><text x="290.0" y="40.0" text-anchor="middle" fill="#0f6b5c" font-weight="700">S₂</text>
+<ellipse cx="136" cy="136" rx="72" ry="46" transform="rotate(45 136 136)" fill="none" stroke="#b5451b" stroke-width="1.5" stroke-dasharray="3 4"/><text x="58.0" y="60.0" text-anchor="middle" fill="#b5451b" font-weight="700">S₁</text>
+<circle cx="100" cy="100" r="11" fill="#3a7bd5"/><text x="100" y="105" text-anchor="middle" fill="#fff" font-weight="700">−</text><text x="100" y="84" text-anchor="middle" fill="#1e222b">−q  (−a, a)</text>
+<circle cx="240" cy="100" r="11" fill="#3a7bd5"/><text x="240" y="105" text-anchor="middle" fill="#fff" font-weight="700">−</text><text x="240" y="84" text-anchor="middle" fill="#1e222b">−q  (a, a)</text>
+<circle cx="170" cy="170" r="11" fill="#b5451b"/><text x="170" y="175" text-anchor="middle" fill="#fff" font-weight="700">+</text><text x="170" y="198" text-anchor="middle" fill="#1e222b">+2q</text>
+</svg>

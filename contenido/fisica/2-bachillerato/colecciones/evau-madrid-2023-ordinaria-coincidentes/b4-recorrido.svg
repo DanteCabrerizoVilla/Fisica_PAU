@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 230" width="330" height="230" font-family="system-ui, sans-serif" font-size="13">
+<title>Recorrido del rayo: incide con 30° sobre la cara inclinada, se refracta con 22,1° respecto a su normal, llega a la cara vertical con 7,9° y sale al aire con 10,6°</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<polygon points="110,214 210,214 210,41" fill="rgba(58,123,213,0.12)" stroke="#1e222b" stroke-width="1.5"/>
+<text x="200.0" y="84.0" text-anchor="middle" fill="#1e222b" font-size="12">30°</text>
+<text x="134.0" y="208.0" text-anchor="middle" fill="#1e222b" font-size="12">60°</text>
+<line x1="99.4" y1="92.5" x2="198.1" y2="149.5" stroke="#5a6170" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="30.0" y1="127.5" x2="160.0" y2="127.5" stroke="#b5451b" stroke-width="2" marker-end="url(#p)"/>
+<text x="178.0" y="190.0" text-anchor="middle" fill="#1e222b" font-size="12">n = 1,33</text>
+<text x="60.0" y="60.0" text-anchor="middle" fill="#1e222b" font-size="12">aire, n = 1</text>
+<line x1="160.0" y1="127.5" x2="210.0" y2="134.5" stroke="#b5451b" stroke-width="2"/>
+<line x1="210.0" y1="134.5" x2="298.5" y2="150.9" stroke="#b5451b" stroke-width="2" marker-end="url(#p)"/>
+<line x1="170.0" y1="134.5" x2="306.0" y2="134.5" stroke="#5a6170" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="120.0" y="119.5" text-anchor="middle" fill="#5a6170" font-size="12">30°</text>
+<text x="206.0" y="151.5" text-anchor="start" fill="#0f6b5c" font-size="12">22,1°</text>
+<text x="202.0" y="126.5" text-anchor="end" fill="#0f6b5c" font-size="12">7,9°</text>
+<text x="280.0" y="164.5" text-anchor="middle" fill="#0f6b5c" font-size="12">10,6°</text>
+</svg>

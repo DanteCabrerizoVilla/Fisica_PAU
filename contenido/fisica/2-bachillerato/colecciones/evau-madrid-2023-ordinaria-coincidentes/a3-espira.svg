@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 204" width="230" height="204" font-family="system-ui, sans-serif" font-size="13">
+<title>Espira cuadrada que gira con velocidad angular omega alrededor de un eje vertical que pasa por su centro, dentro de un campo magnético B horizontal, perpendicular al eje de giro</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="110.0" y1="14.0" x2="110.0" y2="186.0" stroke="#5a6170" stroke-width="1.2" stroke-dasharray="4 4"/>
+<polygon points="62,52 158,34 158,150 62,168" fill="rgba(58,123,213,0.10)" stroke="#1e222b" stroke-width="2"/>
+<path d="M96 22 A14 5 0 1 0 124 22" fill="none" stroke="#5a6170" stroke-width="1.5" marker-end="url(#p)"/><text x="136.0" y="18.0" text-anchor="start" fill="#5a6170" font-style="italic">ω</text>
+<line x1="110.0" y1="104.0" x2="196.0" y2="104.0" stroke="#3a7bd5" stroke-width="2.5" marker-end="url(#p)"/>
+<text x="200.0" y="122.0" text-anchor="middle" fill="#3a7bd5" font-style="italic" font-weight="700">B</text>
+<text x="110.0" y="198.0" text-anchor="middle" fill="#5a6170" font-size="12">eje de giro</text>
+</svg>

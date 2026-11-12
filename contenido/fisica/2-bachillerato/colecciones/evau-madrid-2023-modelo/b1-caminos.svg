@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 230" width="380" height="230" font-family="system-ui, sans-serif" font-size="13">
+<title>Masa m1 en el origen y masa m2 en el punto (2, 0) m. Tres caminos distintos, A, B y C, llevan desde (2, 0) m hasta (0, 1) m: uno recto y dos curvos</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="46" y1="190" x2="340" y2="190" stroke="#5a6170" marker-end="url(#p)"/><text x="344" y="194" fill="#5a6170" font-style="italic">x (m)</text>
+<line x1="70" y1="214" x2="70" y2="30" stroke="#5a6170" marker-end="url(#p)"/><text x="76" y="34" fill="#5a6170" font-style="italic">y (m)</text>
+<line x1="290.0" y1="190.0" x2="74.0" y2="82.0" stroke="#1e222b" stroke-width="1.8" marker-end="url(#p)"/>
+<text x="166.0" y="146.0" text-anchor="middle" fill="#1e222b" >A</text>
+<path d="M290 190 Q220 40 75 80" fill="none" stroke="#1e222b" stroke-width="1.8" marker-end="url(#p)"/><text x="194.0" y="74.0" text-anchor="middle" fill="#1e222b" >B</text>
+<path d="M290 190 C320 -10 180 0 75 78" fill="none" stroke="#1e222b" stroke-width="1.8" marker-end="url(#p)"/><text x="266.0" y="40.0" text-anchor="middle" fill="#1e222b" >C</text>
+<circle cx="70" cy="190" r="9" fill="#5a6170"/><text x="64.0" y="216.0" text-anchor="middle" fill="#1e222b" >m₁  (0, 0)</text>
+<circle cx="290" cy="190" r="11" fill="#5a6170"/><text x="290.0" y="218.0" text-anchor="middle" fill="#1e222b" >m₂  (2, 0)</text>
+<text x="62.0" y="84.0" text-anchor="end" fill="#1e222b" >(0, 1)</text>
+</svg>

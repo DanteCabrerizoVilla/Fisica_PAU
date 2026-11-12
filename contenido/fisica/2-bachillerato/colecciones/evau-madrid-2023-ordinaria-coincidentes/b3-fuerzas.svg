@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 240" width="340" height="240" font-family="system-ui, sans-serif" font-size="13">
+<title>La carga de +4 microculombios, en el punto (0, 4) m, es atraída por la carga negativa con una fuerza F1 dirigida hacia ella y repelida por la positiva con una fuerza F2 menor. La resultante F apunta hacia la izquierda y hacia abajo</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="126" y1="200" x2="290" y2="200" stroke="#5a6170" marker-end="url(#p)"/><text x="294" y="204" fill="#5a6170" font-style="italic">x (m)</text>
+<line x1="150" y1="224" x2="150" y2="22" stroke="#5a6170" marker-end="url(#p)"/><text x="156" y="26" fill="#5a6170" font-style="italic">y (m)</text>
+<line x1="78.0" y1="200.0" x2="150.0" y2="56.0" stroke="#5a6170" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="258.0" y1="200.0" x2="150.0" y2="56.0" stroke="#5a6170" stroke-width="1" stroke-dasharray="4 4"/>
+<circle cx="78" cy="200" r="11" fill="#3a7bd5"/><text x="78" y="205" text-anchor="middle" fill="#fff" font-weight="700">−</text><text x="78" y="228" text-anchor="middle" fill="#1e222b">−3 μC</text>
+<circle cx="258" cy="200" r="11" fill="#b5451b"/><text x="258" y="205" text-anchor="middle" fill="#fff" font-weight="700">+</text><text x="258" y="228" text-anchor="middle" fill="#1e222b">+2 μC</text>
+<line x1="150.0" y1="56.0" x2="108.9" y2="138.1" stroke="#3a7bd5" stroke-width="2.5" marker-end="url(#p)"/>
+<text x="102.9" y="142.1" text-anchor="end" fill="#3a7bd5" >F₁</text>
+<line x1="150.0" y1="56.0" x2="120.6" y2="16.8" stroke="#b5451b" stroke-width="2.5" marker-end="url(#p)"/>
+<text x="114.6" y="16.8" text-anchor="end" fill="#b5451b" >F₂</text>
+<line x1="150.0" y1="56.0" x2="79.6" y2="98.9" stroke="#0f6b5c" stroke-width="3" marker-end="url(#p)"/>
+<text x="73.6" y="102.9" text-anchor="end" fill="#0f6b5c" font-weight="700">F</text>
+<circle cx="150" cy="56" r="11" fill="#b5451b"/><text x="150" y="61" text-anchor="middle" fill="#fff" font-weight="700">+</text><text x="150" y="56" text-anchor="middle" fill="#1e222b"></text>
+<text x="166.0" y="50.0" text-anchor="start" fill="#1e222b" >+4 μC  (0, 4)</text>
+</svg>

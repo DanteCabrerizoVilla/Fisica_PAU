@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 230" width="400" height="230" font-family="system-ui, sans-serif" font-size="13">
+<title>Situación A: el objeto está a 3 cm de la lente convergente, entre el foco y la lente. Los rayos salen divergentes y sus prolongaciones se cortan a 4,5 cm, en el mismo lado que el objeto: la imagen es virtual, derecha y mayor</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="8.0" y1="118.0" x2="392.0" y2="118.0" stroke="#5a6170" stroke-width="1.2"/>
+<line x1="178" y1="14" x2="178" y2="216" stroke="#3a7bd5" stroke-width="2.5" marker-start="url(#p)" marker-end="url(#p)"/>
+<circle cx="25.0" cy="118" r="2.5" fill="#1e222b"/><text x="25.0" y="134.0" text-anchor="middle" fill="#1e222b" font-size="12">F</text>
+<circle cx="331.0" cy="118" r="2.5" fill="#1e222b"/><text x="331.0" y="134.0" text-anchor="middle" fill="#1e222b" font-size="12">F′</text>
+<polyline points="127.0,70.0 178.0,70.0 373.5,131.3" fill="none" stroke="#0f6b5c" stroke-width="1.5"/>
+<polyline points="178.0,70.0 101.5,46.0" fill="none" stroke="#0f6b5c" stroke-width="1.5" stroke-dasharray="5 4"/>
+<polyline points="127.0,70.0 246.0,182.0" fill="none" stroke="#0f6b5c" stroke-width="1.5"/>
+<polyline points="127.0,70.0 101.5,46.0" fill="none" stroke="#0f6b5c" stroke-width="1.5" stroke-dasharray="5 4"/>
+<line x1="127.0" y1="118.0" x2="127.0" y2="70.0" stroke="#1e222b" stroke-width="2.5" marker-end="url(#p)"/>
+<line x1="101.5" y1="118.0" x2="101.5" y2="46.0" stroke="#b5451b" stroke-width="2.5" marker-end="url(#p)"/>
+<text x="133.0" y="134.0" text-anchor="start" fill="#1e222b" font-size="12">objeto</text>
+<text x="95.5" y="40.0" text-anchor="end" fill="#b5451b" font-size="12">imagen</text>
+</svg>

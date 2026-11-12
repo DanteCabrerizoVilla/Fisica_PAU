@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 186" width="450" height="186" font-family="system-ui, sans-serif" font-size="13">
+<title>Trazado con dos lentes: la primera forma una imagen real e invertida a 3,8 cm, justo en el foco objeto de la segunda lente; los rayos salen de la segunda lente paralelos entre sí y la imagen final se forma en el infinito</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="10.0" y1="96.0" x2="440.0" y2="96.0" stroke="#5a6170" stroke-width="1.2"/>
+<line x1="290.0" y1="18" x2="290.0" y2="174" stroke="#3a7bd5" stroke-width="2.5" marker-start="url(#p)" marker-end="url(#p)"/>
+<line x1="380.0" y1="40" x2="380.0" y2="152" stroke="#3a7bd5" stroke-width="2.5" marker-start="url(#p)" marker-end="url(#p)"/>
+<circle cx="236.0" cy="96" r="2.5" fill="#1e222b"/><text x="236.0" y="112.0" text-anchor="middle" fill="#1e222b" font-size="11">F₁</text>
+<circle cx="344.0" cy="96" r="2.5" fill="#1e222b"/><text x="344.0" y="112.0" text-anchor="middle" fill="#1e222b" font-size="11">F′₁</text>
+<circle cx="358.4" cy="96" r="2.5" fill="#1e222b"/><text x="358.4" y="88.0" text-anchor="middle" fill="#1e222b" font-size="11">F₂</text>
+<circle cx="401.6" cy="96" r="2.5" fill="#1e222b"/><text x="401.6" y="112.0" text-anchor="middle" fill="#1e222b" font-size="11">F′₂</text>
+<line x1="34.4" y1="96.0" x2="34.4" y2="36.0" stroke="#1e222b" stroke-width="2.5" marker-end="url(#p)"/>
+<line x1="358.4" y1="96.0" x2="358.4" y2="112.1" stroke="#b5451b" stroke-width="2" marker-end="url(#p)"/>
+<polyline points="34.4,36.0 290.0,36.0 380.0,136.0 434.0,95.9" fill="none" stroke="#0f6b5c" stroke-width="1.5"/>
+<polyline points="34.4,36.0 380.0,117.1 434.0,77.0" fill="none" stroke="#0f6b5c" stroke-width="1.5"/>
+<text x="34.4" y="28.0" text-anchor="middle" fill="#1e222b" >objeto</text>
+<text x="290.0" y="12.0" text-anchor="middle" fill="#3a7bd5" >lente 1</text>
+<text x="380.0" y="34.0" text-anchor="middle" fill="#3a7bd5" >lente 2</text>
+<text x="432.0" y="111.9" text-anchor="end" fill="#0f6b5c" font-size="12">rayos paralelos</text>
+</svg>

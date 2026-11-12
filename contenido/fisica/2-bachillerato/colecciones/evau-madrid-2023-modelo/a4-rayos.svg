@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 530 248" width="530" height="248" font-family="system-ui, sans-serif" font-size="13">
+<title>Trazado con dos lentes convergentes: la primera forma una imagen real e invertida de doble tamaño a 30 cm; la segunda, situada a 50 cm de la primera, forma la imagen final a 30 cm a su derecha, derecha respecto al objeto y de tamaño triple</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="8.0" y1="112.0" x2="520.0" y2="112.0" stroke="#5a6170" stroke-width="1.2"/>
+<line x1="96.0" y1="14" x2="96.0" y2="210" stroke="#3a7bd5" stroke-width="2.5" marker-start="url(#p)" marker-end="url(#p)"/>
+<line x1="346.0" y1="14" x2="346.0" y2="210" stroke="#3a7bd5" stroke-width="2.5" marker-start="url(#p)" marker-end="url(#p)"/>
+<circle cx="46.0" cy="112" r="2.5" fill="#1e222b"/><text x="46.0" y="128.0" text-anchor="middle" fill="#1e222b" font-size="11">F₁</text>
+<circle cx="146.0" cy="112" r="2.5" fill="#1e222b"/><text x="146.0" y="128.0" text-anchor="middle" fill="#1e222b" font-size="11">F′₁</text>
+<circle cx="286.0" cy="112" r="2.5" fill="#1e222b"/><text x="286.0" y="128.0" text-anchor="middle" fill="#1e222b" font-size="11">F₂</text>
+<circle cx="406.0" cy="112" r="2.5" fill="#1e222b"/><text x="406.0" y="128.0" text-anchor="middle" fill="#1e222b" font-size="11">F′₂</text>
+<polyline points="21.0,92.0 96.0,92.0 346.0,192.0 496.0,52.0" fill="none" stroke="#0f6b5c" stroke-width="1.5"/>
+<polyline points="21.0,92.0 346.0,178.7 496.0,52.0" fill="none" stroke="#0f6b5c" stroke-width="1.5"/>
+<line x1="21.0" y1="112.0" x2="21.0" y2="92.0" stroke="#1e222b" stroke-width="2.5" marker-end="url(#p)"/>
+<line x1="246.0" y1="112.0" x2="246.0" y2="152.0" stroke="#5a6170" stroke-width="2" marker-end="url(#p)"/>
+<line x1="496.0" y1="112.0" x2="496.0" y2="52.0" stroke="#b5451b" stroke-width="2.5" marker-end="url(#p)"/>
+<text x="21.0" y="84.0" text-anchor="middle" fill="#1e222b" >objeto</text>
+<text x="240.0" y="168.0" text-anchor="end" fill="#5a6170" font-size="12">imagen 1</text>
+<text x="496.0" y="44.0" text-anchor="middle" fill="#b5451b" >imagen final</text>
+<text x="96.0" y="10.0" text-anchor="middle" fill="#3a7bd5" >lente 1</text>
+<text x="346.0" y="10.0" text-anchor="middle" fill="#3a7bd5" >lente 2</text>
+<line x1="96.0" y1="226.0" x2="496.0" y2="226.0" stroke="#0f6b5c" marker-start="url(#p)" marker-end="url(#p)"/><text x="296.0" y="242.0" text-anchor="middle" fill="#0f6b5c">D = 80 cm</text>
+</svg>
