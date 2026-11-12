@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 212" width="340" height="212" font-family="system-ui, sans-serif" font-size="13">
+<title>Una lámina de vidrio sobre un líquido, con aire por encima. Un rayo sube desde el líquido, incide con 30° en la cara inferior del vidrio, se refracta dentro de él y sale rasante por la cara superior</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<rect x="20" y="70" width="300" height="50" fill="rgba(58,123,213,0.14)"/><rect x="20" y="120" width="300" height="80" fill="rgba(15,107,92,0.16)"/>
+<line x1="20.0" y1="70.0" x2="320.0" y2="70.0" stroke="#1e222b" stroke-width="1.5"/>
+<line x1="20.0" y1="120.0" x2="320.0" y2="120.0" stroke="#1e222b" stroke-width="1.2"/>
+<text x="28.0" y="56.0" text-anchor="start" fill="#1e222b" font-size="12">aire</text>
+<text x="28.0" y="100.0" text-anchor="start" fill="#1e222b" font-size="12">vidrio</text>
+<text x="28.0" y="190.0" text-anchor="start" fill="#1e222b" font-size="12">líquido</text>
+<line x1="109.6" y1="190.0" x2="150.0" y2="120.0" stroke="#b5451b" stroke-width="2" marker-end="url(#p)"/>
+<line x1="150.0" y1="120.0" x2="198.9" y2="70.0" stroke="#b5451b" stroke-width="2"/>
+<line x1="198.9" y1="70.0" x2="288.9" y2="67.0" stroke="#b5451b" stroke-width="2" marker-end="url(#p)"/>
+<line x1="150.0" y1="196.0" x2="150.0" y2="78.0" stroke="#5a6170" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="158.0" y="176.0" text-anchor="start" fill="#0f6b5c" font-size="12">30°</text>
+</svg>

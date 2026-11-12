@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 204" width="350" height="204" font-family="system-ui, sans-serif" font-size="13">
+<title>Un foco sonoro a una altura h sobre el suelo. El punto B está en el suelo, en la vertical del foco, y allí el nivel es de 80 dB. El punto A está en el suelo, a 100 m del foco, y allí el nivel es de 60 dB</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="20.0" y1="170.0" x2="330.0" y2="170.0" stroke="#1e222b" stroke-width="1.5"/>
+<line x1="60.0" y1="170.0" x2="280.0" y2="40.0" stroke="#5a6170" stroke-width="1.2" stroke-dasharray="4 4"/>
+<line x1="280.0" y1="40.0" x2="280.0" y2="170.0" stroke="#5a6170" stroke-width="1.2" stroke-dasharray="4 4"/>
+<circle cx="280" cy="40" r="7" fill="#b5451b"/><text x="268.0" y="30.0" text-anchor="end" fill="#b5451b" >foco de potencia P</text>
+<circle cx="60.0" cy="170.0" r="4" fill="#1e222b"/><text x="56.0" y="190.0" text-anchor="middle" fill="#1e222b">A · 60 dB</text>
+<circle cx="280.0" cy="170.0" r="4" fill="#1e222b"/><text x="284.0" y="190.0" text-anchor="middle" fill="#1e222b">B · 80 dB</text>
+<text x="150.0" y="96.0" text-anchor="middle" fill="#5a6170" >100 m</text>
+<text x="292.0" y="110.0" text-anchor="start" fill="#5a6170" font-style="italic">h</text>
+</svg>
