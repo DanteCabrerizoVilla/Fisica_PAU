@@ -159,6 +159,17 @@ main { padding-block: 1.25rem 3rem; min-height: 60vh; }
 .enlaces a { display: flex; justify-content: space-between; align-items: center; gap: 1rem; min-height: 52px; padding: 0.6rem 1rem; text-decoration: none; font-weight: 600; }
 .enlaces a:hover { background: var(--hundido); }
 .enlaces__dato { font-size: 0.85rem; font-weight: 600; color: var(--tinta-suave); white-space: nowrap; }
+.enlaces__nota { display: block; margin-top: 0.15rem; font-size: 0.85rem; font-weight: 400; line-height: 1.4; color: var(--tinta-suave); }
+@media (max-width: 520px) { .enlaces a:has(.enlaces__nota) { flex-direction: column; align-items: flex-start; gap: 0.3rem; } }
+
+/* Enlace a una simulación dentro de la teoría */
+.mira-caja { margin: 1.2rem 0; }
+.mira { display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; min-height: 52px; background: var(--superficie); border: 1px solid var(--linea); border-left: 4px solid var(--acento); border-radius: var(--radio); text-decoration: none; color: inherit; }
+.mira:hover { background: var(--hundido); }
+.mira__icono { flex: none; display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; background: var(--acento); color: var(--sobre-acento); font-size: 0.8rem; }
+.mira__texto { line-height: 1.4; }
+.mira__texto strong { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--acento); }
+@media print { .mira { display: none; } }
 
 /* ---- Listas de problemas y filtros ------------------------------------- */
 

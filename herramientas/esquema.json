@@ -35,6 +35,10 @@
           "type": "object",
           "additionalProperties": {"type": "string", "pattern": "^[A-Za-z0-9_=&.+-]*$"}
         },
+        "nota_simulacion": {
+          "type": "object",
+          "additionalProperties": {"type": "string", "minLength": 1}
+        },
         "estado": {"enum": ["borrador", "revisar", "verificado"]},
         "revisar": {"type": "string"},
         "resultados": {

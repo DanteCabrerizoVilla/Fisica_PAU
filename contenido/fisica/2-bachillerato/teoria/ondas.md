@@ -117,6 +117,8 @@ Hay dos velocidades distintas y el examen juega con ello:
 
 El signo entre $\omega t$ y $kx$ da el sentido: signos opuestos, la onda avanza hacia las $x$ positivas; signos iguales, hacia las negativas.
 
+[[sim:onda-armonica|Las dos gráficas de una onda, $y(x)$ e $y(t)$: cambia el sentido de propagación y la fase inicial y mira qué se mueve y qué no.]]
+
 Dos puntos separados una distancia $\Delta x$ tienen una diferencia de fase $\Delta\varphi = k\,\Delta x$. Están **en fase** si la distancia es un número entero de longitudes de onda, y en **oposición de fase** si es un número impar de medias longitudes de onda.
 
 ## Energía e intensidad
@@ -129,6 +131,8 @@ $$I = \frac{P}{4\pi r^2}$$
 
 Al doble de distancia, la intensidad es la cuarta parte. Como la intensidad es proporcional al cuadrado de la amplitud, la amplitud cae como $1/r$.
 
+[[sim:focos-sonoros?n=1&P1=1e-4&x1=0&y1=0&ox=2&oy=0|Un foco y un observador: aléjalo al doble de distancia y mira cuánto bajan la intensidad y el nivel.]]
+
 ## Sonido
 
 El sonido es una onda mecánica longitudinal: necesita un medio y las partículas vibran en la dirección de propagación. El oído no responde de forma lineal a la intensidad, así que se usa una escala logarítmica, el **nivel de intensidad sonora**:
@@ -140,6 +144,8 @@ Tres consecuencias que evitan muchos errores:
 - Los decibelios **no se suman**. Con varios focos se suman las intensidades y después se calcula el nivel.
 - Duplicar la intensidad sube el nivel unos 3 dB; multiplicarla por diez, 10 dB.
 - Para ir de decibelios a intensidad: $I = I_0\cdot 10^{\beta/10}$.
+
+[[sim:focos-sonoros|Dos focos a la vez: se suman las intensidades, no los decibelios.]]
 
 El **efecto Doppler** es el cambio de frecuencia que percibe un observador cuando él o el foco se mueven: más aguda al acercarse y más grave al alejarse.
 

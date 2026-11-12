@@ -87,6 +87,8 @@ El campo eléctrico en un punto es la fuerza por unidad de carga positiva. Para 
 
 Con varias cargas se aplica el principio de superposición: se calcula el módulo del campo de cada una, se dibuja su vector, se descompone en $x$ e $y$ y se suman las componentes. El error más habitual está en el dibujo, no en las cuentas, así que merece la pena hacerlo grande y con cuidado.
 
+[[sim:cargas|Coloca las cargas de tu problema y compara los vectores con los de tu dibujo.]]
+
 Una carga $q$ colocada en un campo sufre una fuerza $\vec F = q\vec E$. Si la carga es negativa, se mueve en contra del campo. En un **campo uniforme** (entre dos placas, por ejemplo) la fuerza es constante y la carga lleva un movimiento uniformemente acelerado con $a = qE/m$, igual que un tiro parabólico.
 
 El **teorema de Gauss** dice que el flujo del campo eléctrico a través de una superficie cerrada es $Q_\text{int}/\varepsilon_0$. Se usa para obtener el campo cuando hay mucha simetría: fuera de una esfera cargada el campo es el de una carga puntual en su centro, y dentro de un conductor en equilibrio el campo es nulo.
@@ -106,6 +108,8 @@ Para calcular velocidades se usa la conservación de la energía: $\tfrac12 m v^
 
 Un detalle que se pregunta mucho: que el campo sea cero en un punto **no implica** que el potencial sea cero, ni al revés. En el punto medio entre dos cargas iguales el campo se anula y el potencial no; entre dos cargas del mismo valor y signo contrario ocurre lo opuesto.
 
+[[sim:cargas?n=2&q1=2&x1=-3&y1=0&q2=2&x2=3&y2=0&ax=0&ay=0&bx=0&by=4|Dos cargas iguales con el punto A en el centro: campo nulo y potencial distinto de cero. Cambia el signo de una y mira qué ocurre.]]
+
 ## Fuerza de Lorentz
 
 Un campo magnético solo actúa sobre cargas en movimiento:
@@ -122,6 +126,8 @@ Como la fuerza es siempre perpendicular a la velocidad, **no hace trabajo**: cam
 
 Si además hay un campo eléctrico, la fuerza total es $\vec F = q(\vec E + \vec v\times\vec B)$. Cuando las dos fuerzas se compensan, la carga no se desvía: es el selector de velocidades, $v = E/B$.
 
+[[sim:carga-campos|Lanza una carga en un campo magnético: radio, periodo y sentido de giro. Añade un campo eléctrico y tendrás el selector de velocidades.]]
+
 Sobre un conductor de longitud $L$ recorrido por una corriente $I$, la fuerza es $F = ILB\operatorname{sen}\theta$.
 
 ## Campo magnético creado por corrientes
@@ -133,6 +139,8 @@ $$B = \frac{\mu_0\,I}{2\pi\,d}$$
 Las líneas de campo son circunferencias alrededor del hilo. El sentido se obtiene con la mano derecha: el pulgar en el sentido de la corriente y los dedos indican el giro del campo. En los problemas se dibuja el hilo perpendicular al papel, con un punto (corriente que sale) o un aspa (corriente que entra).
 
 Con dos o más hilos, el campo total es la suma vectorial. Dos hilos paralelos se ejercen fuerzas entre sí: se **atraen** si las corrientes tienen el mismo sentido y se **repelen** si son opuestas, justo al revés de lo que la intuición de las cargas sugiere.
+
+[[sim:hilos|Dos hilos vistos de punta: campo de cada uno, campo total y punto donde se anula.]]
 
 ## Inducción electromagnética
 
@@ -151,6 +159,8 @@ El flujo puede cambiar por tres motivos, y cada uno da un tipo de problema:
 La **ley de Lenz** da el sentido: la corriente inducida crea un campo que se opone al cambio. Si el flujo aumenta, el campo inducido va en contra del original; si disminuye, lo refuerza.
 
 Mientras el flujo no cambie no hay fem, por grande que sea el campo. Una espira completamente dentro de un campo uniforme y constante no tiene corriente inducida aunque se desplace, siempre que no gire.
+
+[[sim:induccion|Una espira que entra en un campo: mira cuándo hay fem y cuándo no, y hacia dónde va la corriente inducida.]]
 
 ## Cómo plantear un problema
 

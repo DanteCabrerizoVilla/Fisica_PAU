@@ -73,6 +73,8 @@ Es un vector que apunta hacia $M$. En la superficie de un planeta de radio $R$ v
 
 Cuando hay varias masas, el campo total es la **suma vectorial** de los campos de cada una. En la práctica: dibuja cada vector, descomponlo en $x$ e $y$, y suma por componentes.
 
+[[sim:masas|Coloca dos masas y un punto: verás el campo de cada una, la suma vectorial y dónde se anula.]]
+
 ## Energía potencial y potencial
 
 La fuerza gravitatoria es conservativa, así que se le puede asociar una energía potencial. Tomando el cero en el infinito:
@@ -115,6 +117,8 @@ La cinética es la mitad de la potencial cambiada de signo, y la mecánica es la
 
 > Para pasar a una órbita más alta hay que **dar** energía al satélite ($E_m$ se hace menos negativa), aunque en la órbita alta acabe yendo más despacio.
 
+[[sim:orbita-circular|Sube la altura de la órbita y mira qué pasa con la velocidad, el periodo y las tres energías.]]
+
 ## Velocidad de escape
 
 Escapar significa llegar al infinito sin velocidad, es decir, con energía mecánica cero. Si un cuerpo parte en reposo respecto al planeta desde una distancia $r$ del centro:
@@ -134,6 +138,8 @@ Hay dos situaciones de examen y no son la misma:
 2. **Ley de las áreas.** El radio que une el Sol con el planeta barre áreas iguales en tiempos iguales. Por eso el planeta va más rápido cerca del Sol.
 3. **Ley de los periodos.** $T^2$ es proporcional a $a^3$, con la misma constante para todos los cuerpos que giran en torno al mismo astro.
 
+[[sim:kepler|Ley de las áreas: una órbita dividida en tramos de igual duración. Todas las franjas tienen la misma área, y el planeta acelera al acercarse al Sol.]]
+
 La segunda ley es la conservación del **momento angular**. La fuerza gravitatoria apunta siempre hacia el Sol, así que no ejerce momento respecto a él y $L$ no cambia:
 
 $$L = m\,r\,v\,\operatorname{sen}\varphi = \text{cte}$$
@@ -143,6 +149,8 @@ En el perihelio y el afelio la velocidad es perpendicular al radio ($\operatorna
 $$r_p\,v_p = r_a\,v_a$$
 
 Con esa ecuación y la conservación de la energía mecánica entre los dos puntos se obtienen las dos velocidades. Las distancias salen del semieje mayor y la excentricidad: $r_p = a(1-e)$ y $r_a = a(1+e)$.
+
+[[sim:kepler?M=5.97e24&a=2.6601e7&e=0.732&cambio=1|Un satélite en órbita muy elíptica: comprueba que $r\cdot v\cdot\operatorname{sen}\varphi$ no cambia y compara $r_p\,v_p$ con $r_a\,v_a$.]]
 
 ## Cómo plantear un problema
 

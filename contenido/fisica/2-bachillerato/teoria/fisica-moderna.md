@@ -83,6 +83,8 @@ $$E_c = (\gamma - 1)\,m_0\,c^2$$
 
 Ningún cuerpo con masa puede alcanzar la velocidad de la luz: haría falta una energía infinita.
 
+[[sim:relatividad|Energía cinética clásica y relativista frente a la velocidad: mira a partir de dónde se separan.]]
+
 ## Efecto fotoeléctrico
 
 Al iluminar un metal con luz de frecuencia suficientemente alta, se arrancan electrones. La física clásica no podía explicar lo que se observa:
@@ -98,6 +100,8 @@ $$h\,f = W_0 + E_{c,\text{máx}}$$
 $W_0$ es el **trabajo de extracción**, la energía mínima para arrancar un electrón de ese metal, y define la frecuencia umbral: $W_0 = hf_0$. El resto se lo lleva el electrón como energía cinética.
 
 El **potencial de frenado** es la diferencia de potencial que detiene a los electrones más rápidos: $E_{c,\text{máx}} = eV_f$. Por eso una energía cinética de 2 eV corresponde a un potencial de frenado de 2 V.
+
+[[sim:fotoelectrico|Cambia la longitud de onda y la intensidad de la luz y comprueba las tres observaciones del principio.]]
 
 Para las unidades: $1\ \mathrm{eV} = 1{,}6\cdot 10^{-19}\ \mathrm{J}$. Y si te dan la longitud de onda, $f = c/\lambda$.
 
@@ -140,6 +144,8 @@ $\lambda$ es la constante de desintegración. El **periodo de semidesintegració
 La **actividad** es el número de desintegraciones por segundo, $A = \lambda N$, y decae con la misma exponencial. Para pasar de la masa de una muestra al número de núcleos se usa el número de Avogadro.
 
 Un atajo útil: tras $n$ periodos de semidesintegración queda una fracción $1/2^n$ de la muestra.
+
+[[sim:desintegracion|Mira cómo la muestra se reduce a la mitad en cada periodo y practica el paso entre $T_{1/2}$, $\tau$ y $\lambda$.]]
 
 ## Partículas e interacciones
 

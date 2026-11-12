@@ -67,6 +67,8 @@ Para ángulos mayores no hay rayo refractado y toda la luz se refleja: **reflexi
 
 En una **lámina de caras paralelas** el rayo se refracta dos veces y sale paralelo al rayo incidente, pero desplazado. En un **prisma**, las dos refracciones lo desvían en el mismo sentido; como el índice depende ligeramente del color, la luz blanca se dispersa.
 
+[[sim:refraccion|Sigue un rayo a través de una lámina o de un prisma y sube el ángulo de incidencia hasta que aparezca la reflexión total.]]
+
 ## Criterio de signos
 
 En el examen de Madrid se usa la norma DIN, y todas las fórmulas de esta página están escritas con ella:
@@ -105,7 +107,11 @@ En una lente convergente, lo que ocurre depende de dónde esté el objeto:
 
 Una lente divergente da siempre una imagen virtual, derecha y menor.
 
+[[sim:banco-optico?tipo=lente|Arrastra el objeto hacia la lente y mira cómo cambia la imagen al cruzar $2f'$ y el foco.]]
+
 Con **dos lentes**, se resuelve por pasos: la imagen de la primera hace de objeto para la segunda, midiendo la nueva $s$ desde la segunda lente. El aumento total es el producto de los aumentos.
+
+[[sim:banco-optico?tipo=dos|Un sistema de dos lentes con su trazado de rayos, para comparar con tu cálculo por pasos.]]
 
 ## Espejos
 
@@ -118,6 +124,8 @@ La distancia focal es la mitad del radio, $f = R/2$. Un espejo **cóncavo** tien
 En los espejos la luz vuelve hacia la izquierda, así que la interpretación de $s'$ es la contraria que en las lentes: la imagen es **real si $s' < 0$** (delante del espejo) y virtual si $s' > 0$ (detrás).
 
 Un espejo convexo da siempre una imagen virtual, derecha y menor, y por eso se usa en retrovisores y cruces. El espejo plano da una imagen virtual, del mismo tamaño y a la misma distancia por detrás.
+
+[[sim:banco-optico?tipo=espejo|Espejo cóncavo o convexo: cambia el signo de la focal y mueve el objeto.]]
 
 ## El ojo e instrumentos ópticos
 

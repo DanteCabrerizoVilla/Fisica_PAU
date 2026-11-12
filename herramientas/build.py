@@ -25,7 +25,7 @@ from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader
 from markdown_it import MarkdownIt
-from markupsafe import Markup
+from markupsafe import Markup, escape
 from mdit_py_plugins.dollarmath import dollarmath_plugin
 
 from comun import (
@@ -38,6 +38,7 @@ from comun import (
     Sitio,
     cargar_sitio,
     numero_tex,
+    relativa,
     trocear,
 )
 
@@ -285,7 +286,8 @@ class Constructor:
                     resultados=self.resultados(p),
                     simulaciones=[
                         {"sim": sims_por_id[s],
-                         "url": self.url(sims_por_id[s].url) + self.consulta(p, s)}
+                         "url": self.url(sims_por_id[s].url) + self.consulta(p, s),
+                         "nota": p.meta.get("nota_simulacion", {}).get(s, "")}
                         for s in p.meta.get("simulaciones", [])
                     ],
                     tema=temas.get(p.meta["bloque"]),
@@ -367,7 +369,7 @@ class Constructor:
         por_id = {b["id"]: b for b in bloques}
         temas = []
         for t in curso.temas:
-            trozos = trocear(t.cuerpo, 2)
+            trozos = trocear(self.enlaces_a_simulaciones(t.cuerpo, curso, relativa(t.ruta)), 2)
             temas.append({
                 "tema": t,
                 "bloque": por_id[t.bloque],
@@ -383,6 +385,30 @@ class Constructor:
                 anterior=temas[i - 1] if i > 0 else None,
                 siguiente=temas[i + 1] if i + 1 < len(temas) else None,
             )
+
+    PATRON_SIM = re.compile(r"^\[\[sim:([a-z0-9-]+)(?:\?([A-Za-z0-9_=&.+-]+))?\|(.+)\]\][ \t]*$", re.M)
+
+    def enlaces_a_simulaciones(self, texto: str, curso: Curso, donde: str) -> str:
+        """Convierte las líneas `[[sim:kepler?e=0.5|Texto]]` de la teoría en un
+        enlace destacado a esa simulación, con los parámetros indicados."""
+        sims = {s.id: s for s in curso.simulaciones}
+
+        def sustituir(m: re.Match) -> str:
+            ident, parametros, frase = m.groups()
+            if ident not in sims:
+                raise ErrorContenido(f"{donde}: la simulación '{ident}' no existe")
+            destino = self.url(sims[ident].url) + (f"?{parametros}" if parametros else "")
+            return (
+                f'<div class="mira-caja"><a class="mira" href="{escape(destino)}">'
+                f'<span class="mira__icono" aria-hidden="true">▶</span>'
+                f'<span class="mira__texto"><strong>Míralo en la simulación</strong>'
+                f"{self.a_html_en_linea(frase)}</span></a></div>"
+            )
+
+        nuevo = self.PATRON_SIM.sub(sustituir, texto)
+        if "[[sim:" in nuevo:
+            raise ErrorContenido(f"{donde}: hay un enlace [[sim:...]] mal escrito")
+        return nuevo
 
     # ---- comprobaciones finales ------------------------------------------
 

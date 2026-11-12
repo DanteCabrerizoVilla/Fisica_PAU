@@ -394,9 +394,10 @@ def _comprobar_referencias(p: Problema, curso: Curso, ids_sim: set[str]) -> None
     for s in p.meta.get("simulaciones", []):
         if s not in ids_sim:
             raise ErrorContenido(f"{donde}: la simulación '{s}' no existe")
-    for s in p.meta.get("parametros_simulacion", {}):
-        if s not in p.meta.get("simulaciones", []):
-            raise ErrorContenido(f"{donde}: hay parámetros para '{s}', que no está en 'simulaciones'")
+    for campo, que in (("parametros_simulacion", "parámetros"), ("nota_simulacion", "una nota")):
+        for s in p.meta.get(campo, {}):
+            if s not in p.meta.get("simulaciones", []):
+                raise ErrorContenido(f"{donde}: hay {que} para '{s}', que no está en 'simulaciones'")
     claves = [r["clave"] for r in p.meta["resultados"]]
     if len(claves) != len(set(claves)):
         raise ErrorContenido(f"{donde}: hay claves de resultado repetidas")

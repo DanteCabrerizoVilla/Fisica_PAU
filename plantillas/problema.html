@@ -93,7 +93,7 @@
     <h2 id="t-sim">Míralo en una simulación</h2>
     <ul class="enlaces">
       {% for s in simulaciones %}
-      <li><a href="{{ s.url }}"><span>{{ s.sim.meta.titulo }}</span><span class="enlaces__dato">{% if '?' in s.url %}Con los datos de este problema{% else %}Abrir{% endif %}</span></a></li>
+      <li><a href="{{ s.url }}"><span>{{ s.sim.meta.titulo }}{% if s.nota %}<small class="enlaces__nota">{{ s.nota }}</small>{% endif %}</span><span class="enlaces__dato">{% if '?' in s.url %}Con los datos de este problema{% else %}Abrir{% endif %}</span></a></li>
       {% endfor %}
     </ul>
   </section>
