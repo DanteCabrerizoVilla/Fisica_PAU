@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 200" width="340" height="200" font-family="system-ui, sans-serif" font-size="13">
+<title>El rayo incide con 30° respecto a la normal. El reflejado sale con 30° al otro lado de la normal y el refractado entra en el material con 18,8°. Entre el reflejado y el refractado hay 131,2°</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<rect x="10" y="100" width="320" height="90" fill="rgba(58,123,213,0.12)"/><line x1="10.0" y1="100.0" x2="330.0" y2="100.0" stroke="#1e222b" stroke-width="1.5"/>
+<line x1="170.0" y1="10.0" x2="170.0" y2="190.0" stroke="#5a6170" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="125.0" y1="22.1" x2="170.0" y2="100.0" stroke="#b5451b" stroke-width="2" marker-end="url(#p)"/>
+<line x1="170.0" y1="100.0" x2="215.0" y2="22.1" stroke="#b5451b" stroke-width="2" marker-end="url(#p)"/>
+<line x1="170.0" y1="100.0" x2="199.0" y2="185.2" stroke="#b5451b" stroke-width="2" marker-end="url(#p)"/>
+<text x="154.0" y="60.0" text-anchor="end" fill="#0f6b5c" font-size="12">30°</text>
+<text x="186.0" y="60.0" text-anchor="start" fill="#0f6b5c" font-size="12">30°</text>
+<text x="182.0" y="162.0" text-anchor="start" fill="#0f6b5c" font-size="12">18,8°</text>
+<path d="M181.0 80.9 A22 22 0 0 1 177.1 120.8" fill="none" stroke="#3a7bd5" stroke-width="1.5"/><text x="220.0" y="126.0" text-anchor="start" fill="#3a7bd5" font-size="12" font-weight="700">131,2°</text>
+<text x="20.0" y="92.0" text-anchor="start" fill="#1e222b" font-size="12">aire, n = 1</text>
+<text x="20.0" y="122.0" text-anchor="start" fill="#1e222b" font-size="12">material, n = 1,55</text>
+</svg>
