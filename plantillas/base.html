@@ -47,6 +47,7 @@
       <p><strong>{{ sitio.nombre }}</strong> · {{ sitio.autor.nombre }}, {{ sitio.autor.titulo | lower }}.</p>
       <p>Las soluciones son de redacción propia. Los enunciados de los exámenes pertenecen a las universidades públicas de Madrid; esta web no tiene relación con ellas.</p>
       <p><a href="{{ url('clases') }}">Clases particulares</a>{% if contacto.correo %} · <a href="mailto:{{ contacto.correo }}">{{ contacto.correo }}</a>{% endif %}</p>
+      {% if legales %}<p class="pie__legal">{% for l in legales %}<a href="{{ url(l.ruta) }}">{{ l.titulo }}</a>{% if not loop.last %} · {% endif %}{% endfor %} · Esta web no usa cookies.</p>{% endif %}
     </div>
   </footer>
 </body>

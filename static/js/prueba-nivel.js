@@ -31,10 +31,15 @@ export function sortear(grupos, azar = Math.random) {
   return grupos.map((variantes) => variantes[Math.min(variantes.length - 1, Math.floor(azar() * variantes.length))]);
 }
 
-/** Datos que se envían al profesor. `bloques`: [{nombre, aciertos, items:[{id, mide, estado}]}]. */
-export function informe({ correo, nombre, publicidad, asignatura, bloques }) {
+/**
+ * Datos que se envían al profesor. `bloques`: [{nombre, aciertos, items:[{id, mide, estado}]}].
+ * `t` es la hora de envío (ms) y `duracion`, lo que ha durado la prueba (s).
+ */
+export function informe({ correo, nombre, publicidad, asignatura, bloques, t = 0, duracion = 0 }) {
   const items = bloques.flatMap((b) => b.items);
   return {
+    t: Math.round(t),
+    duracion: Math.round(duracion),
     correo,
     nombre,
     publicidad: Boolean(publicidad),
@@ -52,6 +57,35 @@ export function informe({ correo, nombre, publicidad, asignatura, bloques }) {
     variantes: items.map((i) => i.id).join(" "),
   };
 }
+
+// ---- Sello contra envíos automáticos ----------------------------------------
+// El receptor solo acepta el envío si el SHA-256 de estos datos, junto con un
+// número («sello») que busca el navegador, empieza por DIFICULTAD. A una persona
+// le cuesta una fracción de segundo; a un programa que mande miles de envíos, no.
+// Debe coincidir con textoSello() y DIFICULTAD de herramientas/informes-prueba-nivel.gs.
+
+export const DIFICULTAD = "000";
+
+export function textoSello(datos, sello) {
+  return [String(datos.correo).trim().toLowerCase(), datos.aciertos, datos.total, datos.variantes,
+    datos.t, datos.duracion, sello].join("|");
+}
+
+async function sha256(texto) {
+  const bytes = new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(texto)));
+  return [...bytes].map((b) => b.toString(16).padStart(2, "0")).join("");
+}
+
+/** Busca el sello. Devuelve "" si el navegador no puede calcularlo (el envío se rechazará). */
+export async function sellar(datos, dificultad = DIFICULTAD, maximo = 2_000_000) {
+  if (!globalThis.crypto?.subtle) return "";
+  for (let n = 0; n < maximo; n++) {
+    if ((await sha256(textoSello(datos, n))).startsWith(dificultad)) return String(n);
+  }
+  return "";
+}
+
+export { sha256 };
 
 /**
  * Envía el informe. La aplicación de Google no permite leer la respuesta desde
@@ -104,6 +138,7 @@ function montar(raiz) {
   }
 
   let alumno = { correo: "", nombre: "", publicidad: false, trampa: "" };
+  let empezo = 0;
   let elegidas = [];
   let actual = 0;
   let resumen = [];
@@ -138,6 +173,7 @@ function montar(raiz) {
     for (const q of todas) for (const r of q.querySelectorAll("input")) r.checked = false;
     elegidas = sortear(grupos);
     actual = 0;
+    empezo = Date.now();
     mostrar("preguntas");
     pintarPregunta();
   });
@@ -183,9 +219,15 @@ function montar(raiz) {
     mostrar("resultado");
     titular.focus({ preventScroll: true });
 
-    ultimoInforme = informe({ ...alumno, asignatura: raiz.dataset.asignatura, bloques: resumen });
+    const ahora = Date.now();
+    ultimoInforme = informe({ ...alumno, asignatura: raiz.dataset.asignatura, bloques: resumen,
+      t: ahora, duracion: (ahora - empezo) / 1000 });
     // Un programa automático habrá rellenado el campo trampa: no se envía nada.
-    const estado = alumno.trampa ? "descartado" : await enviar(raiz.dataset.informes, ultimoInforme);
+    let estado = "descartado";
+    if (!alumno.trampa) {
+      ultimoInforme.sello = raiz.dataset.informes ? await sellar(ultimoInforme) : "";
+      estado = await enviar(raiz.dataset.informes, ultimoInforme);
+    }
     if (estado === "fallo") {
       notaEnvio.textContent = "No se ha podido enviar tu resultado (¿sin conexión?). Si quieres que lo vea, escríbeme.";
       notaEnvio.hidden = false;

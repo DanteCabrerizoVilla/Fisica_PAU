@@ -16,12 +16,14 @@ entrada: "Descubre en media hora qué partes de la Física de la PAU llevas bien
 instrucciones: >-
   Son 30 preguntas de una sola respuesta, sin calculadora. Si no sabes una,
   marca «No lo sé»: acertar por suerte solo te da un resultado que no es el tuyo.
-# Texto informativo sobre los datos. [REVISAR] Debe incluir quién es el
-# responsable (nombre y contacto) y cómo pedir la baja o el borrado.
+# Primera capa de información sobre los datos (RGPD, art. 13); el resto está
+# en la política de privacidad, enlazada justo detrás de este texto.
 privacidad: >-
-  Tu correo y tu resultado se envían a Dante, el profesor que mantiene esta
-  web, para que pueda ver en qué fallas. Puedes pedir que se borren tus datos
-  en cualquier momento escribiéndole.
+  Al empezar, aceptas que tu correo, tu nombre y tu resultado se envíen a
+  Dante, el profesor que mantiene esta web, para que pueda comentarte en qué
+  fallas y ofrecerte clases. No se ceden a nadie. Puedes pedir que se borren,
+  o ejercer tus demás derechos, escribiéndole cuando quieras. Si tienes menos
+  de 14 años, pide a tu madre, padre o tutor que haga la prueba con su correo.
 consentimiento: "Quiero recibir por correo material de estudio e información sobre las clases."
 resultado: >-
   Aquí tienes en qué fallas. El porqué de cada fallo, y cómo dejar de cometerlo,

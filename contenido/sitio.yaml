@@ -16,6 +16,16 @@ autor:
   nombre: "Dante"                      # [REVISAR] nombre completo si quieres que aparezca
   titulo: "Físico y profesor particular"
 
+# Datos del titular de la web. La ley (LSSI, art. 10) obliga a publicarlos en el
+# aviso legal, y el RGPD a darlos en la política de privacidad. Mientras falte
+# alguno, esas páginas lo marcan en rojo con [REVISAR].
+titular:
+  nombre: ""                           # [REVISAR] nombre y apellidos
+  nif: ""                              # [REVISAR] NIF
+  domicilio: ""                        # [REVISAR] domicilio (puede ser el fiscal)
+  actividad: "Clases particulares de Física y Matemáticas"   # [REVISAR]
+  actualizado: "14 de noviembre de 2026"   # fecha de la última revisión de los textos legales
+
 contacto:
   whatsapp: "34665676190"              # número con prefijo, solo cifras
   correo: ""                           # [REVISAR] correo público de contacto

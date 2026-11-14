@@ -36,7 +36,9 @@ from comun import (
     ErrorContenido,
     Problema,
     Sitio,
+    CONTENIDO,
     cargar_sitio,
+    separar_cabecera,
     numero_tex,
     relativa,
     trocear,
@@ -97,6 +99,9 @@ class Constructor:
         )
         self.env.filters["md"] = self.a_html
         self.env.filters["mdi"] = self.a_html_en_linea
+        self.legales = self.cargar_legales()
+        self.env.globals["legales"] = [{"titulo": l["meta"]["titulo"], "ruta": l["ruta"]} for l in self.legales]
+        self.pendientes_legales = 0
 
     # ---- utilidades -------------------------------------------------------
 
@@ -150,6 +155,42 @@ class Constructor:
             "whatsapp": f"https://wa.me/{whatsapp}" if whatsapp else "",
             "correo": correo,
         }
+
+    # ---- textos legales ---------------------------------------------------
+
+    @staticmethod
+    def cargar_legales() -> list[dict]:
+        """Aviso legal, privacidad, etc.: contenido/legal/*.md, ordenados por 'orden'."""
+        carpeta = CONTENIDO / "legal"
+        paginas = []
+        for f in sorted(carpeta.glob("*.md")) if carpeta.is_dir() else []:
+            meta, cuerpo = separar_cabecera(f)
+            paginas.append({"meta": meta, "cuerpo": cuerpo, "ruta": f.stem, "archivo": f})
+        return sorted(paginas, key=lambda p: p["meta"].get("orden", 99))
+
+    def datos_titular(self) -> dict:
+        """Datos del titular para los textos legales; lo que falta sale marcado [REVISAR]."""
+        t = dict(self.sitio.meta.get("titular") or {})
+        t["correo"] = (self.sitio.meta.get("contacto", {}).get("correo") or "").strip()
+        nombres = {"nombre": "nombre y apellidos", "nif": "NIF", "domicilio": "domicilio",
+                   "correo": "correo de contacto", "actividad": "actividad", "actualizado": "fecha"}
+        for clave, que in nombres.items():
+            valor = str(t.get(clave) or "").strip()
+            if valor:
+                t[clave] = Markup(f'<a href="mailto:{escape(valor)}">{escape(valor)}</a>') if clave == "correo" else valor
+            else:
+                t[clave] = Markup(f'<mark class="pendiente">[REVISAR: falta {que}]</mark>')
+        return t
+
+    def construir_legales(self) -> None:
+        t = self.datos_titular()
+        for p in self.legales:
+            texto = self.env.from_string(p["cuerpo"]).render(t=t)
+            # Las notas <!-- [REVISAR] ... --> se ven en la página hasta que se resuelvan.
+            texto = re.sub(r"<!--\s*\[REVISAR\]\s*(.*?)\s*-->",
+                           lambda m: f'<mark class="pendiente">[REVISAR] {escape(m.group(1))}</mark>', texto, flags=re.S)
+            self.pendientes_legales += texto.count('class="pendiente"')
+            self.escribir(p["ruta"], "legal.html", pagina=p["meta"], cuerpo=texto)
 
     @staticmethod
     def ancla(texto: str) -> str:
@@ -222,6 +263,7 @@ class Constructor:
 
         self.escribir("", "portada.html", resumen_cursos=resumen_cursos)
         self.escribir("clases", "clases.html", clases=self.sitio.clases)
+        self.construir_legales()
         self.escribir("404.html", "404.html")
 
     def construir_curso(self, curso: Curso) -> dict:
@@ -461,6 +503,9 @@ def main() -> int:
     print(f"{c.paginas} páginas en {SALIDA.relative_to(RAIZ)}/ · base_url='{c.base}'")
     if ocultos:
         print(f"{ocultos} problemas sin verificar " + ("incluidos con aviso (--todo)" if args.todo else "no publicados"))
+    if c.pendientes_legales:
+        print(f"[REVISAR] los textos legales tienen {c.pendientes_legales} datos o notas pendientes "
+              "(contenido/sitio.yaml → titular, y contenido/legal/)")
     return 0
 
 

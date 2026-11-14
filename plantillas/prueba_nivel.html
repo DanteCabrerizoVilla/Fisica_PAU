@@ -33,7 +33,7 @@
       {# Campo trampa para programas automáticos: las personas no lo ven. #}
       <label class="oculto-visual" aria-hidden="true">No rellenes este campo <input type="text" name="web" tabindex="-1" autocomplete="off"></label>
 
-      <p class="nota">{{ prueba.privacidad }}</p>
+      <p class="nota">{{ prueba.privacidad }} <a href="{{ url('privacidad') }}">Política de privacidad</a>.</p>
       <label class="prueba__opcion prueba__opcion--discreta">
         <input type="checkbox" name="publicidad" value="si">
         <span>{{ prueba.consentimiento }}</span>
