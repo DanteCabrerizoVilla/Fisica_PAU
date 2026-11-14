@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 240" width="330" height="240" font-family="system-ui, sans-serif" font-size="13">
+<title>Cuadrado de 2 m de lado centrado en el origen. En los vértices de arriba hay dos cargas de 5 nC y en los de abajo, dos de 3 nC; todas positivas. El punto medio del lado superior es el (0, 1) m</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="136" y1="116" x2="300" y2="116" stroke="#5a6170" marker-end="url(#p)"/><text x="304" y="120" fill="#5a6170" font-style="italic">x</text>
+<line x1="160" y1="140" x2="160" y2="22" stroke="#5a6170" marker-end="url(#p)"/><text x="166" y="26" fill="#5a6170" font-style="italic">y</text>
+<rect x="90" y="46" width="140" height="140" fill="none" stroke="#1e222b" stroke-width="1.5"/>
+<circle cx="90" cy="46" r="11" fill="#b5451b"/><text x="90" y="51" text-anchor="middle" fill="#fff" font-weight="700">+</text><text x="90" y="30" text-anchor="middle" fill="#1e222b">q₁ = 5 nC</text>
+<circle cx="230" cy="46" r="11" fill="#b5451b"/><text x="230" y="51" text-anchor="middle" fill="#fff" font-weight="700">+</text><text x="230" y="30" text-anchor="middle" fill="#1e222b">q₂ = 5 nC</text>
+<circle cx="90" cy="186" r="11" fill="#b5451b"/><text x="90" y="191" text-anchor="middle" fill="#fff" font-weight="700">+</text><text x="90" y="214" text-anchor="middle" fill="#1e222b">q₄ = 3 nC</text>
+<circle cx="230" cy="186" r="11" fill="#b5451b"/><text x="230" y="191" text-anchor="middle" fill="#fff" font-weight="700">+</text><text x="230" y="214" text-anchor="middle" fill="#1e222b">q₃ = 3 nC</text>
+<line x1="64.0" y1="46.0" x2="64.0" y2="186.0" stroke="#5a6170" marker-start="url(#p)" marker-end="url(#p)"/><text x="64.0" y="110.0" text-anchor="middle" fill="#5a6170"></text>
+<text x="52.0" y="120.0" text-anchor="middle" fill="#5a6170" >2 m</text>
+<circle cx="160.0" cy="46.0" r="4" fill="#1e222b"/><text x="160.0" y="46.0" text-anchor="start" fill="#1e222b"></text>
+<text x="168.0" y="62.0" text-anchor="start" fill="#5a6170" font-size="12">(0, 1) m</text>
+</svg>

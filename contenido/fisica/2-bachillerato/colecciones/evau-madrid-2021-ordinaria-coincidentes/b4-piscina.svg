@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 200" width="360" height="200" font-family="system-ui, sans-serif" font-size="13">
+<title>Un foco en el fondo de una piscina de 3 m de profundidad. Los rayos que llegan a la superficie con más de 48,8° respecto a la normal se reflejan totalmente; los que salen al aire forman un círculo, que hay que tapar con un disco opaco de radio r</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<rect x="10" y="40" width="340" height="150" fill="rgba(58,123,213,0.14)"/><line x1="10.0" y1="40.0" x2="350.0" y2="40.0" stroke="#1e222b" stroke-width="1.5"/>
+<line x1="10.0" y1="190.0" x2="350.0" y2="190.0" stroke="#1e222b" stroke-width="1.5"/>
+<rect x="9.0" y="35" width="342.1" height="6" fill="#1e222b"/><text x="180.0" y="28.0" text-anchor="middle" fill="#1e222b" font-size="12">disco opaco de radio r</text>
+<circle cx="180" cy="186" r="5" fill="#b5451b"/><text x="190.0" y="180.0" text-anchor="start" fill="#b5451b" font-size="12">foco</text>
+<line x1="180.0" y1="186.0" x2="351.0" y2="40.0" stroke="#b5451b" stroke-width="1.8"/>
+<line x1="180.0" y1="186.0" x2="9.0" y2="40.0" stroke="#b5451b" stroke-width="1.8"/>
+<line x1="180.0" y1="186.0" x2="180.0" y2="40.0" stroke="#5a6170" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="192.0" y="146.0" text-anchor="start" fill="#0f6b5c" font-size="12">48,8°</text>
+<text x="172.0" y="120.0" text-anchor="end" fill="#5a6170" font-size="12">3 m</text>
+<text x="22.0" y="60.0" text-anchor="start" fill="#1e222b" font-size="12">agua, n = 1,33</text>
+<text x="22.0" y="22.0" text-anchor="start" fill="#1e222b" font-size="12">aire</text>
+</svg>
