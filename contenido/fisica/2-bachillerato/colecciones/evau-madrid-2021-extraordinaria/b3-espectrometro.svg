@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 240" width="360" height="240" font-family="system-ui, sans-serif" font-size="13">
+<title>Espectrómetro de masas. En el selector de velocidades, entre dos placas, hay un campo eléctrico hacia arriba (+y) y un campo magnético B1 que sale del papel; los iones que siguen recto entran en una segunda región con un campo B2, también saliente, donde describen media circunferencia curvándose hacia abajo</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<rect x="20" y="96" width="210" height="60" fill="rgba(58,123,213,0.10)" stroke="#5a6170" stroke-dasharray="4 3"/><rect x="230" y="20" width="120" height="196" fill="rgba(15,107,92,0.08)" stroke="#5a6170" stroke-dasharray="4 3"/><line x1="20.0" y1="96.0" x2="230.0" y2="96.0" stroke="#1e222b" stroke-width="2.5"/>
+<line x1="20.0" y1="156.0" x2="230.0" y2="156.0" stroke="#1e222b" stroke-width="2.5"/>
+<text x="26.0" y="90.0" text-anchor="start" fill="#3a7bd5" font-weight="700">−</text>
+<text x="26.0" y="172.0" text-anchor="start" fill="#b5451b" font-weight="700">+</text>
+<circle cx="40" cy="112" r="3" fill="none" stroke="#3a7bd5" opacity="0.6"/><circle cx="40" cy="112" r="1" fill="#3a7bd5" opacity="0.6"/>
+<circle cx="40" cy="140" r="3" fill="none" stroke="#3a7bd5" opacity="0.6"/><circle cx="40" cy="140" r="1" fill="#3a7bd5" opacity="0.6"/>
+<circle cx="74" cy="112" r="3" fill="none" stroke="#3a7bd5" opacity="0.6"/><circle cx="74" cy="112" r="1" fill="#3a7bd5" opacity="0.6"/>
+<circle cx="74" cy="140" r="3" fill="none" stroke="#3a7bd5" opacity="0.6"/><circle cx="74" cy="140" r="1" fill="#3a7bd5" opacity="0.6"/>
+<circle cx="108" cy="112" r="3" fill="none" stroke="#3a7bd5" opacity="0.6"/><circle cx="108" cy="112" r="1" fill="#3a7bd5" opacity="0.6"/>
+<circle cx="108" cy="140" r="3" fill="none" stroke="#3a7bd5" opacity="0.6"/><circle cx="108" cy="140" r="1" fill="#3a7bd5" opacity="0.6"/>
+<circle cx="142" cy="112" r="3" fill="none" stroke="#3a7bd5" opacity="0.6"/><circle cx="142" cy="112" r="1" fill="#3a7bd5" opacity="0.6"/>
+<circle cx="142" cy="140" r="3" fill="none" stroke="#3a7bd5" opacity="0.6"/><circle cx="142" cy="140" r="1" fill="#3a7bd5" opacity="0.6"/>
+<circle cx="176" cy="112" r="3" fill="none" stroke="#3a7bd5" opacity="0.6"/><circle cx="176" cy="112" r="1" fill="#3a7bd5" opacity="0.6"/>
+<circle cx="176" cy="140" r="3" fill="none" stroke="#3a7bd5" opacity="0.6"/><circle cx="176" cy="140" r="1" fill="#3a7bd5" opacity="0.6"/>
+<circle cx="210" cy="112" r="3" fill="none" stroke="#3a7bd5" opacity="0.6"/><circle cx="210" cy="112" r="1" fill="#3a7bd5" opacity="0.6"/>
+<circle cx="210" cy="140" r="3" fill="none" stroke="#3a7bd5" opacity="0.6"/><circle cx="210" cy="140" r="1" fill="#3a7bd5" opacity="0.6"/>
+<circle cx="254" cy="36" r="3" fill="none" stroke="#0f6b5c" opacity="0.6"/><circle cx="254" cy="36" r="1" fill="#0f6b5c" opacity="0.6"/>
+<circle cx="254" cy="68" r="3" fill="none" stroke="#0f6b5c" opacity="0.6"/><circle cx="254" cy="68" r="1" fill="#0f6b5c" opacity="0.6"/>
+<circle cx="254" cy="100" r="3" fill="none" stroke="#0f6b5c" opacity="0.6"/><circle cx="254" cy="100" r="1" fill="#0f6b5c" opacity="0.6"/>
+<circle cx="254" cy="132" r="3" fill="none" stroke="#0f6b5c" opacity="0.6"/><circle cx="254" cy="132" r="1" fill="#0f6b5c" opacity="0.6"/>
+<circle cx="254" cy="164" r="3" fill="none" stroke="#0f6b5c" opacity="0.6"/><circle cx="254" cy="164" r="1" fill="#0f6b5c" opacity="0.6"/>
+<circle cx="254" cy="196" r="3" fill="none" stroke="#0f6b5c" opacity="0.6"/><circle cx="254" cy="196" r="1" fill="#0f6b5c" opacity="0.6"/>
+<circle cx="288" cy="36" r="3" fill="none" stroke="#0f6b5c" opacity="0.6"/><circle cx="288" cy="36" r="1" fill="#0f6b5c" opacity="0.6"/>
+<circle cx="288" cy="68" r="3" fill="none" stroke="#0f6b5c" opacity="0.6"/><circle cx="288" cy="68" r="1" fill="#0f6b5c" opacity="0.6"/>
+<circle cx="288" cy="100" r="3" fill="none" stroke="#0f6b5c" opacity="0.6"/><circle cx="288" cy="100" r="1" fill="#0f6b5c" opacity="0.6"/>
+<circle cx="288" cy="132" r="3" fill="none" stroke="#0f6b5c" opacity="0.6"/><circle cx="288" cy="132" r="1" fill="#0f6b5c" opacity="0.6"/>
+<circle cx="288" cy="164" r="3" fill="none" stroke="#0f6b5c" opacity="0.6"/><circle cx="288" cy="164" r="1" fill="#0f6b5c" opacity="0.6"/>
+<circle cx="288" cy="196" r="3" fill="none" stroke="#0f6b5c" opacity="0.6"/><circle cx="288" cy="196" r="1" fill="#0f6b5c" opacity="0.6"/>
+<circle cx="322" cy="36" r="3" fill="none" stroke="#0f6b5c" opacity="0.6"/><circle cx="322" cy="36" r="1" fill="#0f6b5c" opacity="0.6"/>
+<circle cx="322" cy="68" r="3" fill="none" stroke="#0f6b5c" opacity="0.6"/><circle cx="322" cy="68" r="1" fill="#0f6b5c" opacity="0.6"/>
+<circle cx="322" cy="100" r="3" fill="none" stroke="#0f6b5c" opacity="0.6"/><circle cx="322" cy="100" r="1" fill="#0f6b5c" opacity="0.6"/>
+<circle cx="322" cy="132" r="3" fill="none" stroke="#0f6b5c" opacity="0.6"/><circle cx="322" cy="132" r="1" fill="#0f6b5c" opacity="0.6"/>
+<circle cx="322" cy="164" r="3" fill="none" stroke="#0f6b5c" opacity="0.6"/><circle cx="322" cy="164" r="1" fill="#0f6b5c" opacity="0.6"/>
+<circle cx="322" cy="196" r="3" fill="none" stroke="#0f6b5c" opacity="0.6"/><circle cx="322" cy="196" r="1" fill="#0f6b5c" opacity="0.6"/>
+<line x1="70.0" y1="154.0" x2="70.0" y2="100.0" stroke="#b5451b" stroke-width="1.5" marker-end="url(#p)"/>
+<text x="76.0" y="128.0" text-anchor="start" fill="#b5451b" font-style="italic" font-weight="700">E</text>
+<line x1="2.0" y1="126.0" x2="230.0" y2="126.0" stroke="#1e222b" stroke-width="2"/>
+<path d="M230 126 A 45 45 0 0 1 230 216" fill="none" stroke="#1e222b" stroke-width="2" marker-end="url(#p)"/><text x="125.0" y="186.0" text-anchor="middle" fill="#1e222b" font-size="12">selector de velocidades: E y B₁</text>
+<text x="290.0" y="232.0" text-anchor="middle" fill="#0f6b5c" font-weight="700">B₂</text>
+<text x="30.0" y="60.0" text-anchor="start" fill="#5a6170" font-size="12">B₁ y B₂ salen del papel (+z)</text>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" width="360" height="220" font-family="system-ui, sans-serif" font-size="13">
+<title>Vista con el eje x saliendo del papel, el eje y hacia la derecha y el z hacia arriba. Los hilos 1 y 2, paralelos al eje x, salen del papel en el origen y en (0, 0, 4) m. El hilo 3 va a lo largo del eje y. El punto P es el (0, 0, 2) m</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="60" y1="190" x2="330" y2="190" stroke="#b5451b" stroke-width="2.5" marker-end="url(#p)"/><text x="300.0" y="180.0" text-anchor="middle" fill="#b5451b" font-weight="700">I₃ = 3 A</text>
+<line x1="90" y1="210" x2="90" y2="20" stroke="#5a6170" marker-end="url(#p)"/><text x="98.0" y="24.0" text-anchor="start" fill="#5a6170" font-style="italic">z</text>
+<text x="336.0" y="206.0" text-anchor="end" fill="#5a6170" font-style="italic">y</text>
+<circle cx="90.0" cy="190.0" r="9" fill="#fff" stroke="#3a7bd5" stroke-width="2"/><circle cx="90.0" cy="190.0" r="3" fill="#3a7bd5"/><text x="104.0" y="212.0" text-anchor="start" fill="#3a7bd5">I₁ = 2 A  (0, 0, 0)</text>
+<circle cx="90.0" cy="46.0" r="9" fill="#fff" stroke="#3a7bd5" stroke-width="2"/><circle cx="90.0" cy="46.0" r="3" fill="#3a7bd5"/><text x="104.0" y="40.0" text-anchor="start" fill="#3a7bd5">I₂ = 2 A  (0, 0, 4) m</text>
+<circle cx="90.0" cy="118.0" r="4" fill="#0f6b5c"/><text x="100.0" y="122.0" text-anchor="start" fill="#0f6b5c">P (0, 0, 2) m</text>
+<circle cx="236.0" cy="100.0" r="9" fill="#fff" stroke="#3a7bd5" stroke-width="2"/><circle cx="236.0" cy="100.0" r="3" fill="#3a7bd5"/><text x="250.0" y="105.0" text-anchor="start" fill="#3a7bd5">sale del papel (+x)</text>
+</svg>
