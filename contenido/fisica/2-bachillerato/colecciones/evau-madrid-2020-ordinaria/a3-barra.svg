@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 196" width="360" height="196" font-family="system-ui, sans-serif" font-size="13">
+<title>Rieles conductores en forma de U, cerrados a la izquierda y paralelos al eje x. Una barra de 30 cm, paralela al eje y, se apoya en ellos y se mueve hacia la derecha. El campo magnético es uniforme y sale del papel</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="16" y1="170" x2="340" y2="170" stroke="#5a6170" marker-end="url(#p)"/><text x="344" y="174" fill="#5a6170" font-style="italic">x</text>
+<line x1="40" y1="194" x2="40" y2="20" stroke="#5a6170" marker-end="url(#p)"/><text x="46" y="24" fill="#5a6170" font-style="italic">y</text>
+<circle cx="70" cy="56" r="5" fill="none" stroke="#3a7bd5" opacity="0.55"/><circle cx="70" cy="56" r="1.6" fill="#3a7bd5" opacity="0.55"/>
+<circle cx="70" cy="92" r="5" fill="none" stroke="#3a7bd5" opacity="0.55"/><circle cx="70" cy="92" r="1.6" fill="#3a7bd5" opacity="0.55"/>
+<circle cx="70" cy="128" r="5" fill="none" stroke="#3a7bd5" opacity="0.55"/><circle cx="70" cy="128" r="1.6" fill="#3a7bd5" opacity="0.55"/>
+<circle cx="114" cy="56" r="5" fill="none" stroke="#3a7bd5" opacity="0.55"/><circle cx="114" cy="56" r="1.6" fill="#3a7bd5" opacity="0.55"/>
+<circle cx="114" cy="92" r="5" fill="none" stroke="#3a7bd5" opacity="0.55"/><circle cx="114" cy="92" r="1.6" fill="#3a7bd5" opacity="0.55"/>
+<circle cx="114" cy="128" r="5" fill="none" stroke="#3a7bd5" opacity="0.55"/><circle cx="114" cy="128" r="1.6" fill="#3a7bd5" opacity="0.55"/>
+<circle cx="158" cy="56" r="5" fill="none" stroke="#3a7bd5" opacity="0.55"/><circle cx="158" cy="56" r="1.6" fill="#3a7bd5" opacity="0.55"/>
+<circle cx="158" cy="92" r="5" fill="none" stroke="#3a7bd5" opacity="0.55"/><circle cx="158" cy="92" r="1.6" fill="#3a7bd5" opacity="0.55"/>
+<circle cx="158" cy="128" r="5" fill="none" stroke="#3a7bd5" opacity="0.55"/><circle cx="158" cy="128" r="1.6" fill="#3a7bd5" opacity="0.55"/>
+<circle cx="202" cy="56" r="5" fill="none" stroke="#3a7bd5" opacity="0.55"/><circle cx="202" cy="56" r="1.6" fill="#3a7bd5" opacity="0.55"/>
+<circle cx="202" cy="92" r="5" fill="none" stroke="#3a7bd5" opacity="0.55"/><circle cx="202" cy="92" r="1.6" fill="#3a7bd5" opacity="0.55"/>
+<circle cx="202" cy="128" r="5" fill="none" stroke="#3a7bd5" opacity="0.55"/><circle cx="202" cy="128" r="1.6" fill="#3a7bd5" opacity="0.55"/>
+<circle cx="246" cy="56" r="5" fill="none" stroke="#3a7bd5" opacity="0.55"/><circle cx="246" cy="56" r="1.6" fill="#3a7bd5" opacity="0.55"/>
+<circle cx="246" cy="92" r="5" fill="none" stroke="#3a7bd5" opacity="0.55"/><circle cx="246" cy="92" r="1.6" fill="#3a7bd5" opacity="0.55"/>
+<circle cx="246" cy="128" r="5" fill="none" stroke="#3a7bd5" opacity="0.55"/><circle cx="246" cy="128" r="1.6" fill="#3a7bd5" opacity="0.55"/>
+<circle cx="290" cy="56" r="5" fill="none" stroke="#3a7bd5" opacity="0.55"/><circle cx="290" cy="56" r="1.6" fill="#3a7bd5" opacity="0.55"/>
+<circle cx="290" cy="92" r="5" fill="none" stroke="#3a7bd5" opacity="0.55"/><circle cx="290" cy="92" r="1.6" fill="#3a7bd5" opacity="0.55"/>
+<circle cx="290" cy="128" r="5" fill="none" stroke="#3a7bd5" opacity="0.55"/><circle cx="290" cy="128" r="1.6" fill="#3a7bd5" opacity="0.55"/>
+<path d="M330 36 L40 36 L40 140 L330 140" fill="none" stroke="#1e222b" stroke-width="3"/><line x1="250" y1="28" x2="250" y2="148" stroke="#b5451b" stroke-width="6"/><line x1="256.0" y1="88.0" x2="300.0" y2="88.0" stroke="#0f6b5c" stroke-width="2.5" marker-end="url(#p)"/>
+<text x="304.0" y="84.0" text-anchor="start" fill="#0f6b5c" font-style="italic" font-weight="700">v</text>
+<text x="258.0" y="160.0" text-anchor="start" fill="#b5451b" font-size="12">L = 30 cm</text>
+<text x="60.0" y="186.0" text-anchor="start" fill="#3a7bd5" font-size="12">B sale del papel</text>
+</svg>
