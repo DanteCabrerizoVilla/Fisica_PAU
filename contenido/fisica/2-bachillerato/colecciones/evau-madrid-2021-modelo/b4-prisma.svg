@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 190" width="360" height="190" font-family="system-ui, sans-serif" font-size="13">
+<title>Prisma triangular con un ángulo de 45° en el vértice A. El haz incide perpendicularmente sobre la cara AB</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<polygon points="180,20 117.9,170 242.1,170" fill="rgba(58,123,213,0.12)" stroke="#1e222b" stroke-width="1.5"/>
+<text x="180.0" y="14.0" text-anchor="middle" fill="#1e222b" >A</text>
+<text x="107.9" y="184.0" text-anchor="middle" fill="#1e222b" >B</text>
+<text x="252.1" y="184.0" text-anchor="middle" fill="#1e222b" >C</text>
+<text x="180.0" y="66.0" text-anchor="middle" fill="#1e222b" font-size="12">45°</text>
+<line x1="71.9" y1="71.9" x2="145.8" y2="102.5" stroke="#b5451b" stroke-width="2" marker-end="url(#p)"/>
+</svg>

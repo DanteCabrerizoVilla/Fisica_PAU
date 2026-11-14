@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 240" width="430" height="240" font-family="system-ui, sans-serif" font-size="13">
+<title>Dos lentes convergentes de 20 cm separadas 120 cm. La primera forma la imagen del objeto a 100 cm, justo en el foco objeto de la segunda; los rayos que salen de la segunda lente son paralelos y la imagen final está en el infinito</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="8.0" y1="96.0" x2="412.0" y2="96.0" stroke="#5a6170" stroke-width="1.2"/>
+<line x1="80.0" y1="40" x2="80.0" y2="152" stroke="#3a7bd5" stroke-width="2.5" marker-start="url(#p)" marker-end="url(#p)"/>
+<line x1="368.0" y1="14" x2="368.0" y2="200" stroke="#3a7bd5" stroke-width="2.5" marker-start="url(#p)" marker-end="url(#p)"/>
+<circle cx="32.0" cy="96" r="2.5" fill="#1e222b"/><text x="32.0" y="112.0" text-anchor="middle" fill="#1e222b" font-size="11">F₁</text>
+<circle cx="128.0" cy="96" r="2.5" fill="#1e222b"/><text x="128.0" y="112.0" text-anchor="middle" fill="#1e222b" font-size="11">F′₁</text>
+<circle cx="320.0" cy="96" r="2.5" fill="#1e222b"/><text x="320.0" y="112.0" text-anchor="middle" fill="#1e222b" font-size="11">F₂</text>
+<circle cx="416.0" cy="96" r="2.5" fill="#1e222b"/><text x="416.0" y="112.0" text-anchor="middle" fill="#1e222b" font-size="11">F′₂</text>
+<polyline points="20.0,78.0 80.0,78.0 368.0,186.0 416.0,114.0" fill="none" stroke="#0f6b5c" stroke-width="1.5"/>
+<polyline points="20.0,78.0 368.0,182.4 416.0,110.4" fill="none" stroke="#0f6b5c" stroke-width="1.5"/>
+<line x1="20.0" y1="96.0" x2="20.0" y2="78.0" stroke="#1e222b" stroke-width="2.5" marker-end="url(#p)"/>
+<line x1="320.0" y1="96.0" x2="320.0" y2="168.0" stroke="#5a6170" stroke-width="2" marker-end="url(#p)"/>
+<text x="20.0" y="70.0" text-anchor="middle" fill="#1e222b" font-size="12">objeto</text>
+<text x="314.0" y="182.0" text-anchor="end" fill="#5a6170" font-size="11">imagen 1 (en F₂)</text>
+<text x="360.0" y="202.0" text-anchor="end" fill="#0f6b5c" font-size="11">salen paralelos</text>
+<line x1="80.0" y1="216.0" x2="368.0" y2="216.0" stroke="#0f6b5c" marker-start="url(#p)" marker-end="url(#p)"/><text x="224.0" y="230.0" text-anchor="middle" fill="#0f6b5c">d = 120 cm</text>
+</svg>
