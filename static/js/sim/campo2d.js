@@ -9,7 +9,7 @@ import {
   corto, medida, nota, parametroTexto, parametrosURL, punto, rotulo, selector, trazar,
 } from "./kit.js";
 
-const LONGITUDES = { m: 1, cm: 1e-2, mm: 1e-3, nm: 1e-9 };
+const LONGITUDES = { m: 1, cm: 1e-2, mm: 1e-3, "μm": 1e-6, nm: 1e-9 };
 const COLORES = [TINTA.c, TINTA.d, TINTA.b, TINTA.e];
 
 const MODOS = {
@@ -40,7 +40,8 @@ export function montarCampo(contenedor, modo) {
   // ---- Estado ----
   const url = parametrosURL();
   const def = M.porDefecto;
-  let unidad = LONGITUDES[parametroTexto("u")] ? parametroTexto("u") : def.u;
+  const pedida = parametroTexto("u") === "um" ? "μm" : parametroTexto("u");   // en la URL, μm se escribe um
+  let unidad = LONGITUDES[pedida] ? pedida : def.u;
   let n = Math.min(4, Math.max(1, url.n ?? def.fuentes.length));
   const fuentes = [0, 1, 2, 3].map((i) => {
     const d = def.fuentes[i] ?? [i % 2 ? -1 : 1, i === 2 ? 0 : 2, i === 2 ? 4 : -3];

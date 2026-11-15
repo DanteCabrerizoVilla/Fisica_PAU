@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 290" width="320" height="290" font-family="system-ui, sans-serif" font-size="13">
+<title>Carga de +10 nC en (0, −6) μm y de −10 nC en (0, 6) μm. Las dos están a 10 μm del punto (8, 0). Allí E₁ se aleja de la carga positiva y E₂ apunta hacia la negativa; sus componentes x se anulan y el campo total apunta hacia +y</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="66" y1="150" x2="277" y2="150" stroke="#5a6170" marker-end="url(#p)"/><text x="281" y="154" fill="#5a6170" font-style="italic">x (μm)</text>
+<line x1="90" y1="174" x2="90" y2="5.5" stroke="#5a6170" marker-end="url(#p)"/><text x="96" y="9.5" fill="#5a6170" font-style="italic">y (μm)</text>
+<line x1="90.0" y1="174.0" x2="90.0" y2="277.5" stroke="#5a6170" stroke-width="1"/>
+<circle cx="90" cy="252" r="11" fill="#b5451b"/><text x="90" y="257" text-anchor="middle" fill="#fff" font-weight="700">+</text><text x="90" y="280" text-anchor="middle" fill="#1e222b"></text>
+<circle cx="90" cy="48" r="11" fill="#3a7bd5"/><text x="90" y="53" text-anchor="middle" fill="#fff" font-weight="700">−</text><text x="90" y="30" text-anchor="middle" fill="#1e222b"></text>
+<text x="72.0" y="257.0" text-anchor="end" fill="#1e222b" >+10 nC</text>
+<text x="72.0" y="53.0" text-anchor="end" fill="#1e222b" >−10 nC</text>
+<line x1="90.0" y1="252.0" x2="226.0" y2="150.0" stroke="#5a6170" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="90.0" y1="48.0" x2="226.0" y2="150.0" stroke="#5a6170" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="226.0" y1="150.0" x2="226.0" y2="48.0" stroke="#0f6b5c" stroke-width="1.5" stroke-dasharray="4 4"/>
+<circle cx="226.0" cy="150.0" r="4" fill="#1e222b"/><text x="236.0" y="168.0" text-anchor="start" fill="#1e222b">(8, 0)</text>
+<circle cx="226.0" cy="48.0" r="4" fill="#1e222b"/><text x="236.0" y="52.0" text-anchor="start" fill="#1e222b">(8, 6)</text>
+<line x1="226.0" y1="150.0" x2="270.0" y2="117.0" stroke="#b5451b" stroke-width="2" marker-end="url(#p)"/>
+<text x="274.0" y="119.0" text-anchor="start" fill="#b5451b" >E₁</text>
+<line x1="226.0" y1="150.0" x2="182.0" y2="117.0" stroke="#3a7bd5" stroke-width="2" marker-end="url(#p)"/>
+<text x="178.0" y="119.0" text-anchor="end" fill="#3a7bd5" >E₂</text>
+<line x1="226.0" y1="150.0" x2="226.0" y2="84.0" stroke="#0f6b5c" stroke-width="2.5" marker-end="url(#p)"/>
+<text x="232.0" y="80.0" text-anchor="start" fill="#0f6b5c" font-weight="700">E</text>
+</svg>
