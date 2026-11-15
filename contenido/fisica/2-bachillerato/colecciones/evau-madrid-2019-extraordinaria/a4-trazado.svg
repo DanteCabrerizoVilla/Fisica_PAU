@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 210" width="540" height="210" font-family="system-ui, sans-serif" font-size="13">
+<title>Objeto de 1 cm a 35 cm de una lente convergente de 10 cm de focal. El rayo paralelo sale por el foco imagen, el que pasa por el centro no se desvía y el que pasa por el foco objeto sale paralelo. Se cortan a 14 cm detrás de la lente: imagen real, invertida y de 0,4 cm</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="10.0" y1="100.0" x2="530.0" y2="100.0" stroke="#5a6170" stroke-width="1.2"/>
+<line x1="360.0" y1="14" x2="360.0" y2="176" stroke="#3a7bd5" stroke-width="2.5" marker-start="url(#p)" marker-end="url(#p)"/>
+<circle cx="270.0" cy="100" r="2.5" fill="#1e222b"/><text x="270.0" y="116.0" text-anchor="middle" fill="#1e222b" font-size="12">F</text>
+<circle cx="450.0" cy="100" r="2.5" fill="#1e222b"/><text x="450.0" y="116.0" text-anchor="middle" fill="#1e222b" font-size="12">F′</text>
+<polyline points="45.0,30.0 360.0,30.0 486.0,128.0" fill="none" stroke="#0f6b5c" stroke-width="1.5"/>
+<polyline points="45.0,30.0 486.0,128.0" fill="none" stroke="#0f6b5c" stroke-width="1.5"/>
+<polyline points="45.0,30.0 360.0,128.0 486.0,128.0" fill="none" stroke="#0f6b5c" stroke-width="1.5"/>
+<line x1="45.0" y1="100.0" x2="45.0" y2="30.0" stroke="#1e222b" stroke-width="2.5" marker-end="url(#p)"/>
+<line x1="486.0" y1="100.0" x2="486.0" y2="128.0" stroke="#b5451b" stroke-width="2.5" marker-end="url(#p)"/>
+<text x="39.0" y="22.0" text-anchor="start" fill="#1e222b" font-size="12">objeto, 1 cm</text>
+<text x="492.0" y="150.0" text-anchor="end" fill="#b5451b" font-size="12">imagen, 0,4 cm</text>
+<line x1="45.0" y1="196.0" x2="360.0" y2="196.0" stroke="#5a6170" marker-start="url(#p)" marker-end="url(#p)"/><text x="202.5" y="190.0" text-anchor="middle" fill="#5a6170">35 cm</text>
+<line x1="360.0" y1="196.0" x2="486.0" y2="196.0" stroke="#5a6170" marker-start="url(#p)" marker-end="url(#p)"/><text x="423.0" y="190.0" text-anchor="middle" fill="#5a6170">14 cm</text>
+</svg>
