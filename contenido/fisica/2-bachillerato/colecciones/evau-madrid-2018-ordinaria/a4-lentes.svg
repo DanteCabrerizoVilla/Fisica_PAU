@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 570 240" width="570" height="240" font-family="system-ui, sans-serif" font-size="13">
+<title>Objeto de 10 cm a 15 cm de una lente convergente de 10 cm de focal. Su imagen, real e invertida de 20 cm, queda a 30 cm, 20 cm antes de la lente divergente. Los rayos que salen de la lente divergente parecen venir de la imagen final: virtual, invertida, de 6,7 cm, a 6,7 cm a la izquierda de la segunda lente</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="10.0" y1="70.0" x2="560.0" y2="70.0" stroke="#5a6170" stroke-width="1.2"/>
+<line x1="140.0" y1="24" x2="140.0" y2="206" stroke="#3a7bd5" stroke-width="2.5" marker-start="url(#p)" marker-end="url(#p)"/>
+<line x1="460.0" y1="24" x2="460.0" y2="206" stroke="#3a7bd5" stroke-width="2.5"/>
+<path d="M454.0 16 L460.0 24 L466.0 16" fill="none" stroke="#3a7bd5" stroke-width="2.5"/>
+<path d="M454.0 214 L460.0 206 L466.0 214" fill="none" stroke="#3a7bd5" stroke-width="2.5"/>
+<circle cx="76.0" cy="70" r="2.5" fill="#1e222b"/><text x="76.0" y="62.0" text-anchor="middle" fill="#1e222b" font-size="11">F₁</text>
+<circle cx="204.0" cy="70" r="2.5" fill="#1e222b"/><text x="204.0" y="62.0" text-anchor="middle" fill="#1e222b" font-size="11">F₁′</text>
+<circle cx="396.0" cy="70" r="2.5" fill="#1e222b"/><text x="396.0" y="62.0" text-anchor="middle" fill="#1e222b" font-size="11">F₂′</text>
+<circle cx="524.0" cy="70" r="2.5" fill="#1e222b"/><text x="524.0" y="62.0" text-anchor="middle" fill="#1e222b" font-size="11">F₂</text>
+<polyline points="44.0,46.0 140.0,46.0 460.0,166.0" fill="none" stroke="#0f6b5c" stroke-width="1.5"/>
+<polyline points="44.0,46.0 460.0,150.0" fill="none" stroke="#0f6b5c" stroke-width="1.5"/>
+<line x1="460.0" y1="166.0" x2="498.4" y2="238.0" stroke="#0f6b5c" stroke-width="1.5"/>
+<line x1="417.3" y1="86.0" x2="460.0" y2="166.0" stroke="#0f6b5c" stroke-width="1.1" stroke-dasharray="4 4"/>
+<line x1="460.0" y1="150.0" x2="498.4" y2="207.6" stroke="#0f6b5c" stroke-width="1.5"/>
+<line x1="417.3" y1="86.0" x2="460.0" y2="150.0" stroke="#0f6b5c" stroke-width="1.1" stroke-dasharray="4 4"/>
+<line x1="44.0" y1="70.0" x2="44.0" y2="46.0" stroke="#1e222b" stroke-width="2.5" marker-end="url(#p)"/>
+<text x="44.0" y="40.0" text-anchor="middle" fill="#1e222b" font-size="12">objeto</text>
+<line x1="332.0" y1="70.0" x2="332.0" y2="118.0" stroke="#5a6170" stroke-width="2" marker-end="url(#p)"/>
+<text x="328.0" y="134.0" text-anchor="end" fill="#5a6170" font-size="12">imagen 1</text>
+<line x1="417.3" y1="70.0" x2="417.3" y2="86.0" stroke="#b5451b" stroke-width="2.5" marker-end="url(#p)"/>
+<text x="421.3" y="44.0" text-anchor="middle" fill="#b5451b" font-size="12">imagen final</text>
+<text x="140.0" y="228.0" text-anchor="middle" fill="#3a7bd5" font-size="11">lente 1 (+10 D)</text>
+<text x="430.0" y="228.0" text-anchor="middle" fill="#3a7bd5" font-size="11">lente 2 (−10 D)</text>
+</svg>
