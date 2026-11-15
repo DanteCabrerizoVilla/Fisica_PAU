@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 570 210" width="570" height="210" font-family="system-ui, sans-serif" font-size="13">
+<title>Objeto de 2 cm a 60 cm de una lente divergente de −20 cm de focal. El rayo paralelo sale abriéndose como si viniera del foco imagen, a la izquierda; el que pasa por el centro no se desvía. Sus prolongaciones se cortan a 15 cm de la lente, del lado del objeto: imagen virtual, derecha y de 0,5 cm</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="10.0" y1="130.0" x2="560.0" y2="130.0" stroke="#5a6170" stroke-width="1.2"/>
+<line x1="410.0" y1="20" x2="410.0" y2="200" stroke="#3a7bd5" stroke-width="2.5"/>
+<path d="M404.0 12 L410.0 20 L416.0 12" fill="none" stroke="#3a7bd5" stroke-width="2.5"/>
+<path d="M404.0 208 L410.0 200 L416.0 208" fill="none" stroke="#3a7bd5" stroke-width="2.5"/>
+<circle cx="290.0" cy="130" r="2.5" fill="#1e222b"/><text x="290.0" y="146.0" text-anchor="middle" fill="#1e222b" font-size="12">F′</text>
+<circle cx="530.0" cy="130" r="2.5" fill="#1e222b"/><text x="530.0" y="146.0" text-anchor="middle" fill="#1e222b" font-size="12">F</text>
+<polyline points="50.0,62.0 410.0,62.0 542.0,-12.8" fill="none" stroke="#0f6b5c" stroke-width="1.5"/>
+<line x1="290.0" y1="130.0" x2="410.0" y2="62.0" stroke="#0f6b5c" stroke-width="1.1" stroke-dasharray="4 4"/>
+<line x1="50.0" y1="62.0" x2="542.0" y2="154.9" stroke="#0f6b5c" stroke-width="1.5"/>
+<line x1="50.0" y1="130.0" x2="50.0" y2="62.0" stroke="#1e222b" stroke-width="2.5" marker-end="url(#p)"/>
+<text x="50.0" y="54.0" text-anchor="middle" fill="#1e222b" font-size="12">objeto, 2 cm</text>
+<line x1="320.0" y1="130.0" x2="320.0" y2="113.0" stroke="#b5451b" stroke-width="2.5" marker-end="url(#p)"/>
+<text x="330.0" y="148.0" text-anchor="start" fill="#b5451b" font-size="12">imagen, 0,5 cm</text>
+<line x1="50.0" y1="196.0" x2="410.0" y2="196.0" stroke="#5a6170" marker-start="url(#p)" marker-end="url(#p)"/><text x="230.0" y="190.0" text-anchor="middle" fill="#5a6170">60 cm</text>
+<line x1="320.0" y1="174.0" x2="410.0" y2="174.0" stroke="#5a6170" marker-start="url(#p)" marker-end="url(#p)"/><text x="365.0" y="168.0" text-anchor="middle" fill="#5a6170">15 cm</text>
+</svg>

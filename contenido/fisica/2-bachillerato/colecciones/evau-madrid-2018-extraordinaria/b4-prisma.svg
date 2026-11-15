@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="400" height="250" font-family="system-ui, sans-serif" font-size="13">
+<title>Prisma de índice 2 con un ángulo α en el vértice. El rayo entra perpendicular a la primera cara, sin desviarse, y llega a la segunda cara justo con el ángulo límite: sale rasante, a 90° de la normal</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<polygon points="200.0,14.0 141.1,234.0 258.9,234.0" fill="rgba(58,123,213,0.14)" stroke="#1e222b" stroke-width="1.5"/>
+<text x="200.0" y="60.0" text-anchor="middle" fill="#1e222b" font-style="italic">α</text>
+<text x="60.0" y="60.0" text-anchor="middle" fill="#5a6170" font-size="12">aire</text>
+<text x="340.0" y="60.0" text-anchor="middle" fill="#5a6170" font-size="12">aire</text>
+<text x="200.0" y="218.0" text-anchor="middle" fill="#3a7bd5" font-size="12">n = 2</text>
+<line x1="61.3" y1="106.5" x2="167.6" y2="135.0" stroke="#b5451b" stroke-width="2" marker-end="url(#p)"/>
+<line x1="167.6" y1="135.0" x2="237.4" y2="153.7" stroke="#b5451b" stroke-width="2"/>
+<line x1="189.1" y1="166.7" x2="305.1" y2="135.6" stroke="#5a6170" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="237.4" y1="153.7" x2="258.1" y2="231.0" stroke="#b5451b" stroke-width="2" marker-end="url(#p)"/>
+<text x="271.4" y="213.7" text-anchor="start" fill="#0f6b5c" font-size="12">sale rasante</text>
+</svg>
