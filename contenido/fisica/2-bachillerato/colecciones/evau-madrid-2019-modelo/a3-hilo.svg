@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 296" width="340" height="296" font-family="system-ui, sans-serif" font-size="13">
+<title>Hilo en el eje z con la corriente saliendo del papel, en el origen. A 5 m, en el eje y, el electrón se mueve hacia +y. Allí el campo magnético apunta hacia −x y la fuerza sobre el electrón entra en el papel, hacia −z</title>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker></defs>
+<line x1="126" y1="250" x2="280" y2="250" stroke="#5a6170" marker-end="url(#p)"/><text x="284" y="254" fill="#5a6170" font-style="italic">x (m)</text>
+<line x1="150" y1="274" x2="150" y2="18" stroke="#5a6170" marker-end="url(#p)"/><text x="156" y="22" fill="#5a6170" font-style="italic">y (m)</text>
+<circle cx="150.0" cy="250.0" r="9" fill="#fff" stroke="#3a7bd5" stroke-width="2"/><circle cx="150.0" cy="250.0" r="3" fill="#3a7bd5"/><text x="164.0" y="276.0" text-anchor="start" fill="#3a7bd5">I = 20 mA (sale del papel, +z)</text>
+<line x1="150.0" y1="250.0" x2="150.0" y2="110.0" stroke="#5a6170" stroke-width="1" stroke-dasharray="4 4"/>
+<circle cx="150" cy="110" r="8" fill="#3a7bd5"/><text x="150" y="114" text-anchor="middle" fill="#fff" font-weight="700" font-size="12">e⁻</text>
+<line x1="150.0" y1="100.0" x2="150.0" y2="48.0" stroke="#0f6b5c" stroke-width="2.2" marker-end="url(#p)"/>
+<text x="158.0" y="66.0" text-anchor="start" fill="#0f6b5c" font-weight="700">v</text>
+<line x1="140.0" y1="110.0" x2="70.0" y2="110.0" stroke="#b5451b" stroke-width="2.2" marker-end="url(#p)"/>
+<text x="74.0" y="102.0" text-anchor="start" fill="#b5451b" font-weight="700">B</text>
+<circle cx="194" cy="136" r="9" fill="#fff" stroke="#1e222b" stroke-width="2"/><path d="M189 131 L199 141 M189 141 L199 131" stroke="#1e222b" stroke-width="2"/><text x="208.0" y="141.0" text-anchor="start" fill="#1e222b" font-weight="700">F (entra, −z)</text>
+<text x="138.0" y="140.0" text-anchor="end" fill="#5a6170" font-size="12">(0, 5) m</text>
+<text x="134.0" y="180.0" text-anchor="end" fill="#5a6170" font-size="12">5 m</text>
+</svg>
