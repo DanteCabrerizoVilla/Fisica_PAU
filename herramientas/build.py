@@ -256,6 +256,11 @@ class Constructor:
         SALIDA.mkdir()
         shutil.copytree(RAIZ / "static", SALIDA / "static")
         (SALIDA / ".nojekyll").write_text("", encoding="utf-8")
+        if self.sitio.meta.get("indexar", False):
+            robots = "User-agent: *\nAllow: /\n"
+        else:
+            robots = "# Web en preparación: no rastrear.\nUser-agent: *\nDisallow: /\n"
+        (SALIDA / "robots.txt").write_text(robots, encoding="utf-8")
 
         resumen_cursos = []
         for curso in self.sitio.cursos:

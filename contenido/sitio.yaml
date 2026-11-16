@@ -12,6 +12,11 @@ idioma: es
 # con la variable de entorno BASE_URL (por ejemplo "/fisica-pau").
 base_url: ""
 
+# Mientras la web esté en preparación, false: cada página pide a los buscadores
+# que no la indexen (<meta name="robots" content="noindex">) y robots.txt les
+# pide que no la rastreen. El día del lanzamiento, cambiar a true.
+indexar: false
+
 autor:
   nombre: "Dante"                      # [REVISAR] nombre completo si quieres que aparezca
   titulo: "Físico y profesor particular"
