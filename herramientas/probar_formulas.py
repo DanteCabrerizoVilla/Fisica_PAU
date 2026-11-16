@@ -24,6 +24,16 @@ from comun import RAIZ
 from probar_sim import _Silencioso, buscar_navegador
 
 SITIO = RAIZ / "_site"
+# En GitHub Pages el sitio se construye bajo /nombre-del-repo/: el servidor de
+# pruebas tiene que aceptar ese prefijo para que carguen KaTeX y los estilos.
+BASE = os.environ.get("BASE_URL", "").rstrip("/")
+
+
+class _ConBase(_Silencioso):
+    def translate_path(self, path):
+        if BASE and (path == BASE or path.startswith(BASE + "/")):
+            path = path[len(BASE):] or "/"
+        return super().translate_path(path)
 
 
 def revisar(navegador: str, url: str) -> tuple[int, int, list[str]]:
@@ -58,10 +68,10 @@ def main() -> int:
         return 1
     paginas = [p for p in sorted(SITIO.rglob("*.html")) if 'class="math ' in p.read_text(encoding="utf-8")]
 
-    manejador = functools.partial(_Silencioso, directory=str(SITIO))
+    manejador = functools.partial(_ConBase, directory=str(SITIO))
     servidor = http.server.ThreadingHTTPServer(("127.0.0.1", 0), manejador)
     threading.Thread(target=servidor.serve_forever, daemon=True).start()
-    base = f"http://127.0.0.1:{servidor.server_address[1]}/"
+    base = f"http://127.0.0.1:{servidor.server_address[1]}{BASE}/"
     try:
         with ThreadPoolExecutor(max_workers=3) as grupo:
             resultados = list(grupo.map(

@@ -38,6 +38,8 @@ jobs:
           BASE_URL: ${{ steps.pages.outputs.base_path }}
       - name: Comprobar que todas las fórmulas se pintan
         run: python herramientas/probar_formulas.py
+        env:
+          BASE_URL: ${{ steps.pages.outputs.base_path }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
