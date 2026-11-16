@@ -18,7 +18,7 @@ def comprobar(res: dict) -> None:
     b = math.asin(n1 * math.sin(inc) / n2)
     salida = np.array([2 * e * math.tan(b), 0.0])
     u = np.array([math.sin(inc), math.cos(inc)])            # dirección de los dos rayos que suben
-    dist = abs(np.cross(u, salida))
+    dist = abs(u[0] * salida[1] - u[1] * salida[0])          # |u × salida| en 2D
     assert math.isclose(dist, res["d"], rel_tol=1e-12)
     # Reflexión total en la cara inferior justo a partir del ángulo calculado.
     total = lambda grados: n1 * math.sin(math.radians(grados)) / n3 >= 1
