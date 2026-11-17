@@ -12,6 +12,7 @@
     <p class="entrada">Problemas de examen resueltos como te los explicaría un profesor, simulaciones para ver lo que dicen las fórmulas y hojas de ejercicios para practicar.</p>
     <p class="acciones">
       <a class="boton" href="{{ url(principal.curso.url) }}">Ver problemas resueltos</a>
+      <a class="boton boton--suave" href="{{ url(principal.curso.url + '/hojas') }}">Preparar una hoja de ejercicios</a>
       {% if principal.curso.simulaciones %}
       <a class="boton boton--suave" href="{{ url(principal.curso.url + '/simulaciones') }}">Probar una simulación</a>
       {% endif %}

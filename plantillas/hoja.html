@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% from "_macros.html" import migas, llamada_clases %}
+
+{% block titulo %}Hoja de ejercicios a medida · {{ curso.meta.asignatura }} · {{ sitio.nombre }}{% endblock %}
+{% block descripcion %}Genera una hoja de problemas de examen de {{ curso.meta.asignatura }} de la {{ curso.meta.prueba }} por bloques, temas, dificultad y años, lista para imprimir con o sin resultados.{% endblock %}
+{% block cabeza %}{% include "_katex.html" %}
+<script src="{{ url('static/js/hoja.js') }}" defer></script>{% endblock %}
+
+{% block contenido %}
+<div class="ancho hoja" data-hoja data-datos="{{ url(curso.url + '/hojas.json') }}">
+  <div class="hoja__controles">
+    {{ migas([(curso.meta.titulo, curso.url), ('Hoja de ejercicios', '')]) }}
+    <h1>Hoja de ejercicios a medida</h1>
+    <p class="entrada">Elige qué quieres practicar y te preparo una hoja con problemas de examen reales, lista para imprimir. Cada problema enlaza a su solución paso a paso.</p>
+
+    <form class="filtros hoja__form" data-hoja-form aria-label="Opciones de la hoja">
+      <fieldset>
+        <legend>Bloques</legend>
+        {% for b in bloques %}
+        <label class="pastilla"><input type="checkbox" name="b" value="{{ b.id }}" checked><span>{{ b.nombre }}</span></label>
+        {% endfor %}
+      </fieldset>
+
+      <details class="hoja__temas">
+        <summary>Afinar por temas <span class="hoja__nota">(si no marcas ninguno, entran todos los de los bloques elegidos)</span></summary>
+        {% for b in bloques %}
+        <fieldset data-temas-de="{{ b.id }}">
+          <legend>{{ b.nombre }}</legend>
+          {% for s in b.subtemas %}
+          <label class="pastilla"><input type="checkbox" name="t" value="{{ s.id }}" data-bloque="{{ b.id }}"><span>{{ s.nombre }}</span></label>
+          {% endfor %}
+        </fieldset>
+        {% endfor %}
+      </details>
+
+      <fieldset>
+        <legend>Dificultad</legend>
+        {% for n, d in curso.meta.dificultades.items() %}
+        <label class="pastilla"><input type="checkbox" name="d" value="{{ n }}" checked><span>{{ d.nombre }}</span></label>
+        {% endfor %}
+      </fieldset>
+
+      <fieldset>
+        <legend>Años</legend>
+        <label class="hoja__campo">desde
+          <select name="desde">{% for a in anios %}<option value="{{ a }}"{% if loop.first %} selected{% endif %}>{{ a }}</option>{% endfor %}</select>
+        </label>
+        <label class="hoja__campo">hasta
+          <select name="hasta">{% for a in anios %}<option value="{{ a }}"{% if loop.last %} selected{% endif %}>{{ a }}</option>{% endfor %}</select>
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Problemas</legend>
+        <label class="hoja__campo">
+          <select name="n">{% for k in [4, 5, 6, 8, 10, 12] %}<option value="{{ k }}"{% if k == 6 %} selected{% endif %}>{{ k }}</option>{% endfor %}</select>
+        </label>
+        <label class="pastilla"><input type="checkbox" name="r" value="1" checked><span>Resultados al final</span></label>
+      </fieldset>
+
+      <p class="hoja__cuenta" data-hoja-cuenta aria-live="polite">{{ total }} problemas disponibles.</p>
+      <p class="acciones">
+        <button class="boton" type="submit">Generar hoja</button>
+        <button class="boton boton--suave" type="button" data-hoja-otra hidden>Otra con los mismos filtros</button>
+      </p>
+    </form>
+    <noscript><p class="aviso">El generador de hojas necesita JavaScript.</p></noscript>
+  </div>
+
+  <section class="hoja__salida" data-hoja-salida hidden aria-labelledby="t-hoja">
+    <div class="hoja__barra">
+      <button class="boton" type="button" data-hoja-imprimir>Imprimir o guardar en PDF</button>
+      <button class="boton boton--suave" type="button" data-hoja-copiar>Copiar enlace a esta hoja</button>
+      <span class="hoja__nota" data-hoja-copiado hidden>Enlace copiado.</span>
+    </div>
+
+    <header class="hoja__cabecera">
+      <p class="antetitulo">{{ sitio.nombre }} · {{ curso.meta.titulo }}</p>
+      <h2 id="t-hoja">Hoja de ejercicios</h2>
+      <p class="hoja__resumen" data-hoja-resumen></p>
+      <p class="hoja__alumno solo-impresion">Nombre: <span></span> Fecha: <span></span></p>
+    </header>
+
+    <ol class="hoja__lista" data-hoja-lista></ol>
+
+    <section class="hoja__resultados" data-hoja-resultados hidden>
+      <h2>Resultados</h2>
+      <p class="hoja__nota">Solo los resultados finales, para comprobar. El planteamiento y los pasos están en la solución de cada problema en la web.</p>
+      <ol data-hoja-resultados-lista></ol>
+    </section>
+
+    <p class="hoja__pie solo-impresion">Hoja preparada en {{ sitio.nombre }} · {{ sitio.autor.nombre }}, {{ sitio.autor.titulo | lower }}{% if contacto.whatsapp %} · Clases: wa.me/{{ contacto.whatsapp.rsplit('/', 1)[-1] }}{% endif %} · <span data-hoja-enlace></span></p>
+
+    <div class="no-impresion">{{ llamada_clases() }}</div>
+  </section>
+</div>
+{% endblock %}

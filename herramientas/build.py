@@ -300,6 +300,7 @@ class Constructor:
             json.dumps(list(fichas.values()), ensure_ascii=False, separators=(",", ":")),
             encoding="utf-8",
         )
+        self.construir_hojas(curso, problemas, fichas, bloques)
 
         for b in bloques:
             grupos = []
@@ -358,6 +359,29 @@ class Constructor:
 
         return {"curso": curso, "bloques": bloques, "total": len(problemas),
                 "examenes": sum(1 for c in colecciones if c["col"].oficial)}
+
+    def construir_hojas(self, curso: Curso, problemas: list[Problema], fichas: dict, bloques: list[dict]) -> None:
+        """Generador de hojas de ejercicios: la página y los enunciados que descarga al generar."""
+        # Solo problemas de examen (con año): los de muestra no entran en las hojas.
+        problemas = [p for p in problemas if fichas[p.id]["anio"]]
+        if not problemas:
+            return
+        hojas = []
+        for p in problemas:
+            base = self.url(p.coleccion.url).rstrip("/")
+            hojas.append({
+                **fichas[p.id],
+                "enunciado": str(self.a_html(p.secciones["enunciado"], base)),
+                "resultados": [
+                    {"apartado": r["apartado"], "html": "; ".join(str(l) for l in r["lineas"])}
+                    for r in self.resultados(p)
+                ],
+            })
+        (SALIDA / curso.url / "hojas.json").write_text(
+            json.dumps(hojas, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+        anios = sorted({fichas[p.id]["anio"] for p in problemas})
+        self.escribir(f"{curso.url}/hojas", "hoja.html", curso=curso, bloques=[b for b in bloques if b["total"]],
+                      anios=anios, total=len(problemas))
 
     @staticmethod
     def consulta(p: Problema, sim: str) -> str:

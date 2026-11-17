@@ -43,6 +43,16 @@
   {% endif %}
 
   {% if fichas %}
+  <section class="seccion">
+    <div class="tarjeta hoja__aviso">
+      <div>
+        <h2>Hoja de ejercicios a medida</h2>
+        <p>Elige bloques, temas, dificultad y años, y genera una hoja de problemas de examen para imprimir, con los resultados al final.</p>
+      </div>
+      <a class="boton" href="{{ url(curso.url + '/hojas') }}">Preparar una hoja</a>
+    </div>
+  </section>
+
   <section class="seccion" id="todos">
     <h2>Todos los problemas</h2>
     <form class="filtros" data-filtros aria-label="Filtrar problemas">
